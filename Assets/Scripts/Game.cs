@@ -20,7 +20,7 @@ namespace Assets.Scripts
         public Vector3 spotlightOffset;
         public PostProcessVolume postProcessingVolume;
 
-        public bool isPaused = false;
+        public bool isPaused = true;
 
         protected override void Awake()
         {

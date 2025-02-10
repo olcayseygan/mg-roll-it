@@ -16,7 +16,8 @@ namespace Assets.Scripts.States.GameStates
             GameOverPanel.Instance.Hide();
             PlatformManager.Instance.ClearPlatforms();
             Object.Destroy(Cube.Instance.gameObject);
-            Debug.Log("Restarting game");
+            GameController.Instance.score = 0;
+            PlayingPanel.Instance.SetScore(GameController.Instance.score);
             self.StartCoroutine(RestartGame(self, properties));
             return base.Update(self);
         }

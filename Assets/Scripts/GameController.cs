@@ -25,17 +25,17 @@ namespace Assets.Scripts
 
         public void RestartGame()
         {
-            Game.Instance.StateProvider.SwitchTo<States.GameStates.RestartState>(new RestartStateProperties() { isQuickPlayActive = true });
+            Game.Instance.StateProvider.SwitchTo<RestartState>(new RestartStateProperties() { isQuickPlayActive = true });
         }
 
         public void ContinueGame()
         {
-            Game.Instance.StateProvider.SwitchTo<States.GameStates.ContinueState>();
+            Game.Instance.StateProvider.SwitchTo<ContinueState>();
         }
 
         public void MainMenu()
         {
-            Game.Instance.StateProvider.SwitchTo<States.GameStates.RestartState>(new RestartStateProperties() { isQuickPlayActive = false });
+            Game.Instance.StateProvider.SwitchTo<RestartState>(new RestartStateProperties() { isQuickPlayActive = false });
         }
     }
 }

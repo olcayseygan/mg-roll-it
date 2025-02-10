@@ -12,6 +12,8 @@ namespace Assets.Scripts.States.GameStates
     {
         public override StateTransition<Game> OnEnter(Game self, InitializationStateProperties properties)
         {
+            self.isPaused = true;
+            self.postProcessingVolume.profile.GetSetting<UnityEngine.Rendering.PostProcessing.DepthOfField>().active = true;
             var platformManager = PlatformManager.Instance;
             for (int x = 0; x < platformManager.size; x++)
             {
@@ -25,6 +27,9 @@ namespace Assets.Scripts.States.GameStates
             {
                 platformManager.SpawnPlatform();
             }
+
+            ColorController.Instance.SetColor();
+            ColorController.Instance.UpdateColor();
 
             Object.Instantiate(self.playerPrefab);
             if (properties.isQuickPlayActive)

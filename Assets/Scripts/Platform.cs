@@ -6,6 +6,7 @@ namespace Assets.Scripts
 {
     public class Platform : MonoBehaviour
     {
+        public Transform modelTransform;
         public MeshRenderer meshRenderer;
 
         public bool IsCubeOnMe()

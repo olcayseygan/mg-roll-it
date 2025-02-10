@@ -9,6 +9,7 @@ namespace Assets.Scripts.States.GameStates
         {
             self.isPaused = false;
             PlayingPanel.Instance.Show();
+            self.postProcessingVolume.profile.GetSetting<UnityEngine.Rendering.PostProcessing.DepthOfField>().active = false;
             return base.OnEnter(self);
         }
 
@@ -16,6 +17,7 @@ namespace Assets.Scripts.States.GameStates
         {
             base.OnExit(self);
             self.isPaused = true;
+            self.postProcessingVolume.profile.GetSetting<UnityEngine.Rendering.PostProcessing.DepthOfField>().active = true;
             PlayingPanel.Instance.Hide();
         }
 

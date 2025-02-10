@@ -9,7 +9,7 @@ namespace Assets.Scripts
     public class PlatformManager : SingletonProvider<PlatformManager>
     {
         private const float DISMANTLE_DISTANCE_THRESHOLD = 100.0f;
-        public const float PLATFORM_SIZE = 5.0f;
+        public const float PLATFORM_SIZE = 3.0f;
 
         [SerializeField] private GameObject _prefab;
         private FactoryProvider<Platform> _platformFactory = new ();
@@ -43,6 +43,7 @@ namespace Assets.Scripts
         {
             var platform = _platformFactory.Create(_prefab);
             platform.transform.position = new Vector3(x, 0.0f, z);
+            platform.modelTransform.localScale = new Vector3(PLATFORM_SIZE, 20.0f, PLATFORM_SIZE);
             _lastSpawnPosition = new Vector3(x, 0.0f, z);
 
         }
@@ -53,6 +54,7 @@ namespace Assets.Scripts
             platform.transform.position = _lastSpawnPosition + (Random.Range(0, 2) == 0 ?
                 new Vector3(0.0f, 0.0f, PLATFORM_SIZE) :
                 new Vector3(PLATFORM_SIZE, 0.0f, 0.0f));
+            platform.modelTransform.localScale = new Vector3(PLATFORM_SIZE, 20.0f, PLATFORM_SIZE);
             _lastSpawnPosition = platform.transform.position;
         }
 
