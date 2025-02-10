@@ -10,12 +10,19 @@ namespace Assets.Scripts
     {
         public StateProvider<Cube> StateProvider { get; set; }
 
-        public Transform animationPivotTransform;
-        public Transform animationModelTranform;
+        public LayerMask layerMask;
+
         public AnimationCurve motionCurve;
-        public float motionDuration = 1.0f;
 
         public Vector3 direction = Vector3.zero;
+        public Vector3 currentPosition = Vector3.zero;
+
+        public Transform modelTransform;
+        public Rigidbody modelRigidbody;
+
+        public Vector3 deathPosition;
+
+        public Platform lastPlatform;
 
         protected override void Awake()
         {
@@ -23,12 +30,18 @@ namespace Assets.Scripts
             StateProvider = new StateProvider<Cube>(this);
             StateProvider.RegisterState(new States.CubeStates.IdleState());
             StateProvider.RegisterState(new States.CubeStates.MotionState());
+            StateProvider.RegisterState(new States.CubeStates.DeathState());
             StateProvider.SwitchTo<States.CubeStates.MotionState>();
         }
 
         private void Update()
         {
             StateProvider.Update();
+        }
+
+        public void HandleCollisionWithWall()
+        {
+            Debug.Log("Collision with wall");
         }
     }
 }
