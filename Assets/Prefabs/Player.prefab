@@ -76,6 +76,10 @@ MonoBehaviour:
   currentPosition: {x: 0, y: 0, z: 0}
   modelTransform: {fileID: 7676407792814863724}
   modelRigidbody: {fileID: 2176895159026349265}
+  scoreTransform: {fileID: 0}
+  scoreText: {fileID: 0}
+  deathPosition: {x: 0, y: 0, z: 0}
+  lastPlatform: {fileID: 0}
 --- !u!1 &4454700079761934103
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,7 +143,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 3ab9e1fc743c13f47bf3d2864584f26f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

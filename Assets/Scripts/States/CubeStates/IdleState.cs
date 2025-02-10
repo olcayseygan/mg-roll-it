@@ -1,3 +1,4 @@
+using System.Collections;
 using Assets.Scripts.Patterns.StatePattern;
 using UnityEngine;
 
@@ -13,6 +14,7 @@ namespace Assets.Scripts.States.CubeStates
                 if (platform.IsCubeOnMe())
                 {
                     isGrounded = true;
+                    self.lastPlatform = platform;
                     break;
                 }
             }
@@ -23,6 +25,17 @@ namespace Assets.Scripts.States.CubeStates
             }
 
             Debug.Log("Idle state");
+            return base.OnEnter(self);
+        }
+
+
+        public override StateTransition<Cube> Update(Cube self)
+        {
+            if (Game.Instance.isPaused)
+            {
+                return base.Update(self);
+            }
+
             return self.StateProvider.FindState<MotionState>();
         }
     }

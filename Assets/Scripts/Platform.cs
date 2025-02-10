@@ -6,6 +6,8 @@ namespace Assets.Scripts
 {
     public class Platform : MonoBehaviour
     {
+        public MeshRenderer meshRenderer;
+
         public bool IsCubeOnMe()
         {
             return Physics.OverlapBox(

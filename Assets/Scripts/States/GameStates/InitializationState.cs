@@ -3,9 +3,14 @@ using UnityEngine;
 
 namespace Assets.Scripts.States.GameStates
 {
-    public class InitializationState : State<Game>
+    public class InitializationStateProperties : StateProperties
     {
-        public override StateTransition<Game> OnEnter(Game self)
+        public bool isQuickPlayActive;
+    }
+
+    public class InitializationState : State<Game, InitializationStateProperties>
+    {
+        public override StateTransition<Game> OnEnter(Game self, InitializationStateProperties properties)
         {
             var platformManager = PlatformManager.Instance;
             for (int x = 0; x < platformManager.size; x++)
@@ -21,9 +26,13 @@ namespace Assets.Scripts.States.GameStates
                 platformManager.SpawnPlatform();
             }
 
-            var player = Object.Instantiate(self.playerPrefab);
-            Debug.Log("Initializing game");
-            return self.StateProvider.FindState<PlayingState>();
+            Object.Instantiate(self.playerPrefab);
+            if (properties.isQuickPlayActive)
+            {
+                return self.StateProvider.FindState<PlayingState>();
+            }
+
+            return self.StateProvider.FindState<MainMenuState>();
         }
     }
 }

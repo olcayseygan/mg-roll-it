@@ -7,13 +7,20 @@ namespace Assets.Scripts.States.GameStates
     {
         public override StateTransition<Game> OnEnter(Game self)
         {
+            if (GameController.Instance.score > GameController.Instance.GetHighScore())
+            {
+                GameController.Instance.SetHighScore(GameController.Instance.score);
+            }
+
             GameOverPanel.Instance.Show(GameController.Instance.score, GameController.Instance.GetHighScore());
+            self.postProcessingVolume.profile.GetSetting<UnityEngine.Rendering.PostProcessing.DepthOfField>().active = true;
             return base.OnEnter(self);
         }
 
         public override void OnExit(Game self)
         {
             GameOverPanel.Instance.Hide();
+            self.postProcessingVolume.profile.GetSetting<UnityEngine.Rendering.PostProcessing.DepthOfField>().active = false;
             base.OnExit(self);
         }
     }

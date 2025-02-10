@@ -94,8 +94,10 @@ namespace Assets.Scripts.States.CubeStates
                 Mathf.LerpAngle(_initialEulerAngle.y, _targetEulerAngle.y, t),
                 Mathf.LerpAngle(_initialEulerAngle.z, _targetEulerAngle.z, t)
             ));
-            if (_timeElapsed <= 0.0f)
+            if (_timeElapsed <= 0.0f) {
+                Debug.Log("Motion state finished");
                 return self.StateProvider.FindState<IdleState>();
+            }
 
             return base.Update(self);
         }

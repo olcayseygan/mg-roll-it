@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Assets.Scripts.Patterns.SingletonPattern;
 using Assets.Scripts.Patterns.StatePattern;
 using UnityEngine;
+using TMPro;
 
 namespace Assets.Scripts
 {
@@ -31,7 +32,8 @@ namespace Assets.Scripts
             StateProvider.RegisterState(new States.CubeStates.IdleState());
             StateProvider.RegisterState(new States.CubeStates.MotionState());
             StateProvider.RegisterState(new States.CubeStates.DeathState());
-            StateProvider.SwitchTo<States.CubeStates.MotionState>();
+            StateProvider.RegisterState(new States.CubeStates.RevivalState());
+            StateProvider.SwitchTo<States.CubeStates.IdleState>();
         }
 
         private void Update()
@@ -42,6 +44,17 @@ namespace Assets.Scripts
         public void HandleCollisionWithWall()
         {
             Debug.Log("Collision with wall");
+        }
+
+        public void ChangeDirection()
+        {
+            if (direction.z == 1f) {
+                direction.x = 1f;
+                direction.z = 0f;
+            } else {
+                direction.x = 0f;
+                direction.z = 1f;
+            }
         }
     }
 }
