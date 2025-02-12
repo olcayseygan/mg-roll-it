@@ -22,6 +22,8 @@ namespace Assets.Scripts
 
         public bool isPaused = true;
 
+        public bool canContinue = false;
+
         protected override void Awake()
         {
             base.Awake();
@@ -32,7 +34,9 @@ namespace Assets.Scripts
             StateProvider.RegisterState(new RestartState());
             StateProvider.RegisterState(new ContinueState());
             StateProvider.RegisterState(new MainMenuState());
-            StateProvider.SwitchTo<InitializationState>(new InitializationStateProperties() { isQuickPlayActive = false });
+            StateProvider.RegisterState(new AwakeState());
+            StateProvider.RegisterState(new SettingsPanelState());
+            StateProvider.SwitchTo<AwakeState>();
         }
 
         private void Update()

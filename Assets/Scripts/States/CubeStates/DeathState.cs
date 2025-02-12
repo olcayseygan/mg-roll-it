@@ -9,6 +9,7 @@ namespace Assets.Scripts.States.CubeStates {
             self.modelRigidbody.isKinematic = false;
             self.modelRigidbody.useGravity = true;
             Game.Instance.StateProvider.SwitchTo<GameStates.GameOverState>();
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.cubeDeathClip);
             return base.OnEnter(self);
         }
     }

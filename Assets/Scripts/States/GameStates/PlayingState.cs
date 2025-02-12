@@ -10,6 +10,7 @@ namespace Assets.Scripts.States.GameStates
             self.isPaused = false;
             PlayingPanel.Instance.Show();
             self.postProcessingVolume.profile.GetSetting<UnityEngine.Rendering.PostProcessing.DepthOfField>().active = false;
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.gamePlayingClip);
             return base.OnEnter(self);
         }
 

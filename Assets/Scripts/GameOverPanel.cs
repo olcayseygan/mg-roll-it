@@ -11,6 +11,7 @@ namespace Assets.Scripts
         [SerializeField] private GameObject _panel;
         [SerializeField] private TMP_Text _scoreText;
         [SerializeField] private TMP_Text _highScoreText;
+        [SerializeField] private GameObject _continueButtonGameObject;
 
         public void Show(int score, int highScore)
         {
@@ -22,6 +23,16 @@ namespace Assets.Scripts
         public void Hide()
         {
             _panel.gameObject.SetActive(false);
+        }
+
+        public void ShowContinueButton()
+        {
+            _continueButtonGameObject.SetActive(true);
+        }
+
+        public void HideContinueButton()
+        {
+            _continueButtonGameObject.SetActive(false);
         }
     }
 }

@@ -13,6 +13,7 @@ namespace Assets.Scripts.States.GameStates
         public override StateTransition<Game> OnEnter(Game self, InitializationStateProperties properties)
         {
             self.isPaused = true;
+            self.canContinue = true;
             self.postProcessingVolume.profile.GetSetting<UnityEngine.Rendering.PostProcessing.DepthOfField>().active = true;
             var platformManager = PlatformManager.Instance;
             for (int x = 0; x < platformManager.size; x++)

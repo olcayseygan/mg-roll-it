@@ -12,6 +12,16 @@ namespace Assets.Scripts.States.GameStates
                 GameController.Instance.SetHighScore(GameController.Instance.score);
             }
 
+            if (self.canContinue)
+            {
+                GameOverPanel.Instance.ShowContinueButton();
+            }
+            else
+
+            {
+                GameOverPanel.Instance.HideContinueButton();
+            }
+
             GameOverPanel.Instance.Show(GameController.Instance.score, GameController.Instance.GetHighScore());
             self.postProcessingVolume.profile.GetSetting<UnityEngine.Rendering.PostProcessing.DepthOfField>().active = true;
             return base.OnEnter(self);
