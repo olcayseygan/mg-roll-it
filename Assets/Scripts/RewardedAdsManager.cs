@@ -36,6 +36,11 @@ namespace Assets.Scripts
             Advertisement.Load(_adUnitId, this);
         }
 
+        public void ShowAd()
+        {
+            Advertisement.Show(_adUnitId, this);
+        }
+
         public void OnUnityAdsAdLoaded(string placementId)
         {
             Debug.Log("Ad Loaded: " + placementId);
@@ -48,26 +53,35 @@ namespace Assets.Scripts
         public void OnUnityAdsFailedToLoad(string placementId, UnityAdsLoadError error, string message)
         {
             isAdLoaded = false;
+            _onAdsShowFailed.Invoke();
         }
 
         public void OnUnityAdsShowFailure(string placementId, UnityAdsShowError error, string message)
         {
             isAdLoaded = false;
+            _onAdsShowFailed.Invoke();
         }
 
         public void OnUnityAdsShowStart(string placementId)
         {
-            throw new System.NotImplementedException();
+            isAdLoaded = false;
         }
 
         public void OnUnityAdsShowClick(string placementId)
         {
-            throw new System.NotImplementedException();
+            isAdLoaded = false;
         }
 
         public void OnUnityAdsShowComplete(string placementId, UnityAdsShowCompletionState showCompletionState)
         {
-            throw new System.NotImplementedException();
+            if (placementId.Equals(_adUnitId) && showCompletionState.Equals(UnityAdsShowCompletionState.COMPLETED))
+            {
+                _onAdsShowComplete.Invoke();
+            }
+            else
+            {
+                _onAdsShowFailed.Invoke();
+            }
         }
     }
 }

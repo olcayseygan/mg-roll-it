@@ -14,11 +14,11 @@ namespace Assets.Scripts.States.GameStates
 
             if (self.canContinue)
             {
-                GameOverPanel.Instance.ShowContinueButton();
+                GameOverPanel.Instance.ShowWatchAdButton();
             }
             else
-
             {
+                GameOverPanel.Instance.HideWatchAdButton();
                 GameOverPanel.Instance.HideContinueButton();
             }
 

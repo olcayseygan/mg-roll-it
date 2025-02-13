@@ -11,6 +11,7 @@ namespace Assets.Scripts.States.GameStates
             PlayingPanel.Instance.Show();
             self.postProcessingVolume.profile.GetSetting<UnityEngine.Rendering.PostProcessing.DepthOfField>().active = false;
             AudioManager.Instance.PlaySFX(AudioManager.Instance.gamePlayingClip);
+            RewardedAdsManager.Instance.LoadAd();
             return base.OnEnter(self);
         }
 
