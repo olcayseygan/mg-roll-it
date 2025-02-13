@@ -36,7 +36,6 @@ namespace Assets.Scripts.States.CubeStates
 
             var groundFace = DetermineMaxDotFace(Vector3.down);
             var targetFace = DetermineMaxDotFace(self.direction);
-            Debug.Log($"Ground face: {groundFace}, Target face: {targetFace}");
 
             _initialEulerAngle = new Vector3(0.0f, 0.0f, 0.0f);
             _targetEulerAngle = new Vector3(self.direction.z * 90f, 0.0f, self.direction.x * -90f);
@@ -81,7 +80,6 @@ namespace Assets.Scripts.States.CubeStates
             self.currentPosition.z = self.modelTransform.transform.position.z;
             GameController.Instance.score++;
             PlayingPanel.Instance.SetScore(GameController.Instance.score);
-            Debug.Log($"Score: {GameController.Instance.score}");
         }
 
         public override StateTransition<Cube> Update(Cube self)
@@ -95,7 +93,6 @@ namespace Assets.Scripts.States.CubeStates
                 Mathf.LerpAngle(_initialEulerAngle.z, _targetEulerAngle.z, t)
             ));
             if (_timeElapsed <= 0.0f) {
-                Debug.Log("Motion state finished");
                 return self.StateProvider.FindState<IdleState>();
             }
 

@@ -41,11 +41,6 @@ namespace Assets.Scripts
             StateProvider.Update();
         }
 
-        public void HandleCollisionWithWall()
-        {
-            Debug.Log("Collision with wall");
-        }
-
         public void ChangeDirection()
         {
             if (direction.z == 1f) {

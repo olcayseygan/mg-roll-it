@@ -24,7 +24,6 @@ namespace Assets.Scripts.States.CubeStates
                 return self.StateProvider.FindState<DeathState>();
             }
 
-            Debug.Log("Idle state");
             return base.OnEnter(self);
         }
 

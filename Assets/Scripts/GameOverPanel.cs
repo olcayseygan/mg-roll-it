@@ -12,11 +12,13 @@ namespace Assets.Scripts
         [SerializeField] private TMP_Text _scoreText;
         [SerializeField] private TMP_Text _highScoreText;
         [SerializeField] private GameObject _continueButtonGameObject;
+        [SerializeField] private RewardedAdsButton _continueButton;
 
         public void Show(int score, int highScore)
         {
             _highScoreText.text = highScore.ToString();
             _scoreText.text = score.ToString();
+            _continueButton.LoadAd();
             _panel.gameObject.SetActive(true);
         }
 
