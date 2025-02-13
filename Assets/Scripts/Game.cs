@@ -45,8 +45,10 @@ namespace Assets.Scripts
                 return;
             }
 
-            cameraTransform.position = new Vector3(Cube.Instance.modelTransform.position.x, 0f, Cube.Instance.modelTransform.position.z) + cameraOffset;
-            spotlightTransform.position = new Vector3(Cube.Instance.modelTransform.position.x, 0f, Cube.Instance.modelTransform.position.z) + spotlightOffset;
+            var newPosition = new Vector3(Cube.Instance.modelTransform.position.x, 0f, Cube.Instance.modelTransform.position.z);
+
+            cameraTransform.position = Vector3.Lerp(cameraTransform.position, newPosition + cameraOffset, Time.deltaTime * 10f);
+            spotlightTransform.position = Vector3.Lerp(spotlightTransform.position, newPosition + spotlightOffset, Time.deltaTime * 10f);
             StateProvider.Update();
         }
     }

@@ -31,7 +31,6 @@ namespace Assets.Scripts.States.GameStates
             }
 
             PlatformManager.Instance.UpdatePlatforms();
-
             return base.Update(self);
         }
     }

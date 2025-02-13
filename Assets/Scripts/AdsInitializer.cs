@@ -13,6 +13,8 @@ namespace Assets.Scripts
         [SerializeField] private bool _testMode = true;
         private string _gameId;
 
+        public bool isInitialized = false;
+
         protected override void Awake()
         {
             base.Awake();
@@ -32,6 +34,7 @@ namespace Assets.Scripts
         public void OnInitializationComplete()
         {
             Debug.Log("Unity Ads initialization complete.");
+            isInitialized = true;
         }
 
         public void OnInitializationFailed(UnityAdsInitializationError error, string message)
