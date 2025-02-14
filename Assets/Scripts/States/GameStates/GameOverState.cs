@@ -7,31 +7,33 @@ namespace Assets.Scripts.States.GameStates
     {
         public override StateTransition<Game> OnEnter(Game self)
         {
-            if (GameController.Instance.score > GameController.Instance.GetHighScore())
+            if (Game.I.GetScore() > Game.I.GetHighScore())
             {
-                GameController.Instance.SetHighScore(GameController.Instance.score);
+                Game.I.SetHighScore(Game.I.GetScore());
             }
 
-            if (self.canContinue && AdsInitializer.Instance.isInitialized)
+            if (self.canContinue)
+            // if (self.canContinue && AdsInitializer.I.isInitialized)
             {
-                GameOverPanel.Instance.ShowWatchAdButton();
+                GameUI.I.gameOverPanel.ShowWatchAdButton();
             }
             else
             {
-                GameOverPanel.Instance.HideWatchAdButton();
+                GameUI.I.gameOverPanel.HideWatchAdButton();
             }
 
-            GameOverPanel.Instance.HideContinueButton();
-            GameOverPanel.Instance.Show(GameController.Instance.score, GameController.Instance.GetHighScore());
-            self.postProcessingVolume.profile.GetSetting<UnityEngine.Rendering.PostProcessing.DepthOfField>().active = true;
+            GameUI.I.gameOverPanel.HideContinueButton();
+            GameUI.I.gameOverPanel.SetScoreText(self.GetScore());
+            GameUI.I.gameOverPanel.SetHighScoreText(self.GetHighScore());
+            GameUI.I.mainMenuPanel.SetHighScoreText(self.GetHighScore());
+            GameUI.I.gameOverPanel.Show();
             return base.OnEnter(self);
         }
 
         public override void OnExit(Game self)
         {
-            GameOverPanel.Instance.Hide();
-            self.postProcessingVolume.profile.GetSetting<UnityEngine.Rendering.PostProcessing.DepthOfField>().active = false;
             base.OnExit(self);
+            GameUI.I.gameOverPanel.Hide();
         }
     }
 }

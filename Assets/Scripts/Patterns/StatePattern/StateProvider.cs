@@ -10,6 +10,7 @@ namespace Assets.Scripts.Patterns.StatePattern
         private State<MemberType> _currentState = null;
 
         public List<State<MemberType>> GetStates() => new(States.Values);
+        public bool IsInState<StateType>() where StateType : State<MemberType> => _currentState.GetType() == typeof(StateType);
 
         public StateProvider(MemberType member)
         {

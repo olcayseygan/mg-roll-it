@@ -13,11 +13,9 @@ namespace Assets.Scripts.States.GameStates
     {
         public override StateTransition<Game> OnEnter(Game self, RestartStateProperties properties)
         {
-            GameOverPanel.Instance.Hide();
-            PlatformManager.Instance.ClearPlatforms();
-            Object.Destroy(Cube.Instance.gameObject);
-            GameController.Instance.score = 0;
-            PlayingPanel.Instance.SetScore(GameController.Instance.score);
+            PlatformManager.I.ClearPlatforms();
+            Object.Destroy(Cube.I.gameObject);
+            Game.I.SetScore(0);
             self.StartCoroutine(RestartGame(self, properties));
             return base.Update(self);
         }

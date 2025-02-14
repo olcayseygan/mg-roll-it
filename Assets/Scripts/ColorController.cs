@@ -12,7 +12,7 @@ namespace Assets.Scripts
 
         private void Update()
         {
-            if (Game.Instance.isPaused)
+            if (Game.I.isPaused)
             {
                 return;
             }
@@ -33,7 +33,7 @@ namespace Assets.Scripts
         public void UpdateColor()
         {
             Color mainColor = Color.HSVToRGB(h / 360f, 0.12f, 1f);
-            foreach (Platform platform in PlatformManager.Instance.GetPlatforms())
+            foreach (Platform platform in PlatformManager.I.GetPlatforms())
             {
                 platform.meshRenderer.material.color = mainColor;
             }

@@ -13,8 +13,8 @@ namespace Assets.Scripts
         {
             return Physics.OverlapBox(
                 transform.position + Vector3.up * 1f,
-                new Vector3(PlatformManager.PLATFORM_SIZE * 0.75f, 2f, PlatformManager.PLATFORM_SIZE * 0.75f) / 2f,
-                Quaternion.identity, Cube.Instance.layerMask
+                new Vector3(modelTransform.localScale.x * 0.75f, 2f, modelTransform.localScale.z * 0.75f) / 2f,
+                Quaternion.identity, Game.I.GetCubeLayerMask()
             ).Length > 0;
         }
     }

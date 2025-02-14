@@ -7,7 +7,7 @@ using TMPro;
 
 namespace Assets.Scripts
 {
-    public class Cube : SingletonProvider<Cube>, IHasStateProvider<Cube>
+    public class Cube : SingletonProvider<Cube>
     {
         public StateProvider<Cube> StateProvider { get; set; }
 
@@ -22,8 +22,15 @@ namespace Assets.Scripts
         public Rigidbody modelRigidbody;
 
         public Vector3 deathPosition;
+        public bool isRevived = false;
 
         public Platform lastPlatform;
+
+        public float speed = 0.15f;
+        public int highScore = 0;
+
+        public bool HasFallenOff() => StateProvider.IsInState<States.CubeStates.FellOffState>();
+        public Vector3 GetSmoothPosition() => new(modelTransform.position.x, 0f, modelTransform.position.z);
 
         protected override void Awake()
         {
@@ -31,9 +38,10 @@ namespace Assets.Scripts
             StateProvider = new StateProvider<Cube>(this);
             StateProvider.RegisterState(new States.CubeStates.IdleState());
             StateProvider.RegisterState(new States.CubeStates.MotionState());
-            StateProvider.RegisterState(new States.CubeStates.DeathState());
+            StateProvider.RegisterState(new States.CubeStates.FellOffState());
             StateProvider.RegisterState(new States.CubeStates.RevivalState());
-            StateProvider.SwitchTo<States.CubeStates.IdleState>();
+            StateProvider.RegisterState(new States.CubeStates.ShowcaseState());
+            StateProvider.SwitchTo<States.CubeStates.ShowcaseState>();
         }
 
         private void Update()
@@ -43,13 +51,17 @@ namespace Assets.Scripts
 
         public void ChangeDirection()
         {
-            if (direction.z == 1f) {
+            if (direction.z == 1f)
+            {
                 direction.x = 1f;
                 direction.z = 0f;
-            } else {
+            }
+            else
+            {
                 direction.x = 0f;
                 direction.z = 1f;
             }
         }
+
     }
 }

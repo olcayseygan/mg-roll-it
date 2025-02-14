@@ -8,20 +8,21 @@ namespace Assets.Scripts.States.CubeStates
     {
         public override StateTransition<Cube> OnEnter(Cube self)
         {
-            bool isGrounded = false;
-            foreach (var platform in PlatformManager.Instance.GetPlatforms())
+            Platform currentPlatform = null;
+            foreach (var platform in Game.I.GetPlatforms())
             {
                 if (platform.IsCubeOnMe())
                 {
-                    isGrounded = true;
+                    currentPlatform = platform;
                     self.lastPlatform = platform;
+                    self.isRevived = false;
                     break;
                 }
             }
 
-            if (!isGrounded)
+            if (currentPlatform == null && !self.isRevived)
             {
-                return self.StateProvider.FindState<DeathState>();
+                return self.StateProvider.FindState<FellOffState>();
             }
 
             return base.OnEnter(self);
@@ -30,7 +31,7 @@ namespace Assets.Scripts.States.CubeStates
 
         public override StateTransition<Cube> Update(Cube self)
         {
-            if (Game.Instance.isPaused)
+            if (Game.I.isPaused)
             {
                 return base.Update(self);
             }

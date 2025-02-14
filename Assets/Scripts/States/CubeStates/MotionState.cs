@@ -50,7 +50,7 @@ namespace Assets.Scripts.States.CubeStates
                 self.transform.SetPositionAndRotation(self.currentPosition + self.direction * distance, Quaternion.identity);
             });
 
-            _motionDuration = GameController.Instance.speed;
+            _motionDuration = self.speed;
             _timeElapsed = _motionDuration;
             return base.OnEnter(self);
         }
@@ -78,8 +78,11 @@ namespace Assets.Scripts.States.CubeStates
             self.currentPosition.x = self.modelTransform.transform.position.x;
             self.currentPosition.y = 0f;
             self.currentPosition.z = self.modelTransform.transform.position.z;
-            GameController.Instance.score++;
-            PlayingPanel.Instance.SetScore(GameController.Instance.score);
+            Game.I.AddScore(1);
+            if (Game.I.GetScore() > self.highScore)
+            {
+                GameUI.I.playingPanel.SetHighScoreText(Game.I.GetScore());
+            }
         }
 
         public override StateTransition<Cube> Update(Cube self)

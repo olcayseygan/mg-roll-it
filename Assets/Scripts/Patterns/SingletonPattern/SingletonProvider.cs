@@ -6,7 +6,7 @@ namespace Assets.Scripts.Patterns.SingletonPattern
     {
         private static MemberType _instance;
 
-        public static MemberType Instance
+        public static MemberType I
         {
             get
             {

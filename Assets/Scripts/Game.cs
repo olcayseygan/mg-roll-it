@@ -2,54 +2,108 @@ using System.Collections;
 using System.Collections.Generic;
 using Assets.Scripts.Patterns.SingletonPattern;
 using Assets.Scripts.Patterns.StatePattern;
-using Assets.Scripts.States.GameStates;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
 namespace Assets.Scripts
 {
-    public class Game : SingletonProvider<Game>, IHasStateProvider<Game>
+    public class Game : SingletonProvider<Game>
     {
+        private const float LERP_SPEED = 5f;
+
         public StateProvider<Game> StateProvider { get; set; }
 
-        public GameObject playerPrefab;
+        public GameObject cubePrefab;
 
+        public new Camera camera;
         public Transform cameraTransform;
         public Vector3 cameraOffset;
+        public Vector3 cameraTargetOffset;
+        public Quaternion cameraTargetRotation;
+        public float cameraTargetOrthographicSize;
         public Transform spotlightTransform;
         public Vector3 spotlightOffset;
-        public PostProcessVolume postProcessingVolume;
 
         public bool isPaused = true;
 
         public bool canContinue = false;
 
+        private int _score = 0;
+
+        public GameObject puppy;
+        public Cube cube;
+
         protected override void Awake()
         {
             base.Awake();
             StateProvider = new StateProvider<Game>(this);
-            StateProvider.RegisterState(new InitializationState());
-            StateProvider.RegisterState(new PlayingState());
-            StateProvider.RegisterState(new GameOverState());
-            StateProvider.RegisterState(new RestartState());
-            StateProvider.RegisterState(new ContinueState());
-            StateProvider.RegisterState(new MainMenuState());
-            StateProvider.RegisterState(new AwakeState());
-            StateProvider.RegisterState(new SettingsPanelState());
-            StateProvider.SwitchTo<AwakeState>();
+            StateProvider.RegisterState(new States.GameStates.InitializationState());
+            StateProvider.RegisterState(new States.GameStates.PlayingState());
+            StateProvider.RegisterState(new States.GameStates.GameOverState());
+            StateProvider.RegisterState(new States.GameStates.RestartState());
+            StateProvider.RegisterState(new States.GameStates.ContinueState());
+            StateProvider.RegisterState(new States.GameStates.AwakeState());
+            StateProvider.RegisterState(new States.GameStates.ShowcaseState());
+            StateProvider.SwitchTo<States.GameStates.AwakeState>();
         }
 
         private void Update()
         {
-            if (Cube.Instance == null) {
-                return;
+            if (cube != null)
+            {
+                var smoothPosition = cube.GetSmoothPosition();
+                cameraOffset = Vector3.Lerp(cameraOffset, cameraTargetOffset, Time.deltaTime * LERP_SPEED);
+                camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, cameraTargetOrthographicSize, Time.deltaTime * LERP_SPEED);
+                camera.transform.SetPositionAndRotation(
+                    puppy.transform.position + cameraOffset,
+                    Quaternion.Lerp(camera.transform.rotation, cameraTargetRotation, Time.deltaTime * LERP_SPEED)
+                );
+                spotlightTransform.position = Vector3.Lerp(spotlightTransform.position, smoothPosition + spotlightOffset, Time.deltaTime * LERP_SPEED);
+                puppy.transform.position = Vector3.Lerp(puppy.transform.position, smoothPosition, Time.deltaTime * LERP_SPEED);
             }
 
-            var newPosition = new Vector3(Cube.Instance.modelTransform.position.x, 0f, Cube.Instance.modelTransform.position.z);
-
-            cameraTransform.position = Vector3.Lerp(cameraTransform.position, newPosition + cameraOffset, Time.deltaTime * 10f);
-            spotlightTransform.position = Vector3.Lerp(spotlightTransform.position, newPosition + spotlightOffset, Time.deltaTime * 10f);
             StateProvider.Update();
+        }
+
+        public List<Platform> GetPlatforms() => PlatformManager.I.GetPlatforms();
+        public LayerMask GetCubeLayerMask() => cube.layerMask;
+        public int GetScore() => _score;
+        public int GetHighScore() => PlayerPrefs.GetInt("HighScore", 0);
+
+        public void SetScore(int score)
+        {
+            _score = score;
+            GameUI.I.playingPanel.SetScoreText(_score);
+        }
+        public void SetHighScore(int highScore) => PlayerPrefs.SetInt("HighScore", highScore);
+
+        public void AddScore(int score)
+        {
+            _score += score;
+            GameUI.I.playingPanel.SetScoreText(_score);
+        }
+
+        public void ContinueGame()
+        {
+            StateProvider.SwitchTo<States.GameStates.ContinueState>();
+        }
+
+        public void RestartGame(bool isQuickPlayActive)
+        {
+            StateProvider.SwitchTo<States.GameStates.RestartState>(new States.GameStates.RestartStateProperties() { isQuickPlayActive = isQuickPlayActive });
+        }
+
+        public void NavigateToMainMenuPanel()
+        {
+            StateProvider.SwitchTo<States.GameStates.ShowcaseState>();
+        }
+
+        public void AdjustCameraAndSpotlight()
+        {
+            cameraOffset = cameraTargetOffset;
+            camera.transform.SetPositionAndRotation(cameraTargetOffset, cameraTargetRotation);
+            camera.orthographicSize = cameraTargetOrthographicSize;
+            spotlightTransform.position = spotlightOffset;
         }
     }
 }

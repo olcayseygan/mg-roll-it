@@ -9,7 +9,7 @@ namespace Assets.Scripts.States.GameStates
         {
             QualitySettings.vSyncCount = 0;
             Application.targetFrameRate = 60;
-            AudioManager.Instance.PlayBGM();
+            AudioManager.I.PlayBGM();
             return self.StateProvider.FindState<InitializationState>(new InitializationStateProperties() { isQuickPlayActive = false });
         }
     }

@@ -8,10 +8,11 @@ namespace Assets.Scripts.States.GameStates
         public override StateTransition<Game> OnEnter(Game self)
         {
             self.isPaused = false;
-            PlayingPanel.Instance.Show();
-            self.postProcessingVolume.profile.GetSetting<UnityEngine.Rendering.PostProcessing.DepthOfField>().active = false;
-            AudioManager.Instance.PlaySFX(AudioManager.Instance.gamePlayingClip);
-            RewardedAdsManager.Instance.LoadAd();
+            AudioManager.I.PlaySFX(AudioManager.I.gamePlayingClip);
+            // RewardedAdsManager.I.LoadAd();
+            self.cube.highScore = Game.I.GetHighScore();
+            GameUI.I.playingPanel.SetHighScoreText(self.cube.highScore);
+            self.cube.StateProvider.SwitchTo<CubeStates.IdleState>();
             return base.OnEnter(self);
         }
 
@@ -19,18 +20,16 @@ namespace Assets.Scripts.States.GameStates
         {
             base.OnExit(self);
             self.isPaused = true;
-            self.postProcessingVolume.profile.GetSetting<UnityEngine.Rendering.PostProcessing.DepthOfField>().active = true;
-            PlayingPanel.Instance.Hide();
         }
 
         public override StateTransition<Game> Update(Game self)
         {
             if (Input.GetMouseButtonDown(0))
             {
-                Cube.Instance.ChangeDirection();
+                Cube.I.ChangeDirection();
             }
 
-            PlatformManager.Instance.UpdatePlatforms();
+            PlatformManager.I.UpdatePlatforms();
             return base.Update(self);
         }
     }

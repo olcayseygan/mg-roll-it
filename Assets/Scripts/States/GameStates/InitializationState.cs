@@ -14,8 +14,7 @@ namespace Assets.Scripts.States.GameStates
         {
             self.isPaused = true;
             self.canContinue = true;
-            self.postProcessingVolume.profile.GetSetting<UnityEngine.Rendering.PostProcessing.DepthOfField>().active = true;
-            var platformManager = PlatformManager.Instance;
+            var platformManager = PlatformManager.I;
             for (int x = 0; x < platformManager.size; x++)
             {
                 for (int z = 0; z < platformManager.size; z++)
@@ -29,16 +28,17 @@ namespace Assets.Scripts.States.GameStates
                 platformManager.SpawnPlatform();
             }
 
-            ColorController.Instance.SetColor();
-            ColorController.Instance.UpdateColor();
+            ColorController.I.SetColor();
+            ColorController.I.UpdateColor();
 
-            Object.Instantiate(self.playerPrefab);
+            self.cube = Object.Instantiate(self.cubePrefab).GetComponent<Cube>();
             if (properties.isQuickPlayActive)
             {
+                self.AdjustCameraAndSpotlight();
                 return self.StateProvider.FindState<PlayingState>();
             }
 
-            return self.StateProvider.FindState<MainMenuState>();
+            return self.StateProvider.FindState<ShowcaseState>();
         }
     }
 }

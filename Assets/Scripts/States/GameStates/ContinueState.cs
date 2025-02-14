@@ -9,8 +9,7 @@ namespace Assets.Scripts.States.GameStates
         public override StateTransition<Game> OnEnter(Game self)
         {
             self.canContinue = false;
-            GameOverPanel.Instance.Hide();
-            Cube.Instance.StateProvider.SwitchTo<CubeStates.RevivalState>();
+            Cube.I.StateProvider.SwitchTo<CubeStates.RevivalState>();
             self.StartCoroutine(RestartGame(self));
             return base.Update(self);
         }
