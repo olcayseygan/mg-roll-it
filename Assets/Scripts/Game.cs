@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Assets.Scripts.Patterns.SingletonPattern;
 using Assets.Scripts.Patterns.StatePattern;
+using GoogleMobileAds.Api;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -32,6 +33,14 @@ namespace Assets.Scripts
         public GameObject puppy;
         public Cube cube;
 
+        public RewardedAd rewardedAd;
+
+        public List<byte> inputList = new();
+
+        public GameObject adsSuccessObject;
+        public GameObject adsFailObject;
+        public TMPro.TMP_Text adsFailText;
+
         protected override void Awake()
         {
             base.Awake();
@@ -43,6 +52,7 @@ namespace Assets.Scripts
             StateProvider.RegisterState(new States.GameStates.ContinueState());
             StateProvider.RegisterState(new States.GameStates.AwakeState());
             StateProvider.RegisterState(new States.GameStates.ShowcaseState());
+            StateProvider.RegisterState(new States.GameStates.LoadAdState());
             StateProvider.SwitchTo<States.GameStates.AwakeState>();
         }
 
@@ -103,6 +113,17 @@ namespace Assets.Scripts
             camera.transform.SetPositionAndRotation(cameraTargetOffset, cameraTargetRotation);
             camera.orthographicSize = cameraTargetOrthographicSize;
             spotlightTransform.position = spotlightOffset;
+        }
+
+        public void ShowRewardedAd()
+        {
+            if (rewardedAd != null && rewardedAd.CanShowAd())
+            {
+                rewardedAd.Show((reward) =>
+                {
+                    StateProvider.SwitchTo<States.GameStates.ContinueState>();
+                });
+            }
         }
     }
 }

@@ -23,7 +23,6 @@ namespace Assets.Scripts.States.GameStates
             self.cameraTargetRotation = Quaternion.Euler(45f, 45f, 0f);
             self.cameraTargetOrthographicSize = 15f;
             self.camera.transform.position = self.cameraTargetOffset;
-            Debug.Log("ShowcaseState.OnExit");
             GameUI.I.StateProvider.SwitchTo<GameUIStates.PlayingState>();
         }
     }

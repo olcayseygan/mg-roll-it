@@ -35,7 +35,7 @@ namespace Assets.Scripts.States.GameStates
             if (properties.isQuickPlayActive)
             {
                 self.AdjustCameraAndSpotlight();
-                return self.StateProvider.FindState<PlayingState>();
+                return self.StateProvider.FindState<LoadAdState>();
             }
 
             return self.StateProvider.FindState<ShowcaseState>();

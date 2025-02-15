@@ -41,6 +41,7 @@ namespace Assets.Scripts
             StateProvider.RegisterState(new States.CubeStates.FellOffState());
             StateProvider.RegisterState(new States.CubeStates.RevivalState());
             StateProvider.RegisterState(new States.CubeStates.ShowcaseState());
+            StateProvider.RegisterState(new States.CubeStates.WaitForActionState());
             StateProvider.SwitchTo<States.CubeStates.ShowcaseState>();
         }
 

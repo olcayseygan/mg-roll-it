@@ -20,7 +20,7 @@ namespace Assets.Scripts.Panels
         public void Play()
         {
             GameUI.I.StateProvider.SwitchTo<States.GameUIStates.PlayingState>();
-            Game.I.StateProvider.SwitchTo<States.GameStates.PlayingState>();
+            Game.I.StateProvider.SwitchTo<States.GameStates.LoadAdState>();
         }
 
         public void ToggleBGM()

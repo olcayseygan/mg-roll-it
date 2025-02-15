@@ -9,10 +9,13 @@ namespace Assets.Scripts.States.GameStates
         {
             self.isPaused = false;
             AudioManager.I.PlaySFX(AudioManager.I.gamePlayingClip);
-            // RewardedAdsManager.I.LoadAd();
             self.cube.highScore = Game.I.GetHighScore();
             GameUI.I.playingPanel.SetHighScoreText(self.cube.highScore);
-            self.cube.StateProvider.SwitchTo<CubeStates.IdleState>();
+            if (!self.cube.StateProvider.IsInState<CubeStates.WaitForActionState>())
+            {
+                self.cube.StateProvider.SwitchTo<CubeStates.IdleState>();
+            }
+
             return base.OnEnter(self);
         }
 
@@ -26,7 +29,13 @@ namespace Assets.Scripts.States.GameStates
         {
             if (Input.GetMouseButtonDown(0))
             {
-                Cube.I.ChangeDirection();
+                if (self.cube.StateProvider.IsInState<CubeStates.WaitForActionState>()) {
+                    self.cube.StateProvider.SwitchTo<CubeStates.IdleState>();
+                    return base.Update(self);
+                }
+
+                self.inputList.Add(0);
+                Debug.Log("Input added " + self.inputList.Count);
             }
 
             PlatformManager.I.UpdatePlatforms();

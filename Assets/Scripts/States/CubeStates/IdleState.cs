@@ -16,13 +16,22 @@ namespace Assets.Scripts.States.CubeStates
                     currentPlatform = platform;
                     self.lastPlatform = platform;
                     self.isRevived = false;
+                    Debug.Log("Cube is on platform");
                     break;
                 }
             }
 
+            Debug.Log("Current platform is " + currentPlatform);
             if (currentPlatform == null && !self.isRevived)
             {
                 return self.StateProvider.FindState<FellOffState>();
+            }
+
+            if (Game.I.inputList.Count > 0)
+            {
+                Cube.I.ChangeDirection();
+                Game.I.inputList.RemoveAt(0);
+                Debug.Log("changed direction");
             }
 
             return base.OnEnter(self);

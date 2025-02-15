@@ -14,7 +14,7 @@ namespace Assets.Scripts.States.CubeStates {
             self.direction = direction.normalized;
             self.currentPosition = self.lastPlatform.transform.position;
             self.isRevived = true;
-            return self.StateProvider.FindState<IdleState>();
+            return self.StateProvider.FindState<WaitForActionState>();
         }
     }
 }

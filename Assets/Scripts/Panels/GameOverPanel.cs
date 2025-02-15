@@ -55,7 +55,7 @@ namespace Assets.Scripts.Panels
 
         public void WatchAd()
         {
-            // RewardedAdsManager.I.ShowAd();
+            Game.I.ShowRewardedAd();
             HideWatchAdButton();
         }
 
