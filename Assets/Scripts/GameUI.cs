@@ -14,6 +14,7 @@ namespace Assets.Scripts
         public MainMenuPanel mainMenuPanel;
         public PlayingPanel playingPanel;
         public GameOverPanel gameOverPanel;
+        public ContinuePanel continuePanel;
 
         protected override void Awake()
         {
@@ -22,6 +23,7 @@ namespace Assets.Scripts
             StateProvider.RegisterState(new States.GameUIStates.MainMenuState());
             StateProvider.RegisterState(new States.GameUIStates.PlayingState());
             StateProvider.RegisterState(new States.GameUIStates.GameOverState());
+            StateProvider.RegisterState(new States.GameUIStates.ContinueState());
             StateProvider.SwitchTo<States.GameUIStates.MainMenuState>();
         }
     }

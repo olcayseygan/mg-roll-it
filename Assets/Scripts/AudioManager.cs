@@ -13,6 +13,7 @@ public class AudioManager : SingletonProvider<AudioManager>
     public AudioClip bgmClip;
     public AudioClip gamePlayingClip;
     public AudioClip cubeDeathClip;
+    public AudioClip screenTapClip;
 
     public void PlayBGM()
     {

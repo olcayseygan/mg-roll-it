@@ -3,14 +3,19 @@ using System.Collections.Generic;
 using Assets.Scripts.Patterns.SingletonPattern;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 namespace Assets.Scripts.Panels
 {
     public class MainMenuPanel : Panel
     {
         [SerializeField] private TMP_Text _highScoreText;
-        [SerializeField] private TMP_Text _bgmText;
-        [SerializeField] private TMP_Text _sfxText;
+
+        [SerializeField] private Image _bgmImage;
+        [SerializeField] private Image _sfxImage;
+
+        [SerializeField] private Color _onColor;
+        [SerializeField] private Color _offColor;
 
         public void SetHighScoreText(int highScore)
         {
@@ -26,19 +31,19 @@ namespace Assets.Scripts.Panels
         public void ToggleBGM()
         {
             AudioManager.I.ToggleBGM();
-            SetTexts();
+            RefreshAudioToggleColors();
         }
 
         public void ToggleSFX()
         {
             AudioManager.I.ToggleSFX();
-            SetTexts();
+            RefreshAudioToggleColors();
         }
 
-        public void SetTexts()
+        public void RefreshAudioToggleColors()
         {
-            _bgmText.text = AudioManager.I.IsBGMOn() ? "M" : "m";
-            _sfxText.text = AudioManager.I.IsSFXOn() ? "S" : "s";
+            _bgmImage.color = AudioManager.I.IsBGMOn() ? _onColor : _offColor;
+            _sfxImage.color = AudioManager.I.IsSFXOn() ? _onColor : _offColor;
         }
     }
 }

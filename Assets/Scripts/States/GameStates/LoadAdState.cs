@@ -18,14 +18,14 @@ namespace Assets.Scripts.States.GameStates
                     {
                         Debug.LogError("Rewarded ad failed to load an ad " +
                                      "with error : " + error);
-                        self.StartCoroutine(LoadAd(self, false, error.GetCode().ToString() + error.GetMessage()));
+                        // self.StartCoroutine(LoadAd(self, false, error.GetCode().ToString() + error.GetMessage()));
                         return;
                     }
 
                     Debug.Log("Rewarded ad loaded with response : "
                             + ad.GetResponseInfo());
 
-                    self.StartCoroutine(LoadAd(self, true, ""));
+                    // self.StartCoroutine(LoadAd(self, true, ""));
                     self.rewardedAd = ad;
                 });
             return self.StateProvider.FindState<PlayingState>();

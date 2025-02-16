@@ -3,19 +3,18 @@ using UnityEngine;
 
 namespace Assets.Scripts.States.GameUIStates
 {
-    public class MainMenuState : State<GameUI>
+    public class ContinueState : State<GameUI>
     {
         public override StateTransition<GameUI> OnEnter(GameUI self)
         {
-            self.mainMenuPanel.RefreshAudioToggleColors();
-            self.mainMenuPanel.Show();
+            self.continuePanel.Show();
             return base.OnEnter(self);
         }
 
         public override void OnExit(GameUI self)
         {
             base.OnExit(self);
-            self.mainMenuPanel.Hide();
+            self.continuePanel.Hide();
         }
     }
 }

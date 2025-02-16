@@ -1,3 +1,4 @@
+using System.Collections;
 using Assets.Scripts.Patterns.StatePattern;
 using GoogleMobileAds.Api;
 using UnityEngine;
@@ -10,11 +11,13 @@ namespace Assets.Scripts.States.GameStates
         {
             QualitySettings.vSyncCount = 0;
             Application.targetFrameRate = 60;
-            AudioManager.I.PlayBGM();
+            // NOTE: muzik yapilana kadar kapali.
+            // AudioManager.I.PlayBGM();
             MobileAds.Initialize(initStatus => {
                 Debug.Log("AdMob initialized");
             });
             return self.StateProvider.FindState<InitializationState>(new InitializationStateProperties() { isQuickPlayActive = false });
         }
+
     }
 }

@@ -58,6 +58,11 @@ namespace Assets.Scripts
 
         private void Update()
         {
+            if (Input.GetMouseButtonDown(0))
+            {
+                AudioManager.I.PlaySFX(AudioManager.I.screenTapClip);
+            }
+
             if (cube != null)
             {
                 var smoothPosition = cube.GetSmoothPosition();
