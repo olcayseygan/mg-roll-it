@@ -9,6 +9,7 @@ namespace Assets.Scripts.States.GameUIStates
         {
             self.mainMenuPanel.RefreshAudioToggleColors();
             self.mainMenuPanel.Show();
+            self.mainMenuPanel.SetHighScoreText(Game.I.GetHighScore());
             return base.OnEnter(self);
         }
 
