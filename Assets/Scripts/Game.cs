@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using Assets.Scripts.Patterns.SingletonPattern;
 using Assets.Scripts.Patterns.StatePattern;
@@ -16,7 +15,6 @@ namespace Assets.Scripts
         public GameObject cubePrefab;
 
         public new Camera camera;
-        public Transform cameraTransform;
         public Vector3 cameraOffset;
         public Vector3 cameraTargetOffset;
         public Quaternion cameraTargetRotation;
@@ -31,7 +29,6 @@ namespace Assets.Scripts
         private int _score = 0;
 
         public GameObject puppy;
-        public Cube cube;
 
         public RewardedAd rewardedAd;
 
@@ -64,9 +61,9 @@ namespace Assets.Scripts
                 AudioManager.I.PlaySFX(AudioManager.I.screenTapClip);
             }
 
-            if (cube != null)
+            if (Cube.I != null)
             {
-                var smoothPosition = cube.GetSmoothPosition();
+                var smoothPosition = Cube.I.GetSmoothPosition();
                 cameraOffset = Vector3.Lerp(cameraOffset, cameraTargetOffset, Time.deltaTime * LERP_SPEED);
                 camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, cameraTargetOrthographicSize, Time.deltaTime * LERP_SPEED);
                 camera.transform.SetPositionAndRotation(
@@ -80,23 +77,11 @@ namespace Assets.Scripts
             StateProvider.Update();
         }
 
-        public List<Platform> GetPlatforms() => PlatformManager.I.GetPlatforms();
-        public LayerMask GetCubeLayerMask() => cube.layerMask;
         public int GetScore() => _score;
         public int GetHighScore() => PlayerPrefs.GetInt("HighScore", 0);
-
-        public void SetScore(int score)
-        {
-            _score = score;
-            GameUI.I.playingPanel.SetScoreText(_score);
-        }
+        public void SetScore(int score) => _score = score;
         public void SetHighScore(int highScore) => PlayerPrefs.SetInt("HighScore", highScore);
-
-        public void AddScore(int score)
-        {
-            _score += score;
-            GameUI.I.playingPanel.SetScoreText(_score);
-        }
+        public void AddScore(int score) => _score += score;
 
         public void ContinueGame()
         {

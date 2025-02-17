@@ -78,6 +78,7 @@ namespace Assets.Scripts.States.CubeStates
             self.lastKnownPosition.y = 0f;
             self.lastKnownPosition.z = self.modelTransform.transform.position.z;
             Game.I.AddScore(1);
+            GameUI.I.playingPanel.SetScoreText(Game.I.GetScore());
             if (Game.I.GetScore() > self.highScore)
             {
                 GameUI.I.playingPanel.SetHighScoreText(Game.I.GetScore());

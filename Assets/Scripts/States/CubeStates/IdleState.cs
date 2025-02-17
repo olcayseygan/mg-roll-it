@@ -8,7 +8,7 @@ namespace Assets.Scripts.States.CubeStates
     {
         public override StateTransition<Cube> OnEnter(Cube self)
         {
-            var lastVisitedPlatform = Game.I.GetPlatforms().Find(platform => platform.IsCubeOnMe());
+            var lastVisitedPlatform = PlatformManager.I.GetPlatforms().Find(platform => platform.IsCubeOnMe());
             if (lastVisitedPlatform == null)
             {
                 return self.StateProvider.FindState<FellOffState>();

@@ -18,6 +18,7 @@ namespace Assets.Scripts.States.GameStates
             InstantiatePlatforms();
             InstantiateCube(self);
             self.SetScore(0);
+            GameUI.I.playingPanel.SetScoreText(0);
             self.isContinuationEnabled = true;
             if (properties.canSkipToPlaying)
             {
@@ -60,7 +61,7 @@ namespace Assets.Scripts.States.GameStates
 
         public void InstantiateCube(Game self)
         {
-            self.cube = Object.Instantiate(self.cubePrefab).GetComponent<Cube>();
+            Object.Instantiate(self.cubePrefab).GetComponent<Cube>();
         }
     }
 }

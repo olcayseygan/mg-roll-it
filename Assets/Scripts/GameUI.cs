@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using Assets.Scripts.Patterns.SingletonPattern;
 using Assets.Scripts.Patterns.StatePattern;
 using Assets.Scripts.Panels;
-using UnityEngine;
 
 namespace Assets.Scripts
 {
