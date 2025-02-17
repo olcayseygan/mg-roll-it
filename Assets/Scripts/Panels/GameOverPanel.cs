@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Assets.Scripts.Patterns.SingletonPattern;
 using UnityEngine;
 using TMPro;
+using Assets.Scripts.States;
 
 namespace Assets.Scripts.Panels
 {
@@ -25,7 +26,7 @@ namespace Assets.Scripts.Panels
 
         public void ShowWatchAdButton()
         {
-            if (!Game.I.canContinue)
+            if (!Game.I.isContinuationEnabled)
             {
                 return;
             }
@@ -40,7 +41,7 @@ namespace Assets.Scripts.Panels
 
         public void ShowContinueButton()
         {
-            if (!Game.I.canContinue)
+            if (!Game.I.isContinuationEnabled)
             {
                 return;
             }
@@ -66,12 +67,12 @@ namespace Assets.Scripts.Panels
 
         public void Retry()
         {
-            Game.I.RestartGame(true);
+            Game.I.StateProvider.SwitchTo<States.GameStates.CleaningState>(new States.GameStates.CleaningStateProperties() { canSkipToPlaying = true });
         }
 
         public void MainMenu()
         {
-            Game.I.RestartGame(false);
+            Game.I.StateProvider.SwitchTo<States.GameStates.CleaningState>(new States.GameStates.CleaningStateProperties() { canSkipToPlaying = false });
         }
     }
 }

@@ -8,23 +8,13 @@ namespace Assets.Scripts.States.CubeStates
     {
         public override StateTransition<Cube> OnEnter(Cube self)
         {
-            Platform currentPlatform = null;
-            foreach (var platform in Game.I.GetPlatforms())
-            {
-                if (platform.IsCubeOnMe())
-                {
-                    currentPlatform = platform;
-                    self.lastPlatform = platform;
-                    self.isRevived = false;
-                    break;
-                }
-            }
-
-            if (currentPlatform == null && !self.isRevived)
+            var lastVisitedPlatform = Game.I.GetPlatforms().Find(platform => platform.IsCubeOnMe());
+            if (lastVisitedPlatform == null)
             {
                 return self.StateProvider.FindState<FellOffState>();
             }
 
+            self.lastVisitedPlatform = lastVisitedPlatform;
             if (Game.I.inputList.Count > 0)
             {
                 Cube.I.ChangeDirection();
@@ -37,7 +27,7 @@ namespace Assets.Scripts.States.CubeStates
 
         public override StateTransition<Cube> Update(Cube self)
         {
-            if (Game.I.isPaused)
+            if (!Game.I.StateProvider.IsInState<GameStates.PlayingState>())
             {
                 return base.Update(self);
             }

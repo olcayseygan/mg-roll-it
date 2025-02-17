@@ -26,7 +26,7 @@ namespace Assets.Scripts
 
         public bool isPaused = true;
 
-        public bool canContinue = false;
+        public bool isContinuationEnabled = true;
 
         private int _score = 0;
 
@@ -45,15 +45,16 @@ namespace Assets.Scripts
         {
             base.Awake();
             StateProvider = new StateProvider<Game>(this);
-            StateProvider.RegisterState(new States.GameStates.InitializationState());
-            StateProvider.RegisterState(new States.GameStates.PlayingState());
-            StateProvider.RegisterState(new States.GameStates.GameOverState());
-            StateProvider.RegisterState(new States.GameStates.RestartState());
+            StateProvider.RegisterState(new States.GameStates.AwakeningState());
+            StateProvider.RegisterState(new States.GameStates.CleaningState());
             StateProvider.RegisterState(new States.GameStates.ContinueState());
-            StateProvider.RegisterState(new States.GameStates.AwakeState());
-            StateProvider.RegisterState(new States.GameStates.ShowcaseState());
+            StateProvider.RegisterState(new States.GameStates.GameOverState());
+            StateProvider.RegisterState(new States.GameStates.InstantiationState());
             StateProvider.RegisterState(new States.GameStates.LoadAdState());
-            StateProvider.SwitchTo<States.GameStates.AwakeState>();
+            StateProvider.RegisterState(new States.GameStates.PlayingState());
+            StateProvider.RegisterState(new States.GameStates.ShowcaseState());
+            StateProvider.RegisterState(new States.GameStates.StartingState());
+            StateProvider.SwitchTo<States.GameStates.AwakeningState>();
         }
 
         private void Update()
@@ -100,11 +101,6 @@ namespace Assets.Scripts
         public void ContinueGame()
         {
             StateProvider.SwitchTo<States.GameStates.ContinueState>();
-        }
-
-        public void RestartGame(bool isQuickPlayActive)
-        {
-            StateProvider.SwitchTo<States.GameStates.RestartState>(new States.GameStates.RestartStateProperties() { isQuickPlayActive = isQuickPlayActive });
         }
 
         public void NavigateToMainMenuPanel()

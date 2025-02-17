@@ -16,15 +16,11 @@ namespace Assets.Scripts
         public AnimationCurve motionCurve;
 
         public Vector3 direction = Vector3.zero;
-        public Vector3 currentPosition = Vector3.zero;
+        public Vector3 lastKnownPosition = Vector3.zero;
 
         public Transform modelTransform;
-        public Rigidbody modelRigidbody;
 
-        public Vector3 deathPosition;
-        public bool isRevived = false;
-
-        public Platform lastPlatform;
+        public Platform lastVisitedPlatform;
 
         public float speed = 0.15f;
         public int highScore = 0;

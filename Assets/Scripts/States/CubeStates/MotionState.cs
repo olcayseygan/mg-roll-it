@@ -21,7 +21,6 @@ namespace Assets.Scripts.States.CubeStates
         private float _timeElapsed = 0.0f;
         private float _motionDuration = 0.0f;
 
-
         private Vector3 _initialEulerAngle = Vector3.zero;
         private Vector3 _targetEulerAngle = Vector3.zero;
 
@@ -47,7 +46,7 @@ namespace Assets.Scripts.States.CubeStates
                     distance = 1.0f;
                 }
 
-                self.transform.SetPositionAndRotation(self.currentPosition + self.direction * distance, Quaternion.identity);
+                self.transform.SetPositionAndRotation(self.lastKnownPosition + self.direction * distance, Quaternion.identity);
             });
 
             _motionDuration = self.speed;
@@ -75,9 +74,9 @@ namespace Assets.Scripts.States.CubeStates
         public override void OnExit(Cube self)
         {
             base.OnExit(self);
-            self.currentPosition.x = self.modelTransform.transform.position.x;
-            self.currentPosition.y = 0f;
-            self.currentPosition.z = self.modelTransform.transform.position.z;
+            self.lastKnownPosition.x = self.modelTransform.transform.position.x;
+            self.lastKnownPosition.y = 0f;
+            self.lastKnownPosition.z = self.modelTransform.transform.position.z;
             Game.I.AddScore(1);
             if (Game.I.GetScore() > self.highScore)
             {

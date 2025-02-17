@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Panels
 {
-    public class ContinuePanel : Panel
+    public class WaitForActionPanel : Panel
     {
 
     }

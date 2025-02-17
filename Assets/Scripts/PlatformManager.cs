@@ -8,7 +8,7 @@ namespace Assets.Scripts
 {
     public class PlatformManager : SingletonProvider<PlatformManager>
     {
-        private const float DISMANTLE_DISTANCE_THRESHOLD = 100.0f;
+        private const float DISMANTLE_DISTANCE_THRESHOLD = 10.0f;
         public const float PLATFORM_SIZE = 3.0f;
 
         [SerializeField] private GameObject _prefab;
@@ -16,11 +16,10 @@ namespace Assets.Scripts
 
         private Vector3 _lastSpawnPosition;
 
+        [SerializeField] private float _speed = 5f;
+        private float h = 0f;
+
         private List<int> _last2Directions = new(); // 1 means forward, 0 means right
-
-        public int size = 3;
-
-        public int totalPlatforms = 40;
 
         public void UpdatePlatforms()
         {
@@ -34,11 +33,33 @@ namespace Assets.Scripts
                 return;
             }
 
-            var distance = Vector3.Distance(Cube.I.transform.position, _lastSpawnPosition);
-            if (distance < DISMANTLE_DISTANCE_THRESHOLD)
+            var firstPlatform = GetPlatforms()[0];
+            var distance = Vector3.Distance(Cube.I.transform.position, firstPlatform.transform.position);
+            if (distance > DISMANTLE_DISTANCE_THRESHOLD)
             {
-                _platformFactory.Dismantle(_platformFactory.Instances[0]);
+                firstPlatform.StateProvider.SwitchTo<States.PlatformStates.DestroyState>();
+                _platformFactory.Dismantle(firstPlatform, 0.1f);
                 SpawnPlatform();
+            }
+        }
+
+        public void SetColor()
+        {
+            h = Random.Range(0f, 360f);
+        }
+
+        public void UpdateColors()
+        {
+            h += _speed * Time.deltaTime;
+            if (h >= 360f)
+            {
+                h = 0f;
+            }
+
+            Color mainColor = Color.HSVToRGB(h / 360f, 0.12f, 1f);
+            foreach (Platform platform in GetPlatforms())
+            {
+                platform.meshRenderer.material.color = mainColor;
             }
         }
 
@@ -48,7 +69,6 @@ namespace Assets.Scripts
             platform.transform.position = new Vector3(x, 0.0f, z);
             platform.modelTransform.localScale = new Vector3(PLATFORM_SIZE, 20.0f, PLATFORM_SIZE);
             _lastSpawnPosition = new Vector3(x, 0.0f, z);
-
         }
 
         public void SpawnPlatform()

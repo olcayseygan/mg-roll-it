@@ -28,6 +28,7 @@ namespace Assets.Scripts.States.GameStates
                     // self.StartCoroutine(LoadAd(self, true, ""));
                     self.rewardedAd = ad;
                 });
+
             return self.StateProvider.FindState<PlayingState>();
         }
 

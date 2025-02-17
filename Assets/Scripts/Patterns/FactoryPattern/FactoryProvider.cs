@@ -14,10 +14,17 @@ namespace Assets.Scripts.Patterns.FactoryPattern
             return instance;
         }
 
-        public void Dismantle(MemberType instance)
+        public void Dismantle(MemberType instance, float delay = 0)
         {
             Instances.Remove(instance);
-            Object.Destroy(instance.gameObject);
+            if (delay == 0)
+            {
+                Object.Destroy(instance.gameObject);
+            }
+            else
+            {
+                Object.Destroy(instance.gameObject, delay);
+            }
         }
     }
 }

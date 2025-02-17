@@ -7,32 +7,26 @@ namespace Assets.Scripts.States.GameStates
     {
         public override StateTransition<Game> OnEnter(Game self)
         {
-            self.isPaused = false;
-            self.cube.highScore = Game.I.GetHighScore();
             self.inputList.Clear();
-            GameUI.I.playingPanel.SetHighScoreText(self.cube.highScore);
-            if (!self.cube.StateProvider.IsInState<CubeStates.WaitForActionState>())
-            {
-                self.cube.StateProvider.SwitchTo<CubeStates.IdleState>();
-            }
-
+            GameUI.I.StateProvider.SwitchTo<GameUIStates.WaitForActionState>();
+            GameUI.I.playingPanel.SetHighScoreText(Cube.I.highScore);
+            Cube.I.highScore = Game.I.GetHighScore();
+            Cube.I.StateProvider.SwitchTo<CubeStates.WaitForActionState>();
             return base.OnEnter(self);
-        }
-
-        public override void OnExit(Game self)
-        {
-            base.OnExit(self);
-            self.isPaused = true;
         }
 
         public override StateTransition<Game> Update(Game self)
         {
+            if (Cube.I.StateProvider.IsInState<CubeStates.FellOffState>())
+            {
+                return self.StateProvider.FindState<GameOverState>();
+            }
+
             if (Input.GetMouseButtonDown(0))
             {
-                if (self.cube.StateProvider.IsInState<CubeStates.WaitForActionState>()) {
+                if (Cube.I.StateProvider.IsInState<CubeStates.WaitForActionState>()) {
                     GameUI.I.StateProvider.SwitchTo<GameUIStates.PlayingState>();
-                    self.cube.StateProvider.SwitchTo<CubeStates.IdleState>();
-
+                    Cube.I.StateProvider.SwitchTo<CubeStates.IdleState>();
                     return base.Update(self);
                 }
 
@@ -41,6 +35,7 @@ namespace Assets.Scripts.States.GameStates
             }
 
             PlatformManager.I.UpdatePlatforms();
+            PlatformManager.I.UpdateColors();
             return base.Update(self);
         }
     }

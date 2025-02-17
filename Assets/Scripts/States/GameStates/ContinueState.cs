@@ -8,9 +8,6 @@ namespace Assets.Scripts.States.GameStates
     {
         public override StateTransition<Game> OnEnter(Game self)
         {
-            self.canContinue = false;
-            Cube.I.StateProvider.SwitchTo<CubeStates.RevivalState>();
-            GameUI.I.StateProvider.SwitchTo<GameUIStates.ContinueState>();
             self.StartCoroutine(RestartGame(self));
             return base.Update(self);
         }
@@ -18,6 +15,9 @@ namespace Assets.Scripts.States.GameStates
         // IMPORTANT: Burayi silme, bura cokomelli.
         private IEnumerator RestartGame(Game self)
         {
+            self.isContinuationEnabled = false;
+            Cube.I.StateProvider.SwitchTo<CubeStates.RevivalState>();
+            GameUI.I.StateProvider.SwitchTo<GameUIStates.WaitForActionState>();
             yield return null;
             self.StateProvider.SwitchTo<PlayingState>();
         }

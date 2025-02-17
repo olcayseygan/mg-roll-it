@@ -3,18 +3,18 @@ using UnityEngine;
 
 namespace Assets.Scripts.States.GameUIStates
 {
-    public class ContinueState : State<GameUI>
+    public class WaitForActionState : State<GameUI>
     {
         public override StateTransition<GameUI> OnEnter(GameUI self)
         {
-            self.continuePanel.Show();
+            self.waitForActionPanel.Show();
             return base.OnEnter(self);
         }
 
         public override void OnExit(GameUI self)
         {
             base.OnExit(self);
-            self.continuePanel.Hide();
+            self.waitForActionPanel.Hide();
         }
     }
 }

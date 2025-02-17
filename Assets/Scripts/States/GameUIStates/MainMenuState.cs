@@ -8,8 +8,8 @@ namespace Assets.Scripts.States.GameUIStates
         public override StateTransition<GameUI> OnEnter(GameUI self)
         {
             self.mainMenuPanel.RefreshAudioToggleColors();
-            self.mainMenuPanel.Show();
             self.mainMenuPanel.SetHighScoreText(Game.I.GetHighScore());
+            self.mainMenuPanel.Show();
             return base.OnEnter(self);
         }
 

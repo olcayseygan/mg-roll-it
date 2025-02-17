@@ -12,7 +12,7 @@ namespace Assets.Scripts.States.GameStates
                 Game.I.SetHighScore(Game.I.GetScore());
             }
 
-            if (self.canContinue && Game.I.rewardedAd != null && Game.I.rewardedAd.CanShowAd())
+            if (self.isContinuationEnabled && Game.I.rewardedAd != null && Game.I.rewardedAd.CanShowAd())
             {
                 GameUI.I.gameOverPanel.ShowWatchAdButton();
             }
