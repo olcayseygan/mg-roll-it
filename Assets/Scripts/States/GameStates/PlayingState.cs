@@ -3,15 +3,25 @@ using UnityEngine;
 
 namespace Assets.Scripts.States.GameStates
 {
-    public class PlayingState : State<Game>
+    public class PlayingStateProperties : StateProperties
     {
-        public override StateTransition<Game> OnEnter(Game self)
+        public bool isFreshRun;
+    }
+
+    public class PlayingState : State<Game, PlayingStateProperties>
+    {
+        public override StateTransition<Game> OnEnter(Game self, PlayingStateProperties properties)
         {
             self.inputList.Clear();
             GameUI.I.StateProvider.SwitchTo<GameUIStates.WaitForActionState>();
-            GameUI.I.playingPanel.SetHighScoreText(Cube.I.highScore);
-            Cube.I.highScore = Game.I.GetHighScore();
+            GameUI.I.playingPanel.SetHighScoreText(self.GetCurrentRunHighScore());
+            GameUI.I.playingPanel.SetCoinsText(PlayerController.I.GetCoins(), self.GetCurrentRunCoins());
             Cube.I.StateProvider.SwitchTo<CubeStates.WaitForActionState>();
+            if (properties.isFreshRun)
+            {
+                PlayerController.I.AddPlayedGames();
+            }
+
             return base.OnEnter(self);
         }
 
@@ -24,7 +34,8 @@ namespace Assets.Scripts.States.GameStates
 
             if (Input.GetMouseButtonDown(0))
             {
-                if (Cube.I.StateProvider.IsInState<CubeStates.WaitForActionState>()) {
+                if (Cube.I.StateProvider.IsInState<CubeStates.WaitForActionState>())
+                {
                     GameUI.I.StateProvider.SwitchTo<GameUIStates.PlayingState>();
                     Cube.I.StateProvider.SwitchTo<CubeStates.IdleState>();
                     return base.Update(self);

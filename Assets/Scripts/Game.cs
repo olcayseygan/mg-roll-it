@@ -22,11 +22,8 @@ namespace Assets.Scripts
         public Transform spotlightTransform;
         public Vector3 spotlightOffset;
 
-        public bool isPaused = true;
-
         public bool isContinuationEnabled = true;
 
-        private int _score = 0;
 
         public GameObject puppy;
 
@@ -37,6 +34,8 @@ namespace Assets.Scripts
         public GameObject adsSuccessObject;
         public GameObject adsFailObject;
         public TMPro.TMP_Text adsFailText;
+
+
 
         protected override void Awake()
         {
@@ -77,21 +76,6 @@ namespace Assets.Scripts
             StateProvider.Update();
         }
 
-        public int GetScore() => _score;
-        public int GetHighScore() => PlayerPrefs.GetInt("HighScore", 0);
-        public void SetScore(int score) => _score = score;
-        public void SetHighScore(int highScore) => PlayerPrefs.SetInt("HighScore", highScore);
-        public void AddScore(int score) => _score += score;
-
-        public void ContinueGame()
-        {
-            StateProvider.SwitchTo<States.GameStates.ContinueState>();
-        }
-
-        public void NavigateToMainMenuPanel()
-        {
-            StateProvider.SwitchTo<States.GameStates.ShowcaseState>();
-        }
 
         public void AdjustCameraAndSpotlight()
         {
@@ -101,15 +85,26 @@ namespace Assets.Scripts
             spotlightTransform.position = spotlightOffset;
         }
 
-        public void ShowRewardedAd()
+
+        #region Current Run
+        private int _currentRunScore = 0;
+        public int GetCurrentRunScore() => _currentRunScore;
+        public void AddCurrentRunScore(int score) => _currentRunScore += score;
+
+        private int _currentRunHighScore = 0;
+        public int GetCurrentRunHighScore() => _currentRunHighScore;
+        public void SetCurrentRunHighScore(int highScore) => _currentRunHighScore = highScore;
+
+        private int _currentRunCoins = 0;
+        public int GetCurrentRunCoins() => _currentRunCoins;
+        public void AddCurrentRunCoins(int coins) => _currentRunCoins += coins;
+
+        public void ResetCurrentRun()
         {
-            if (rewardedAd != null && rewardedAd.CanShowAd())
-            {
-                rewardedAd.Show((reward) =>
-                {
-                    StateProvider.SwitchTo<States.GameStates.ContinueState>();
-                });
-            }
+            _currentRunScore = 0;
+            _currentRunHighScore = PlayerController.I.GetHighScore();
+            _currentRunCoins = 0;
         }
+        #endregion
     }
 }

@@ -9,7 +9,10 @@ namespace Assets.Scripts.Panels
 {
     public class MainMenuPanel : Panel
     {
+        [SerializeField] private TMP_Text _coinsText;
         [SerializeField] private TMP_Text _highScoreText;
+        [SerializeField] private TMP_Text _gamesPlayedText;
+
 
         [SerializeField] private Image _bgmImage;
         [SerializeField] private Image _sfxImage;
@@ -17,9 +20,19 @@ namespace Assets.Scripts.Panels
         [SerializeField] private Color _onColor;
         [SerializeField] private Color _offColor;
 
+        public void SetCoinsText(int coins)
+        {
+            _coinsText.text = coins.ToString();
+        }
+
         public void SetHighScoreText(int highScore)
         {
             _highScoreText.text = highScore.ToString();
+        }
+
+        public void SetGamesPlayedText(int gamesPlayed)
+        {
+            _gamesPlayedText.text = gamesPlayed.ToString();
         }
 
         public void Play()

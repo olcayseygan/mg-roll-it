@@ -10,10 +10,11 @@ namespace Assets.Scripts.States.GameStates
         public override StateTransition<Game> OnEnter(Game self)
         {
             AudioManager.I.LoadAudioSettings();
-            MobileAds.Initialize(initStatus =>
-            {
-                Debug.Log("AdMob initialized");
-            });
+            // MobileAds.Initialize(initStatus =>
+            // {
+            //     Debug.Log("AdMob initialized");
+            // });
+            // PlayerController.I.SetHighScore(0);
             return self.StateProvider.FindState<InstantiationState>(new InstantiationStateProperties() { canSkipToPlaying = false });
         }
 

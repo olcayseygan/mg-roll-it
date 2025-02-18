@@ -9,10 +9,18 @@ namespace Assets.Scripts.Panels
 {
     public class GameOverPanel : Panel
     {
+        [SerializeField] private TMP_Text _coinsText;
         [SerializeField] private TMP_Text _scoreText;
         [SerializeField] private TMP_Text _highScoreText;
         [SerializeField] private GameObject _watchAdButtonGameObject;
         [SerializeField] private GameObject _continueButtonGameObject;
+        [SerializeField] private GameObject _doubleCoinsButtonGameObject;
+        [SerializeField] private TMP_Text _doubleCoinsButtonText;
+
+        public void SetCoinsText(int coins)
+        {
+            _coinsText.text = coins.ToString();
+        }
 
         public void SetScoreText(int score)
         {
@@ -24,28 +32,8 @@ namespace Assets.Scripts.Panels
             _highScoreText.text = highScore.ToString();
         }
 
-        public void ShowWatchAdButton()
-        {
-            if (!Game.I.isContinuationEnabled)
-            {
-                return;
-            }
-
-            _watchAdButtonGameObject.SetActive(true);
-        }
-
-        public void HideWatchAdButton()
-        {
-            _watchAdButtonGameObject.SetActive(false);
-        }
-
         public void ShowContinueButton()
         {
-            if (!Game.I.isContinuationEnabled)
-            {
-                return;
-            }
-
             _continueButtonGameObject.SetActive(true);
         }
 
@@ -54,23 +42,40 @@ namespace Assets.Scripts.Panels
             _continueButtonGameObject.SetActive(false);
         }
 
-        public void WatchAd()
+        public void SetDoubleCoinsButtonText(int coins)
         {
-            Game.I.ShowRewardedAd();
-            HideWatchAdButton();
+            _doubleCoinsButtonText.text = $"+{coins} COINS";
         }
 
-        public void Continue()
+        public void ShowDoubleCoinsButton()
         {
-            Game.I.ContinueGame();
+            _doubleCoinsButtonGameObject.SetActive(true);
         }
 
-        public void Retry()
+        public void HideDoubleCoinsButton()
+        {
+            _doubleCoinsButtonGameObject.SetActive(false);
+        }
+
+        public void ContinueButton_Click()
+        {
+            Game.I.StateProvider.SwitchTo<States.GameStates.ContinueState>();
+        }
+
+        public void DoubleCoinsButton_Click()
+        {
+            PlayerController.I.AddCoins(Game.I.GetCurrentRunCoins());
+            SetCoinsText(PlayerController.I.GetCoins());
+            HideDoubleCoinsButton();
+        }
+
+
+        public void RetryButton_Click()
         {
             Game.I.StateProvider.SwitchTo<States.GameStates.CleaningState>(new States.GameStates.CleaningStateProperties() { canSkipToPlaying = true });
         }
 
-        public void MainMenu()
+        public void MainMenu_Click()
         {
             Game.I.StateProvider.SwitchTo<States.GameStates.CleaningState>(new States.GameStates.CleaningStateProperties() { canSkipToPlaying = false });
         }

@@ -23,7 +23,6 @@ namespace Assets.Scripts
         public Platform lastVisitedPlatform;
 
         public float speed = 0.15f;
-        public int highScore = 0;
 
         public bool HasFallenOff() => StateProvider.IsInState<States.CubeStates.FellOffState>();
         public Vector3 GetSmoothPosition() => new(modelTransform.position.x, 0f, modelTransform.position.z);
@@ -60,5 +59,11 @@ namespace Assets.Scripts
             }
         }
 
+        public void OnCoinCollected(int amount)
+        {
+            Debug.Log("Coin collected");
+            Game.I.AddCurrentRunCoins(amount);
+            GameUI.I.playingPanel.SetCoinsText(PlayerController.I.GetCoins(), Game.I.GetCurrentRunCoins());
+        }
     }
 }

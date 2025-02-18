@@ -19,7 +19,7 @@ namespace Assets.Scripts.States.GameStates
             Cube.I.StateProvider.SwitchTo<CubeStates.RevivalState>();
             GameUI.I.StateProvider.SwitchTo<GameUIStates.WaitForActionState>();
             yield return null;
-            self.StateProvider.SwitchTo<PlayingState>();
+            self.StateProvider.SwitchTo<PlayingState>(new PlayingStateProperties() { isFreshRun = false });
         }
     }
 }

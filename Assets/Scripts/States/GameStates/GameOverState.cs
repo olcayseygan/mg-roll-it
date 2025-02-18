@@ -5,34 +5,32 @@ namespace Assets.Scripts.States.GameStates
 {
     public class GameOverState : State<Game>
     {
+
         public override StateTransition<Game> OnEnter(Game self)
         {
-            if (Game.I.GetScore() > Game.I.GetHighScore())
+            PlayerController.I.SetHighScoreIfHigher(self.GetCurrentRunScore());
+            PlayerController.I.AddCoins(self.GetCurrentRunCoins());
+            self.SetCurrentRunHighScore(PlayerController.I.GetHighScore());
+            if (self.isContinuationEnabled && (true || (Game.I.rewardedAd != null && Game.I.rewardedAd.CanShowAd())))
             {
-                Game.I.SetHighScore(Game.I.GetScore());
-            }
-
-            if (self.isContinuationEnabled && Game.I.rewardedAd != null && Game.I.rewardedAd.CanShowAd())
-            {
-                GameUI.I.gameOverPanel.ShowWatchAdButton();
+                GameUI.I.gameOverPanel.ShowContinueButton();
             }
             else
             {
-                GameUI.I.gameOverPanel.HideWatchAdButton();
+                GameUI.I.gameOverPanel.HideContinueButton();
             }
 
-            GameUI.I.gameOverPanel.HideContinueButton();
-            GameUI.I.gameOverPanel.SetScoreText(self.GetScore());
-            GameUI.I.gameOverPanel.SetHighScoreText(self.GetHighScore());
-            GameUI.I.mainMenuPanel.SetHighScoreText(self.GetHighScore());
-            GameUI.I.gameOverPanel.Show();
-            return base.OnEnter(self);
-        }
+            if (self.GetCurrentRunCoins() > 0 || (Game.I.rewardedAd != null && Game.I.rewardedAd.CanShowAd()))
+            {
+                GameUI.I.gameOverPanel.ShowDoubleCoinsButton();
+            }
+            else
+            {
+                GameUI.I.gameOverPanel.HideDoubleCoinsButton();
+            }
 
-        public override void OnExit(Game self)
-        {
-            base.OnExit(self);
-            GameUI.I.gameOverPanel.Hide();
+            GameUI.I.StateProvider.SwitchTo<GameUIStates.GameOverState>();
+            return base.OnEnter(self);
         }
     }
 }

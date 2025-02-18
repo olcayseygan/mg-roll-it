@@ -9,7 +9,7 @@ namespace Assets.Scripts.States.GameStates
         {
             self.cameraTargetOffset = new Vector3(-5.5f, 5f, -5f);
             self.cameraTargetRotation = Quaternion.Euler(30f, 45f, 0f);
-            self.cameraTargetOrthographicSize = 3f;
+            self.cameraTargetOrthographicSize = 5f;
             self.AdjustCameraAndSpotlight();
             self.puppy.transform.position = new Vector3(0f, 0f, 0f);
             GameUI.I.StateProvider.SwitchTo<GameUIStates.MainMenuState>();

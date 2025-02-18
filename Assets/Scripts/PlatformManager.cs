@@ -95,6 +95,7 @@ namespace Assets.Scripts
                 new Vector3(0.0f, 0.0f, PLATFORM_SIZE)
             );
             platform.modelTransform.localScale = new Vector3(PLATFORM_SIZE, 20.0f, PLATFORM_SIZE);
+            platform.TrySpawnCoinByChance();
             _lastSpawnPosition = platform.transform.position;
         }
 

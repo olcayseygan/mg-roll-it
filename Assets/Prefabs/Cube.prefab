@@ -73,12 +73,9 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   direction: {x: 1, y: 0, z: 0}
-  currentPosition: {x: 0, y: 0, z: 0}
+  lastKnownPosition: {x: 0, y: 0, z: 0}
   modelTransform: {fileID: 7676407792814863724}
-  modelRigidbody: {fileID: 2176895159026349265}
-  deathPosition: {x: 0, y: 0, z: 0}
-  isRevived: 0
-  lastPlatform: {fileID: 0}
+  lastVisitedPlatform: {fileID: 0}
   speed: 0.1
   highScore: 0
 --- !u!1 &4454700079761934103
@@ -181,7 +178,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3

@@ -77,11 +77,11 @@ namespace Assets.Scripts.States.CubeStates
             self.lastKnownPosition.x = self.modelTransform.transform.position.x;
             self.lastKnownPosition.y = 0f;
             self.lastKnownPosition.z = self.modelTransform.transform.position.z;
-            Game.I.AddScore(1);
-            GameUI.I.playingPanel.SetScoreText(Game.I.GetScore());
-            if (Game.I.GetScore() > self.highScore)
+            Game.I.AddCurrentRunScore(1);
+            GameUI.I.playingPanel.SetScoreText(Game.I.GetCurrentRunScore());
+            if (Game.I.GetCurrentRunScore() > Game.I.GetCurrentRunHighScore())
             {
-                GameUI.I.playingPanel.SetHighScoreText(Game.I.GetScore());
+                GameUI.I.playingPanel.SetHighScoreText(Game.I.GetCurrentRunScore());
             }
         }
 

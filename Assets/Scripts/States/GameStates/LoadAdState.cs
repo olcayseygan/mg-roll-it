@@ -9,27 +9,27 @@ namespace Assets.Scripts.States.GameStates
     {
         public override StateTransition<Game> OnEnter(Game self)
         {
-            RewardedAd.Load(
-                "ca-app-pub-2270871235119756/5704405785",
-                new AdRequest(),
-                (ad, error) =>
-                {
-                    if (error != null || ad == null)
-                    {
-                        Debug.LogError("Rewarded ad failed to load an ad " +
-                                     "with error : " + error);
-                        // self.StartCoroutine(LoadAd(self, false, error.GetCode().ToString() + error.GetMessage()));
-                        return;
-                    }
+            // RewardedAd.Load(
+            //     "ca-app-pub-2270871235119756/5704405785",
+            //     new AdRequest(),
+            //     (ad, error) =>
+            //     {
+            //         if (error != null || ad == null)
+            //         {
+            //             Debug.LogError("Rewarded ad failed to load an ad " +
+            //                          "with error : " + error);
+            //             // self.StartCoroutine(LoadAd(self, false, error.GetCode().ToString() + error.GetMessage()));
+            //             return;
+            //         }
 
-                    Debug.Log("Rewarded ad loaded with response : "
-                            + ad.GetResponseInfo());
+            //         Debug.Log("Rewarded ad loaded with response : "
+            //                 + ad.GetResponseInfo());
 
-                    // self.StartCoroutine(LoadAd(self, true, ""));
-                    self.rewardedAd = ad;
-                });
+            //         // self.StartCoroutine(LoadAd(self, true, ""));
+            //         self.rewardedAd = ad;
+            //     });
 
-            return self.StateProvider.FindState<PlayingState>();
+            return self.StateProvider.FindState<PlayingState>(new PlayingStateProperties() { isFreshRun = true });
         }
 
         private IEnumerator LoadAd(Game self, bool isRewarded, string message)

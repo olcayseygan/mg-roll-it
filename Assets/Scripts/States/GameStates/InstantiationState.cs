@@ -17,9 +17,9 @@ namespace Assets.Scripts.States.GameStates
         {
             InstantiatePlatforms();
             InstantiateCube(self);
-            self.SetScore(0);
             GameUI.I.playingPanel.SetScoreText(0);
             self.isContinuationEnabled = true;
+            self.ResetCurrentRun();
             if (properties.canSkipToPlaying)
             {
                 return self.StateProvider.FindState<LoadAdState>();
