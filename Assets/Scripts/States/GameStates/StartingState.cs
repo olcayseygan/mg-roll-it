@@ -15,7 +15,7 @@ namespace Assets.Scripts.States.GameStates
             //     Debug.Log("AdMob initialized");
             // });
             // PlayerController.I.SetHighScore(0);
-            PlayerController.I.OwnAllCubeSkins();
+            // PlayerController.I.OwnAllCubeSkins();
             return self.StateProvider.FindState<InstantiationState>(new InstantiationStateProperties() { canSkipToPlaying = false });
         }
 

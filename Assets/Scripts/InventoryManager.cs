@@ -13,11 +13,11 @@ namespace Assets.Scripts
         public Color unequippedColor;
         public Color equippedColor;
 
-        private List<InventoryItem> _inventoryItems = new();
+        private readonly List<InventoryItem> _inventoryItems = new();
 
         public void LoadOwnedCubeSkins()
         {
-            ClearInventory();
+            ClearList();
 
             var equippedKey = PlayerController.I.GetEquippedCubeSkinKey();
             foreach (var key in PlayerController.I.GetOwnedCubeSkinKeys())
@@ -45,7 +45,7 @@ namespace Assets.Scripts
             inventoryItem.MarkAsEquipped();
         }
 
-        public void ClearInventory()
+        public void ClearList()
         {
             foreach (Transform child in _contentTranform)
             {

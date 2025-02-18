@@ -48,5 +48,7 @@ namespace Assets.Scripts
             }
             PlayerPrefs.SetString("PLAYER_OWNED_CUBE_SKINS", string.Join(",", ownedSkins));
         }
+
+        public List<string> GetAllSkinKeys() => SkinManager.I.skinCollection.collection.Select(pair => pair.key).ToList();
     }
 }

@@ -16,7 +16,7 @@ namespace Assets.Scripts.States.GameUIStates
         public override void OnExit(GameUI self)
         {
             base.OnExit(self);
-            InventoryManager.I.ClearInventory();
+            InventoryManager.I.ClearList();
             self.StartCoroutine(ChangeCubeSkin(self));
         }
 

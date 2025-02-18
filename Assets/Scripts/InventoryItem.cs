@@ -12,6 +12,7 @@ namespace Assets.Scripts
         public SkinDataSO data;
 
         [SerializeField] private TMP_Text _nameText;
+        [SerializeField] private GameObject _equippedTextGameObject;
         [SerializeField] private Image _image;
 
         public void SetNameText(string name)
@@ -22,11 +23,13 @@ namespace Assets.Scripts
         public void MarkAsEquipped()
         {
             _image.color = InventoryManager.I.equippedColor;
+            _equippedTextGameObject.SetActive(true);
         }
 
         public void MarkAsUnequipped()
         {
             _image.color = InventoryManager.I.unequippedColor;
+            _equippedTextGameObject.SetActive(false);
         }
 
         public void Equip()
