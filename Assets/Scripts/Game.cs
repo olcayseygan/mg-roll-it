@@ -91,7 +91,6 @@ namespace Assets.Scripts
             var cubeSkin = SkinManager.I.GetSkinData(PlayerController.I.GetEquippedCubeSkinKey());
             Instantiate(cubeSkin.prefab).GetComponent<Cube>();
         }
-
         public void DestoryCube()
         {
             Destroy(Cube.I.gameObject);

@@ -46,5 +46,20 @@ namespace Assets.Scripts.Panels
         {
             _sfxText.text = AudioManager.I.IsSFXOn() ? "UNMUTE" : "MUTE";
         }
+
+        public void PlayButton_Click()
+        {
+            Game.I.StateProvider.SwitchTo<States.GameStates.LoadAdState>();
+        }
+
+        public void ShopButton_Click()
+        {
+            GameUI.I.StateProvider.SwitchTo<States.GameUIStates.ShopState>();
+        }
+
+        public void InventoryButton_Click()
+        {
+            GameUI.I.StateProvider.SwitchTo<States.GameUIStates.InventoryState>();
+        }
     }
 }

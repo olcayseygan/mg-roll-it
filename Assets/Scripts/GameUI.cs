@@ -19,28 +19,13 @@ namespace Assets.Scripts
         {
             base.Awake();
             StateProvider = new StateProvider<GameUI>(this);
+            StateProvider.RegisterState(new States.GameUIStates.GameOverState());
+            StateProvider.RegisterState(new States.GameUIStates.InventoryState());
             StateProvider.RegisterState(new States.GameUIStates.MainMenuState());
             StateProvider.RegisterState(new States.GameUIStates.PlayingState());
-            StateProvider.RegisterState(new States.GameUIStates.GameOverState());
-            StateProvider.RegisterState(new States.GameUIStates.WaitForActionState());
-            StateProvider.RegisterState(new States.GameUIStates.InventoryState());
             StateProvider.RegisterState(new States.GameUIStates.ShopState());
+            StateProvider.RegisterState(new States.GameUIStates.WaitForActionState());
             StateProvider.SwitchTo<States.GameUIStates.MainMenuState>();
-        }
-
-        public void NavigateToMainMenu()
-        {
-            StateProvider.SwitchTo<States.GameUIStates.MainMenuState>();
-        }
-
-        public void NavigateToInventory()
-        {
-            StateProvider.SwitchTo<States.GameUIStates.InventoryState>();
-        }
-
-        public void NavigateToShop()
-        {
-            StateProvider.SwitchTo<States.GameUIStates.ShopState>();
         }
     }
 }

@@ -7,5 +7,9 @@ namespace Assets.Scripts.Panels
 {
     public class ShopPanel : Panel
     {
+        public void BackButton_Click()
+        {
+            GameUI.I.StateProvider.SwitchTo<States.GameUIStates.MainMenuState>();
+        }
     }
 }
