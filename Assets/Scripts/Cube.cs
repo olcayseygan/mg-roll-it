@@ -11,25 +11,25 @@ namespace Assets.Scripts
     {
         public StateProvider<Cube> StateProvider { get; set; }
 
-        public LayerMask layerMask;
+        [HideInInspector] public LayerMask layerMask;
 
         public AnimationCurve motionCurve;
 
-        public Vector3 direction = Vector3.zero;
-        public Vector3 lastKnownPosition = Vector3.zero;
+        [HideInInspector] public Vector3 direction = Vector3.zero;
+        [HideInInspector] public Vector3 lastKnownPosition = Vector3.zero;
 
         public Transform modelTransform;
 
-        public Platform lastVisitedPlatform;
+        [HideInInspector] public Platform lastVisitedPlatform;
 
         public float speed = 0.15f;
 
-        public bool HasFallenOff() => StateProvider.IsInState<States.CubeStates.FellOffState>();
         public Vector3 GetSmoothPosition() => new(modelTransform.position.x, 0f, modelTransform.position.z);
 
         protected override void Awake()
         {
             base.Awake();
+            layerMask = LayerMask.GetMask("Cube");
             StateProvider = new StateProvider<Cube>(this);
             StateProvider.RegisterState(new States.CubeStates.IdleState());
             StateProvider.RegisterState(new States.CubeStates.MotionState());
@@ -39,6 +39,7 @@ namespace Assets.Scripts
             StateProvider.RegisterState(new States.CubeStates.WaitForActionState());
             StateProvider.SwitchTo<States.CubeStates.ShowcaseState>();
         }
+
 
         private void Update()
         {

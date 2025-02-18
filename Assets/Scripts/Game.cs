@@ -86,6 +86,17 @@ namespace Assets.Scripts
         }
 
 
+        public void CreateCube()
+        {
+            var cubeSkin = SkinManager.I.GetSkinData(PlayerController.I.GetEquippedCubeSkinKey());
+            Instantiate(cubeSkin.prefab).GetComponent<Cube>();
+        }
+
+        public void DestoryCube()
+        {
+            Destroy(Cube.I.gameObject);
+        }
+
         #region Current Run
         private int _currentRunScore = 0;
         public int GetCurrentRunScore() => _currentRunScore;

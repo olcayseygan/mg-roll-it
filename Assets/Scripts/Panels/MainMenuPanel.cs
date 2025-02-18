@@ -13,12 +13,7 @@ namespace Assets.Scripts.Panels
         [SerializeField] private TMP_Text _highScoreText;
         [SerializeField] private TMP_Text _gamesPlayedText;
 
-
-        [SerializeField] private Image _bgmImage;
-        [SerializeField] private Image _sfxImage;
-
-        [SerializeField] private Color _onColor;
-        [SerializeField] private Color _offColor;
+        [SerializeField] private TMP_Text _sfxText;
 
         public void SetCoinsText(int coins)
         {
@@ -41,12 +36,6 @@ namespace Assets.Scripts.Panels
             Game.I.StateProvider.SwitchTo<States.GameStates.LoadAdState>();
         }
 
-        public void ToggleBGM()
-        {
-            AudioManager.I.ToggleBGM();
-            RefreshAudioToggleColors();
-        }
-
         public void ToggleSFX()
         {
             AudioManager.I.ToggleSFX();
@@ -55,8 +44,7 @@ namespace Assets.Scripts.Panels
 
         public void RefreshAudioToggleColors()
         {
-            _bgmImage.color = AudioManager.I.IsBGMOn() ? _onColor : _offColor;
-            _sfxImage.color = AudioManager.I.IsSFXOn() ? _onColor : _offColor;
+            _sfxText.text = AudioManager.I.IsSFXOn() ? "UNMUTE" : "MUTE";
         }
     }
 }

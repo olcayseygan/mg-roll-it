@@ -61,7 +61,7 @@ namespace Assets.Scripts.States.GameStates
 
         public void InstantiateCube(Game self)
         {
-            Object.Instantiate(self.cubePrefab).GetComponent<Cube>();
+            self.CreateCube();
         }
     }
 }

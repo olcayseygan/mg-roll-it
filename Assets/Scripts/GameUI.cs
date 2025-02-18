@@ -12,6 +12,7 @@ namespace Assets.Scripts
         public PlayingPanel playingPanel;
         public GameOverPanel gameOverPanel;
         public WaitForActionPanel waitForActionPanel;
+        public InventoryPanel inventoryPanel;
 
         protected override void Awake()
         {
@@ -21,7 +22,18 @@ namespace Assets.Scripts
             StateProvider.RegisterState(new States.GameUIStates.PlayingState());
             StateProvider.RegisterState(new States.GameUIStates.GameOverState());
             StateProvider.RegisterState(new States.GameUIStates.WaitForActionState());
+            StateProvider.RegisterState(new States.GameUIStates.InventoryState());
             StateProvider.SwitchTo<States.GameUIStates.MainMenuState>();
+        }
+
+        public void NavigateToMainMenu()
+        {
+            StateProvider.SwitchTo<States.GameUIStates.MainMenuState>();
+        }
+
+        public void NavigateToInventory()
+        {
+            StateProvider.SwitchTo<States.GameUIStates.InventoryState>();
         }
     }
 }
