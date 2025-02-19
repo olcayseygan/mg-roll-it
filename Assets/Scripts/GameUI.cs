@@ -8,12 +8,13 @@ namespace Assets.Scripts
     {
         public StateProvider<GameUI> StateProvider;
 
+        public GameOverPanel gameOverPanel;
+        public InventoryPanel inventoryPanel;
         public MainMenuPanel mainMenuPanel;
         public PlayingPanel playingPanel;
-        public GameOverPanel gameOverPanel;
-        public WaitForActionPanel waitForActionPanel;
-        public InventoryPanel inventoryPanel;
+        public SettingsPanel settingsPanel;
         public ShopPanel shopPanel;
+        public WaitForActionPanel waitForActionPanel;
 
         public TMPro.TMP_Text debugText;
 
@@ -25,6 +26,7 @@ namespace Assets.Scripts
             StateProvider.RegisterState(new States.GameUIStates.InventoryState());
             StateProvider.RegisterState(new States.GameUIStates.MainMenuState());
             StateProvider.RegisterState(new States.GameUIStates.PlayingState());
+            StateProvider.RegisterState(new States.GameUIStates.SettingsState());
             StateProvider.RegisterState(new States.GameUIStates.ShopState());
             StateProvider.RegisterState(new States.GameUIStates.WaitForActionState());
             StateProvider.SwitchTo<States.GameUIStates.MainMenuState>();

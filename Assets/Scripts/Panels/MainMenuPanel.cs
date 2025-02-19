@@ -61,5 +61,10 @@ namespace Assets.Scripts.Panels
         {
             GameUI.I.StateProvider.SwitchTo<States.GameUIStates.InventoryState>();
         }
+
+        public void SettingsButton_Click()
+        {
+            GameUI.I.StateProvider.SwitchTo<States.GameUIStates.SettingsState>();
+        }
     }
 }

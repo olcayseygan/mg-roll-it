@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Table_tr
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: tr
+  m_SharedData: {fileID: 11400000, guid: 1fbb5fc14e224af47ac07f0c967b5bd5, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 62367973376
+    m_Localized: OYNA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2108953444352
+    m_Localized: "GER\u0130"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2192160047104
+    m_Localized: ENVANTER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3094241591296
+    m_Localized: MARKET
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3720635727872
+    m_Localized: AYARLAR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5583544238080
+    m_Localized: SES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5749668036608
+    m_Localized: KAPAT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5785000853504
+    m_Localized: "A\xC7"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8156300951552
+    m_Localized: "GRAF\u0130K KAL\u0130TES\u0130"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10267675836416
+    m_Localized: "\xC7OK D\xDC\u015E\xDCK"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10288848683008
+    m_Localized: "D\xDC\u015E\xDCK"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10303780405248
+    m_Localized: ORTA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10322096930816
+    m_Localized: "Y\xDCKSEK"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10336927989760
+    m_Localized: "\xC7OK Y\xDCKSEK"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10360818745344
+    m_Localized: ULTRA
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
