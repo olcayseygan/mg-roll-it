@@ -9,19 +9,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 02f9bdb9294c4834eb857475da8ff158, type: 3}
   m_Name: Skin Collection
-  m_EditorClassIdentifier: Assembly-CSharp:Assets.Scripts:SkinCollectionSO
+  m_EditorClassIdentifier: 
   collection:
   - key: 0
     data: {fileID: 11400000, guid: a5c058770aaa1f941ae744209ef91580, type: 2}
   - key: 1
     data: {fileID: 11400000, guid: f5b956b079871a64c8d7845c3b0a376a, type: 2}
   - key: 2
-    data: {fileID: 11400000, guid: f0a648fd69070be48bb8a890f4a021aa, type: 2}
+    data: {fileID: 11400000, guid: a2137ff0e82ce11409c808b77d5f4188, type: 2}
   - key: 3
     data: {fileID: 11400000, guid: 92f4c8a2296923348be81b4fdf08d5c6, type: 2}
   - key: 4
-    data: {fileID: 11400000, guid: a2137ff0e82ce11409c808b77d5f4188, type: 2}
+    data: {fileID: 11400000, guid: f0a648fd69070be48bb8a890f4a021aa, type: 2}
   - key: 5
     data: {fileID: 11400000, guid: 9e4cb95954201a445bfdf977243f77f9, type: 2}

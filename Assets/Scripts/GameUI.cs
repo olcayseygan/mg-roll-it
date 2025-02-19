@@ -15,6 +15,8 @@ namespace Assets.Scripts
         public InventoryPanel inventoryPanel;
         public ShopPanel shopPanel;
 
+        public TMPro.TMP_Text debugText;
+
         protected override void Awake()
         {
             base.Awake();

@@ -39,6 +39,7 @@ namespace Assets.Scripts
 
         protected override void Awake()
         {
+            // Application.logMessageReceivedThreaded += HandleLog;
             base.Awake();
             StateProvider = new StateProvider<Game>(this);
             StateProvider.RegisterState(new States.GameStates.AwakeningState());
@@ -51,6 +52,15 @@ namespace Assets.Scripts
             StateProvider.RegisterState(new States.GameStates.ShowcaseState());
             StateProvider.RegisterState(new States.GameStates.StartingState());
             StateProvider.SwitchTo<States.GameStates.AwakeningState>();
+        }
+//
+        private void HandleLog(string logString, string stackTrace, LogType type)
+        {
+            string colorTag = type == LogType.Error ? "<color=red>" :
+                type == LogType.Warning ? "<color=yellow>" :
+                "<color=black>";
+            string formattedMessage = $"{colorTag}{logString}{stackTrace}</color>\n";
+            GameUI.I.debugText.text += formattedMessage;
         }
 
         private void Update()
