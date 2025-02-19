@@ -9,7 +9,6 @@ namespace Assets.Scripts.Panels
     {
         [SerializeField] private TMPro.TMP_Text _coinsText;
         [SerializeField] private TMPro.TMP_Text _scoreText;
-        [SerializeField] private TMPro.TMP_Text _highScoreText;
 
         public void SetCoinsText(int coins, int currentCoins)
         {
@@ -23,11 +22,6 @@ namespace Assets.Scripts.Panels
         public void SetScoreText(int score)
         {
             _scoreText.text = score.ToString();
-        }
-
-        public void SetHighScoreText(int highScore)
-        {
-            _highScoreText.text = highScore.ToString();
         }
     }
 }

@@ -78,6 +78,106 @@ MonoBehaviour:
     m_Localized: ULTRA
     m_Metadata:
       m_Items: []
+  - m_Id: 52179143217152
+    m_Localized: SETTINGS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52264329531392
+    m_Localized: SHOP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52231655903232
+    m_Localized: INVENTORY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52571096731648
+    m_Localized: BACK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52608602198016
+    m_Localized: BACK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52789108264960
+    m_Localized: BACK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 68889262936064
+    m_Localized: MAX FPS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72654317670400
+    m_Localized: MAIN MENU
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72719614595072
+    m_Localized: RETRY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73339016826880
+    m_Localized: HIGHSCORE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73308503265280
+    m_Localized: SCORE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73268414107648
+    m_Localized: COINS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 74197586661376
+    m_Localized: FELL OFF
+    m_Metadata:
+      m_Items: []
+  - m_Id: 75512500965376
+    m_Localized: GAMES PLAYED
+    m_Metadata:
+      m_Items: []
+  - m_Id: 75474076946432
+    m_Localized: HIGHSCORE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 75413192429568
+    m_Localized: COINS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80524648108032
+    m_Localized: TAP TO CONTINUE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 81669596631040
+    m_Localized: LOADING
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83178463940608
+    m_Localized: EQUIPED
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83737409474560
+    m_Localized: BLACK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 85595381288960
+    m_Localized: RAINBOW
+    m_Metadata:
+      m_Items: []
+  - m_Id: 85583071006720
+    m_Localized: BLUE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 85571570225152
+    m_Localized: GREEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 85563231948800
+    m_Localized: RED
+    m_Metadata:
+      m_Items: []
+  - m_Id: 85540754673664
+    m_Localized: WHITE
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -15,64 +15,168 @@ MonoBehaviour:
   m_TableCollectionName: Table
   m_TableCollectionNameGuidString: 1fbb5fc14e224af47ac07f0c967b5bd5
   m_Entries:
-  - m_Id: 62367973376
-    m_Key: PLAY
+  - m_Id: 52264329531392
+    m_Key: UI_SHOP_TITLE_TEXT
     m_Metadata:
       m_Items: []
-  - m_Id: 2108953444352
-    m_Key: BACK
+  - m_Id: 52571096731648
+    m_Key: UI_SHOP_BACK_BUTTON_TEXT
     m_Metadata:
       m_Items: []
-  - m_Id: 2192160047104
-    m_Key: INVENTORY
-    m_Metadata:
-      m_Items: []
-  - m_Id: 3094241591296
-    m_Key: SHOP
-    m_Metadata:
-      m_Items: []
-  - m_Id: 3720635727872
-    m_Key: SETTINGS
-    m_Metadata:
-      m_Items: []
-  - m_Id: 5583544238080
-    m_Key: SOUND
-    m_Metadata:
-      m_Items: []
-  - m_Id: 5749668036608
-    m_Key: MUTE
+  - m_Id: 52179143217152
+    m_Key: UI_SETTINGS_TITLE_TEXT
     m_Metadata:
       m_Items: []
   - m_Id: 5785000853504
-    m_Key: UNMUTE
+    m_Key: UI_SETTINGS_SOUND_UNMUTE_BUTTON_TEXT
     m_Metadata:
       m_Items: []
-  - m_Id: 8156300951552
-    m_Key: GRAPHICS QUALITY
+  - m_Id: 5583544238080
+    m_Key: UI_SETTINGS_SOUND_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5749668036608
+    m_Key: UI_SETTINGS_SOUND_MUTE_BUTTON_TEXT
     m_Metadata:
       m_Items: []
   - m_Id: 10267675836416
-    m_Key: VERY_LOW
-    m_Metadata:
-      m_Items: []
-  - m_Id: 10288848683008
-    m_Key: LOW
-    m_Metadata:
-      m_Items: []
-  - m_Id: 10303780405248
-    m_Key: MEDIUM
-    m_Metadata:
-      m_Items: []
-  - m_Id: 10322096930816
-    m_Key: HIGH
+    m_Key: UI_SETTINGS_GRAPHICS_QUALITY_VERY_LOW_RADIO_BUTTON_TEXT
     m_Metadata:
       m_Items: []
   - m_Id: 10336927989760
-    m_Key: VERY_HIGH
+    m_Key: UI_SETTINGS_GRAPHICS_QUALITY_VERY_HIGH_RADIO_BUTTON_TEXT
     m_Metadata:
       m_Items: []
   - m_Id: 10360818745344
-    m_Key: ULTRA
+    m_Key: UI_SETTINGS_GRAPHICS_QUALITY_ULTRA_RADIO_BUTTON_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8156300951552
+    m_Key: UI_SETTINGS_GRAPHICS_QUALITY_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10303780405248
+    m_Key: UI_SETTINGS_GRAPHICS_QUALITY_MEDIUM_RADIO_BUTTON_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10288848683008
+    m_Key: UI_SETTINGS_GRAPHICS_QUALITY_LOW_RADIO_BUTTON_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10322096930816
+    m_Key: UI_SETTINGS_GRAPHICS_QUALITY_HIGH_RADIO_BUTTON_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52608602198016
+    m_Key: UI_SETTINGS_BACK_BUTTON_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3094241591296
+    m_Key: UI_MAIN_MENU_SHOP_BUTTON_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3720635727872
+    m_Key: UI_MAIN_MENU_SETTINGS_BUTTON_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62367973376
+    m_Key: UI_MAIN_MENU_PLAY_BUTTON_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2192160047104
+    m_Key: UI_MAIN_MENU_INVENTORY_PANEL_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52231655903232
+    m_Key: UI_INVENTORY_TITLE_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2108953444352
+    m_Key: UI_INVENTORY_BACK_BUTTON_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52789108264960
+    m_Key: 'UI_SETTINGS_BACK_BUTTON_TEXT
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 68889262936064
+    m_Key: UI_SETTINGS_MAX_FPS_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72654317670400
+    m_Key: 'UI_GAME_OVER_MAIN_MENU_BUTTON_TEXT
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72719614595072
+    m_Key: UI_GAME_OVER_RETRY_BUTTON_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73268414107648
+    m_Key: UI_GAME_OVER_COINS_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73308503265280
+    m_Key: UI_GAME_OVER_SCORE_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73339016826880
+    m_Key: UI_GAME_OVER_HIGHSCORE_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 74197586661376
+    m_Key: UI_GAME_OVER_FELL_OFF_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 75413192429568
+    m_Key: UI_MAIN_MENU_COINS_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 75474076946432
+    m_Key: UI_MAIN_MENU_HIGHSCORE_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 75512500965376
+    m_Key: UI_MAIN_MENU_GAMES_PLAYED_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80524648108032
+    m_Key: UI_WAIT_FOR_ACTION_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 81669596631040
+    m_Key: UI_LOADING_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83178463940608
+    m_Key: INVENTORY_ITEM_EQUIPED_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83737409474560
+    m_Key: SKIN_CUBE_BLACK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 85540754673664
+    m_Key: SKIN_CUBE_WHITE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 85563231948800
+    m_Key: SKIN_CUBE_RED
+    m_Metadata:
+      m_Items: []
+  - m_Id: 85571570225152
+    m_Key: SKIN_CUBE_GREEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 85583071006720
+    m_Key: SKIN_CUBE_BLUE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 85595381288960
+    m_Key: SKIN_CUBE_RAINBOW
     m_Metadata:
       m_Items: []
   m_Metadata:

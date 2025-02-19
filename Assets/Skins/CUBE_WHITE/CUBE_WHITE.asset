@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b121e8d9691a44a43876473fdaf2c1e6, type: 3}
   m_Name: CUBE_WHITE
   m_EditorClassIdentifier: 
-  name: White
+  name: CUBE_WHITE
   prefab: {fileID: 918632457735281269, guid: 36379c28889ca3d41b952347430d5e86, type: 3}
+  price: 0

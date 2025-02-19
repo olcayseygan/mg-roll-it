@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Assets.Scripts.Patterns.SingletonPattern;
 using UnityEngine;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Components;
 
 namespace Assets.Scripts
 {
@@ -25,7 +27,8 @@ namespace Assets.Scripts
                 var inventoryItem = Instantiate(_inventoryItemPrefab, _contentTranform).GetComponent<InventoryItem>();
                 inventoryItem.key = key;
                 inventoryItem.data = SkinManager.I.GetSkinData(key);
-                inventoryItem.SetNameText(inventoryItem.data.name);
+                var stringEvent = inventoryItem.GetNameText().GetComponent<LocalizeStringEvent>();
+                stringEvent.StringReference = new LocalizedString { TableReference = "Table", TableEntryReference = $"SKIN_{inventoryItem.data.name}" };
                 if (key == equippedKey)
                 {
                     inventoryItem.MarkAsEquipped();

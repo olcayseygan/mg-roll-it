@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b121e8d9691a44a43876473fdaf2c1e6, type: 3}
   m_Name: CUBE_RED
   m_EditorClassIdentifier: 
-  name: Red
+  name: CUBE_RED
   prefab: {fileID: 918632457735281269, guid: cf2261e211a0c0c4d9110e4369a3742f, type: 3}
+  price: 0

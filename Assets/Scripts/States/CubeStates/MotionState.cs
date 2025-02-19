@@ -79,10 +79,7 @@ namespace Assets.Scripts.States.CubeStates
             self.lastKnownPosition.z = self.modelTransform.transform.position.z;
             Game.I.AddCurrentRunScore(1);
             GameUI.I.playingPanel.SetScoreText(Game.I.GetCurrentRunScore());
-            if (Game.I.GetCurrentRunScore() > Game.I.GetCurrentRunHighScore())
-            {
-                GameUI.I.playingPanel.SetHighScoreText(Game.I.GetCurrentRunScore());
-            }
+
         }
 
         public override StateTransition<Cube> Update(Cube self)

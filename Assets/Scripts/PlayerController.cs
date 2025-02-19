@@ -50,5 +50,24 @@ namespace Assets.Scripts
         }
 
         public List<string> GetAllSkinKeys() => SkinManager.I.skinCollection.collection.Select(pair => pair.key).ToList();
+
+        public void SetQualityLevel(int index)
+        {
+            PlayerPrefs.SetInt("PLAYER_QUALITY_LEVEL", index);
+            QualitySettings.SetQualityLevel(index);
+        }
+
+        public int GetQualityLevelIndex() => PlayerPrefs.GetInt("PLAYER_QUALITY_LEVEL", 2);
+
+        public void SetMaxFPSIndex(int index)
+        {
+            var maxFps = new int[] { 30, 60, 90, 120 };
+            index = Mathf.Clamp(index, 0, maxFps.Length - 1);
+
+            PlayerPrefs.SetInt("PLAYER_MAX_FPS", index);
+            Application.targetFrameRate = maxFps[index];
+        }
+
+        public int GetMaxFPSIndex() => PlayerPrefs.GetInt("PLAYER_MAX_FPS", 0);
     }
 }

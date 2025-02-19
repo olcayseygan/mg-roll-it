@@ -20,6 +20,11 @@ namespace Assets.Scripts
             _nameText.text = name;
         }
 
+        public TMP_Text GetNameText()
+        {
+            return _nameText;
+        }
+
         public void MarkAsEquipped()
         {
             _image.color = InventoryManager.I.equippedColor;

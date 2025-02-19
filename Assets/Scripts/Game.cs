@@ -42,7 +42,6 @@ namespace Assets.Scripts
             // Application.logMessageReceivedThreaded += HandleLog;
             base.Awake();
             StateProvider = new StateProvider<Game>(this);
-            StateProvider.RegisterState(new States.GameStates.AwakeningState());
             StateProvider.RegisterState(new States.GameStates.CleaningState());
             StateProvider.RegisterState(new States.GameStates.ContinueState());
             StateProvider.RegisterState(new States.GameStates.GameOverState());
@@ -50,8 +49,8 @@ namespace Assets.Scripts
             StateProvider.RegisterState(new States.GameStates.LoadAdState());
             StateProvider.RegisterState(new States.GameStates.PlayingState());
             StateProvider.RegisterState(new States.GameStates.ShowcaseState());
-            StateProvider.RegisterState(new States.GameStates.StartingState());
-            StateProvider.SwitchTo<States.GameStates.AwakeningState>();
+            StateProvider.RegisterState(new States.GameStates.LoadingState());
+            StateProvider.SwitchTo<States.GameStates.LoadingState>();
         }
 //
         private void HandleLog(string logString, string stackTrace, LogType type)

@@ -14,7 +14,6 @@ namespace Assets.Scripts.States.GameStates
         {
             self.inputList.Clear();
             GameUI.I.StateProvider.SwitchTo<GameUIStates.WaitForActionState>();
-            GameUI.I.playingPanel.SetHighScoreText(self.GetCurrentRunHighScore());
             GameUI.I.playingPanel.SetCoinsText(PlayerController.I.GetCoins(), self.GetCurrentRunCoins());
             Cube.I.StateProvider.SwitchTo<CubeStates.WaitForActionState>();
             if (properties.isFreshRun)

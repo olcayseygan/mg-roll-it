@@ -15,6 +15,7 @@ namespace Assets.Scripts
         public SettingsPanel settingsPanel;
         public ShopPanel shopPanel;
         public WaitForActionPanel waitForActionPanel;
+        public LoadingPanel loadingPanel;
 
         public TMPro.TMP_Text debugText;
 
@@ -29,7 +30,7 @@ namespace Assets.Scripts
             StateProvider.RegisterState(new States.GameUIStates.SettingsState());
             StateProvider.RegisterState(new States.GameUIStates.ShopState());
             StateProvider.RegisterState(new States.GameUIStates.WaitForActionState());
-            StateProvider.SwitchTo<States.GameUIStates.MainMenuState>();
+            StateProvider.RegisterState(new States.GameUIStates.LoadingState());
         }
     }
 }

@@ -7,6 +7,8 @@ namespace Assets.Scripts.States.GameUIStates
     {
         public override StateTransition<GameUI> OnEnter(GameUI self)
         {
+            self.settingsPanel.graphicsQualityGroup.SetSelectedIndex(PlayerController.I.GetQualityLevelIndex());
+            self.settingsPanel.maxFpsGroup.SetSelectedIndex(PlayerController.I.GetMaxFPSIndex());
             self.settingsPanel.Show();
             return base.OnEnter(self);
         }

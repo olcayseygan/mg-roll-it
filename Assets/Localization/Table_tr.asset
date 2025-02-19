@@ -31,7 +31,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3094241591296
-    m_Localized: MARKET
+    m_Localized: "MA\u011EAZA"
     m_Metadata:
       m_Items: []
   - m_Id: 3720635727872
@@ -76,6 +76,106 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 10360818745344
     m_Localized: ULTRA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 74197586661376
+    m_Localized: "D\xDC\u015ET\xDCM"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73339016826880
+    m_Localized: "EN \u0130Y\u0130 PUAN"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73308503265280
+    m_Localized: PUAN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73268414107648
+    m_Localized: JETON
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72719614595072
+    m_Localized: TEKRAR DENE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72654317670400
+    m_Localized: "ANA MEN\xDC"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 68889262936064
+    m_Localized: "MAKS\u0130MUM FPS"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52789108264960
+    m_Localized: "GER\u0130"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52231655903232
+    m_Localized: ENVANTER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52608602198016
+    m_Localized: "GER\u0130"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52179143217152
+    m_Localized: AYARLAR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52571096731648
+    m_Localized: "GER\u0130"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52264329531392
+    m_Localized: "MA\u011EAZA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 75413192429568
+    m_Localized: JETON
+    m_Metadata:
+      m_Items: []
+  - m_Id: 75474076946432
+    m_Localized: "EN \u0130Y\u0130 PUAN"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 75512500965376
+    m_Localized: OYNANAN OYUN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80524648108032
+    m_Localized: "DEVAM ETMEK \u0130\xC7\u0130N DOKUN"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 81669596631040
+    m_Localized: "Y\xDCKLEN\u0130YOR"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83178463940608
+    m_Localized: "KU\u015EANILDI"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83737409474560
+    m_Localized: "S\u0130YAH"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 85540754673664
+    m_Localized: BEYAZ
+    m_Metadata:
+      m_Items: []
+  - m_Id: 85563231948800
+    m_Localized: KIRMIZI
+    m_Metadata:
+      m_Items: []
+  - m_Id: 85571570225152
+    m_Localized: "YE\u015E\u0130L"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 85583071006720
+    m_Localized: "MAV\u0130"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 85595381288960
+    m_Localized: "G\xD6KKU\u015EA\u011EI"
     m_Metadata:
       m_Items: []
   references:

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b121e8d9691a44a43876473fdaf2c1e6, type: 3}
   m_Name: CUBE_RAINBOW
   m_EditorClassIdentifier: 
-  name: Rainbow
+  name: CUBE_RAINBOW
   prefab: {fileID: 918632457735281269, guid: d1655c761eda57247b0ac7ba90064ae9, type: 3}
   price: 100
