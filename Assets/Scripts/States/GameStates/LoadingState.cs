@@ -24,25 +24,22 @@ namespace Assets.Scripts.States.GameStates
             // PlayerController.I.SetHighScore(0);
             // PlayerController.I.OwnAllCubeSkins();
             // PlayerPrefs.DeleteAll();
-            PlayGamesPlatform.InitializeNearby((client) =>
-            {
-                Debug.Log("Nearby initialized");
-            });
-            PlayGamesPlatform.Activate();
-            PlayGamesPlatform.Instance.Authenticate((status) =>
-            {
-                Debug.Log("PlayGamesPlatform authenticated");
-            });
+            // PlayGamesPlatform.DebugLogEnabled = true;
+            // PlayGamesPlatform.Activate();
+            // PlayGamesPlatform.Instance.Authenticate((status) =>
+            // {
+            //     Debug.Log("PlayGamesPlatform authentication");
+            //     Debug.Log(status.ToString());
+            // });
+
             self.StartCoroutine(OnEnterCoroutine(self));
             return base.OnEnter(self);
         }
 
         private IEnumerator OnEnterCoroutine(Game self)
         {
-            Debug.Log("LoadingState.OnEnterCoroutine");
             yield return LocalizationSettings.InitializationOperation;
             yield return new WaitForSeconds(1f);
-            Debug.Log("LocalizationSettings.InitializationOperation");
             self.StateProvider.SwitchTo<InstantiationState>(new InstantiationStateProperties() { canSkipToPlaying = false });
         }
     }
