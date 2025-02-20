@@ -4,6 +4,7 @@ using GoogleMobileAds.Api;
 using UnityEngine;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
+using GooglePlayGames;
 
 namespace Assets.Scripts.States.GameStates
 {
@@ -23,11 +24,21 @@ namespace Assets.Scripts.States.GameStates
             // PlayerController.I.SetHighScore(0);
             // PlayerController.I.OwnAllCubeSkins();
             // PlayerPrefs.DeleteAll();
+            PlayGamesPlatform.InitializeNearby((client) =>
+            {
+                Debug.Log("Nearby initialized");
+            });
+            PlayGamesPlatform.Activate();
+            PlayGamesPlatform.Instance.Authenticate((status) =>
+            {
+                Debug.Log("PlayGamesPlatform authenticated");
+            });
             self.StartCoroutine(OnEnterCoroutine(self));
             return base.OnEnter(self);
         }
 
-        private IEnumerator OnEnterCoroutine(Game self) {
+        private IEnumerator OnEnterCoroutine(Game self)
+        {
             Debug.Log("LoadingState.OnEnterCoroutine");
             yield return LocalizationSettings.InitializationOperation;
             yield return new WaitForSeconds(1f);
