@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: CUBE_GOLD
   prefab: {fileID: 918632457735281269, guid: 06ebb0ffd52796041a3bdf1f7721e629, type: 3}
-  price: 0
+  price: 100

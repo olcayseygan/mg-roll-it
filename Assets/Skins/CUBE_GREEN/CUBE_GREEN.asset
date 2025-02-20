@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: CUBE_GREEN
   prefab: {fileID: 918632457735281269, guid: 5360228e03e900d4d923813e0115fcd1, type: 3}
-  price: 5000
+  price: 50

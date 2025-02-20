@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: CUBE_RAINBOW
   prefab: {fileID: 918632457735281269, guid: d1655c761eda57247b0ac7ba90064ae9, type: 3}
-  price: 100
+  price: 250

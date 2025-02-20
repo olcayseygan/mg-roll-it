@@ -22,7 +22,7 @@ namespace Assets.Scripts.States.GameStates
             // });
             // PlayerController.I.SetHighScore(0);
             // PlayerController.I.OwnAllCubeSkins();
-            PlayerPrefs.DeleteAll();
+            // PlayerPrefs.DeleteAll();
             self.StartCoroutine(OnEnterCoroutine(self));
             return base.OnEnter(self);
         }
