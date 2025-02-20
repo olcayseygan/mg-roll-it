@@ -25,3 +25,5 @@ MonoBehaviour:
     data: {fileID: 11400000, guid: f0a648fd69070be48bb8a890f4a021aa, type: 2}
   - key: 5
     data: {fileID: 11400000, guid: 9e4cb95954201a445bfdf977243f77f9, type: 2}
+  - key: 6
+    data: {fileID: 11400000, guid: 582588fe22dd33d4186276070bd6cad4, type: 2}

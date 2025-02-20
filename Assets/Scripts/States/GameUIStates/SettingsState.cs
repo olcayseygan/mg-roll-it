@@ -9,6 +9,8 @@ namespace Assets.Scripts.States.GameUIStates
         {
             self.settingsPanel.graphicsQualityGroup.SetSelectedIndex(PlayerController.I.GetQualityLevelIndex());
             self.settingsPanel.maxFpsGroup.SetSelectedIndex(PlayerController.I.GetMaxFPSIndex());
+            self.settingsPanel.muteButtonGameObject.SetActive(PlayerController.I.GetSFXToggle());
+            self.settingsPanel.unmuteButtonGameObject.SetActive(!PlayerController.I.GetSFXToggle());
             self.settingsPanel.Show();
             return base.OnEnter(self);
         }

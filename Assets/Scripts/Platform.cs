@@ -35,13 +35,13 @@ namespace Assets.Scripts
         }
 
 
-        public void TrySpawnCoinByChance()
+        public void TrySpawnGoldByChance()
         {
             if (Random.Range(0, 100) < 10)
             {
-                var coin = CoinController.I.SpawnCoin();
-                coin.transform.SetParent(transform);
-                coin.transform.localPosition = new Vector3(Random.Range(transform.localScale.x / 2f, -transform.localScale.x / 2f), 0f, Random.Range(transform.localScale.z / 2f, -transform.localScale.z / 2f));
+                var gold = GoldController.I.SpawnGold();
+                gold.transform.SetParent(transform);
+                gold.transform.localPosition = new Vector3(Random.Range(transform.localScale.x / 2f, -transform.localScale.x / 2f), 0f, Random.Range(transform.localScale.z / 2f, -transform.localScale.z / 2f));
             }
         }
     }

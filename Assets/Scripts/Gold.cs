@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public class Coin : MonoBehaviour
+    public class Gold : MonoBehaviour
     {
         private float _turnSpeed = 100f;
 
@@ -20,7 +20,7 @@ namespace Assets.Scripts
 
         public void OnTriggerEnter(Collider collider)
         {
-            Cube.I.OnCoinCollected(1);
+            Cube.I.OnGoldCollected(1);
             Destroy(gameObject);
         }
     }

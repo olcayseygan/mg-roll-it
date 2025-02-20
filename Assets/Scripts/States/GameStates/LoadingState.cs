@@ -13,7 +13,7 @@ namespace Assets.Scripts.States.GameStates
         {
             GameUI.I.StateProvider.SwitchTo<GameUIStates.LoadingState>();
             QualitySettings.vSyncCount = 0;
-            Application.targetFrameRate = 60;
+            Application.targetFrameRate = PlayerController.I.GetMaxFPS();
 
             AudioManager.I.LoadAudioSettings();
             // MobileAds.Initialize(initStatus =>
@@ -21,7 +21,8 @@ namespace Assets.Scripts.States.GameStates
             //     Debug.Log("AdMob initialized");
             // });
             // PlayerController.I.SetHighScore(0);
-            PlayerController.I.OwnAllCubeSkins();
+            // PlayerController.I.OwnAllCubeSkins();
+            PlayerPrefs.DeleteAll();
             self.StartCoroutine(OnEnterCoroutine(self));
             return base.OnEnter(self);
         }

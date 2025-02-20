@@ -17,45 +17,27 @@ namespace Assets.Scripts
         public AudioClip cubeDeathClip;
         public AudioClip screenTapClip;
 
-        public void PlayBGM()
-        {
-            bgmSource.clip = bgmClip;
-            bgmSource.loop = true;
-            bgmSource.Play();
-        }
-
         public void PlaySFX(AudioClip clip)
         {
             sfxSource.clip = clip;
             sfxSource.Play();
         }
 
-        public bool IsBGMOn()
-        {
-            return !bgmSource.mute;
-        }
-
-        public bool IsSFXOn()
-        {
-            return !sfxSource.mute;
-        }
-
         public void LoadAudioSettings()
         {
-            bgmSource.mute = PlayerPrefs.GetInt("Is_BGM_On", 1) == 0;
-            sfxSource.mute = PlayerPrefs.GetInt("Is_SFX_On", 1) == 0;
+            sfxSource.mute = !PlayerController.I.GetSFXToggle();
         }
 
-        public void ToggleBGM()
+        public void MuteSFX()
         {
-            bgmSource.mute = !bgmSource.mute;
-            PlayerPrefs.SetInt("Is_BGM_On", bgmSource.mute ? 0 : 1);
+            sfxSource.mute = true;
+            PlayerController.I.SetSFXToggle(false);
         }
 
-        public void ToggleSFX()
+        public void UnmuteSFX()
         {
-            sfxSource.mute = !sfxSource.mute;
-            PlayerPrefs.SetInt("Is_SFX_On", sfxSource.mute ? 0 : 1);
+            sfxSource.mute = false;
+            PlayerController.I.SetSFXToggle(true);
         }
     }
 }

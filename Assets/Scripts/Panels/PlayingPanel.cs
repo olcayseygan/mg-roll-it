@@ -7,15 +7,15 @@ namespace Assets.Scripts.Panels
 {
     public class PlayingPanel : Panel
     {
-        [SerializeField] private TMPro.TMP_Text _coinsText;
+        [SerializeField] private TMPro.TMP_Text _goldsText;
         [SerializeField] private TMPro.TMP_Text _scoreText;
 
-        public void SetCoinsText(int coins, int currentCoins)
+        public void SetGoldText(int golds, int currentGolds)
         {
-            if (currentCoins > 0) {
-                _coinsText.text = $"{coins}+{currentCoins}({coins + currentCoins})";
+            if (currentGolds > 0) {
+                _goldsText.text = $"{golds}+{currentGolds}({golds + currentGolds})";
             } else {
-                _coinsText.text = coins.ToString();
+                _goldsText.text = golds.ToString();
             }
         }
 

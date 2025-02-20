@@ -11,9 +11,26 @@ namespace Assets.Scripts.Panels
         public RadioButtonGroup graphicsQualityGroup;
         public RadioButtonGroup maxFpsGroup;
 
+        public GameObject muteButtonGameObject;
+        public GameObject unmuteButtonGameObject;
+
         public void BackButton_Click()
         {
             GameUI.I.StateProvider.SwitchTo<States.GameUIStates.MainMenuState>();
+        }
+
+        public void MuteButton_Click()
+        {
+            AudioManager.I.MuteSFX();
+            muteButtonGameObject.SetActive(false);
+            unmuteButtonGameObject.SetActive(true);
+        }
+
+        public void UnmuteButton_Click()
+        {
+            AudioManager.I.UnmuteSFX();
+            muteButtonGameObject.SetActive(true);
+            unmuteButtonGameObject.SetActive(false);
         }
     }
 }

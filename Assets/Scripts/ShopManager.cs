@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Assets.Scripts.Patterns.SingletonPattern;
 using UnityEngine;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Components;
 
 namespace Assets.Scripts
 {
@@ -12,7 +14,7 @@ namespace Assets.Scripts
 
         public Color defaultColor;
         public Color purchasedColor;
-        public Color notEnoughCoinColor;
+        public Color notEnoughGoldColor;
 
         private readonly List<ShopItem> _shopItems = new();
 
@@ -25,15 +27,16 @@ namespace Assets.Scripts
                 var shopItem = Instantiate(_shopItemPrefab, _contentTranform).GetComponent<ShopItem>();
                 shopItem.key = key;
                 shopItem.data = SkinManager.I.GetSkinData(key);
-                shopItem.SetNameText(shopItem.data.name);
+                var stringEvent = shopItem.GetNameText().GetComponent<LocalizeStringEvent>();
+                stringEvent.StringReference = new LocalizedString { TableReference = "Table", TableEntryReference = $"SKIN_{shopItem.data.name}" };
                 shopItem.SetPriceText(shopItem.data.price);
                 if (ownedKeys.Contains(key))
                 {
                     shopItem.MaskAsPurchased();
                 }
-                else if (PlayerController.I.GetCoins() < shopItem.data.price)
+                else if (PlayerController.I.GetGolds() < shopItem.data.price)
                 {
-                    shopItem.MaskAsNotEnoughCoin();
+                    shopItem.MaskAsNotEnoughGold();
                 }
 
                 _shopItems.Add(shopItem);
@@ -42,9 +45,9 @@ namespace Assets.Scripts
 
         public void ClearList()
         {
-            foreach (Transform child in _contentTranform)
+            foreach (var item in _shopItems)
             {
-                Destroy(child.gameObject);
+                Destroy(item.gameObject);
             }
 
             _shopItems.Clear();

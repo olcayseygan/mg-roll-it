@@ -108,21 +108,21 @@ namespace Assets.Scripts
         #region Current Run
         private int _currentRunScore = 0;
         public int GetCurrentRunScore() => _currentRunScore;
-        public void AddCurrentRunScore(int score) => _currentRunScore += score;
+        public void AddCurrentRunScore(int amount) => _currentRunScore += amount;
 
         private int _currentRunHighScore = 0;
         public int GetCurrentRunHighScore() => _currentRunHighScore;
         public void SetCurrentRunHighScore(int highScore) => _currentRunHighScore = highScore;
 
-        private int _currentRunCoins = 0;
-        public int GetCurrentRunCoins() => _currentRunCoins;
-        public void AddCurrentRunCoins(int coins) => _currentRunCoins += coins;
+        private int _currentRunGolds = 0;
+        public int GetCurrentRunGolds() => _currentRunGolds;
+        public void AddCurrentRunGolds(int amount) => _currentRunGolds += amount;
 
         public void ResetCurrentRun()
         {
             _currentRunScore = 0;
             _currentRunHighScore = PlayerController.I.GetHighScore();
-            _currentRunCoins = 0;
+            _currentRunGolds = 0;
         }
         #endregion
     }

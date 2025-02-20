@@ -9,7 +9,7 @@ namespace Assets.Scripts.States.GameStates
         public override StateTransition<Game> OnEnter(Game self)
         {
             PlayerController.I.SetHighScoreIfHigher(self.GetCurrentRunScore());
-            PlayerController.I.AddCoins(self.GetCurrentRunCoins());
+            PlayerController.I.AddGold(self.GetCurrentRunGolds());
             self.SetCurrentRunHighScore(PlayerController.I.GetHighScore());
             if (self.isContinuationEnabled && (true || (Game.I.rewardedAd != null && Game.I.rewardedAd.CanShowAd())))
             {
@@ -20,13 +20,13 @@ namespace Assets.Scripts.States.GameStates
                 GameUI.I.gameOverPanel.HideContinueButton();
             }
 
-            if (self.GetCurrentRunCoins() > 0 || (Game.I.rewardedAd != null && Game.I.rewardedAd.CanShowAd()))
+            if (self.GetCurrentRunGolds() > 0 || (Game.I.rewardedAd != null && Game.I.rewardedAd.CanShowAd()))
             {
-                GameUI.I.gameOverPanel.ShowDoubleCoinsButton();
+                GameUI.I.gameOverPanel.ShowDoubleGoldButton();
             }
             else
             {
-                GameUI.I.gameOverPanel.HideDoubleCoinsButton();
+                GameUI.I.gameOverPanel.HideDoubleGoldButton();
             }
 
             GameUI.I.StateProvider.SwitchTo<GameUIStates.GameOverState>();

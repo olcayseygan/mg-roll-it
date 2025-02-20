@@ -60,11 +60,10 @@ namespace Assets.Scripts
             }
         }
 
-        public void OnCoinCollected(int amount)
+        public void OnGoldCollected(int amount)
         {
-            Debug.Log("Coin collected");
-            Game.I.AddCurrentRunCoins(amount);
-            GameUI.I.playingPanel.SetCoinsText(PlayerController.I.GetCoins(), Game.I.GetCurrentRunCoins());
+            Game.I.AddCurrentRunGolds(amount);
+            GameUI.I.playingPanel.SetGoldText(PlayerController.I.GetGolds(), Game.I.GetCurrentRunGolds());
         }
     }
 }

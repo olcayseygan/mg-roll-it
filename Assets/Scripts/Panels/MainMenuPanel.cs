@@ -9,15 +9,15 @@ namespace Assets.Scripts.Panels
 {
     public class MainMenuPanel : Panel
     {
-        [SerializeField] private TMP_Text _coinsText;
+        [SerializeField] private TMP_Text _goldsText;
         [SerializeField] private TMP_Text _highScoreText;
         [SerializeField] private TMP_Text _gamesPlayedText;
 
         [SerializeField] private TMP_Text _sfxText;
 
-        public void SetCoinsText(int coins)
+        public void SetGoldsText(int golds)
         {
-            _coinsText.text = coins.ToString();
+            _goldsText.text = golds.ToString();
         }
 
         public void SetHighScoreText(int highScore)
@@ -28,23 +28,6 @@ namespace Assets.Scripts.Panels
         public void SetGamesPlayedText(int gamesPlayed)
         {
             _gamesPlayedText.text = gamesPlayed.ToString();
-        }
-
-        public void Play()
-        {
-            GameUI.I.StateProvider.SwitchTo<States.GameUIStates.PlayingState>();
-            Game.I.StateProvider.SwitchTo<States.GameStates.LoadAdState>();
-        }
-
-        public void ToggleSFX()
-        {
-            AudioManager.I.ToggleSFX();
-            RefreshAudioToggleColors();
-        }
-
-        public void RefreshAudioToggleColors()
-        {
-            _sfxText.text = AudioManager.I.IsSFXOn() ? "UNMUTE" : "MUTE";
         }
 
         public void PlayButton_Click()

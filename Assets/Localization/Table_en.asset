@@ -123,7 +123,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 73268414107648
-    m_Localized: COINS
+    m_Localized: GOLDS
     m_Metadata:
       m_Items: []
   - m_Id: 74197586661376
@@ -139,7 +139,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 75413192429568
-    m_Localized: COINS
+    m_Localized: GOLDS
     m_Metadata:
       m_Items: []
   - m_Id: 80524648108032
@@ -176,6 +176,38 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 85540754673664
     m_Localized: WHITE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 257147047493632
+    m_Localized: NOT ENOUGH GOLD
+    m_Metadata:
+      m_Items: []
+  - m_Id: 257207147675648
+    m_Localized: OWNED
+    m_Metadata:
+      m_Items: []
+  - m_Id: 261726594121728
+    m_Localized: PURCHASE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 267017289187328
+    m_Localized: FREE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 270453757952000
+    m_Localized: CUBE SKINS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 273401372196864
+    m_Localized: GOLD
+    m_Metadata:
+      m_Items: []
+  - m_Id: 280459379195904
+    m_Localized: CONTINUE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 280495408267264
+    m_Localized: +{0} GOLDS
     m_Metadata:
       m_Items: []
   references:

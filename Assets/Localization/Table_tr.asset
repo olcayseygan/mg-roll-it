@@ -91,7 +91,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 73268414107648
-    m_Localized: JETON
+    m_Localized: ALTIN
     m_Metadata:
       m_Items: []
   - m_Id: 72719614595072
@@ -131,7 +131,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 75413192429568
-    m_Localized: JETON
+    m_Localized: ALTIN
     m_Metadata:
       m_Items: []
   - m_Id: 75474076946432
@@ -176,6 +176,38 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 85595381288960
     m_Localized: "G\xD6KKU\u015EA\u011EI"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 257147047493632
+    m_Localized: "YETERL\u0130 ALTIN YOK"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 257207147675648
+    m_Localized: ALINDI
+    m_Metadata:
+      m_Items: []
+  - m_Id: 261726594121728
+    m_Localized: SATIN AL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 267017289187328
+    m_Localized: BEDAVA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 270453757952000
+    m_Localized: "K\xDCP KOST\xDCMLER\u0130"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 273401372196864
+    m_Localized: ALTIN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 280459379195904
+    m_Localized: DEVAM ET
+    m_Metadata:
+      m_Items: []
+  - m_Id: 280495408267264
+    m_Localized: +{0} ALTIN
     m_Metadata:
       m_Items: []
   references:

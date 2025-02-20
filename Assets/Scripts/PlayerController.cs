@@ -8,10 +8,11 @@ namespace Assets.Scripts
 {
     public class PlayerController : SingletonProvider<PlayerController>
     {
-        public void SetCoins(int coins) => PlayerPrefs.SetInt("PLAYER_COINS", coins);
-        public int GetCoins() => PlayerPrefs.GetInt("PLAYER_COINS", 0);
-        public void AddCoins(int amount) => SetCoins(GetCoins() + amount);
-        public void RemoveCoins(int amount) => SetCoins(GetCoins() - amount);
+        private int[] _maxFps = new int[] { 30, 60, 90, 120 };
+        public void SetGolds(int amount) => PlayerPrefs.SetInt("PLAYER_GOLDS", amount);
+        public int GetGolds() => PlayerPrefs.GetInt("PLAYER_GOLDS", 0);
+        public void AddGold(int amount) => SetGolds(GetGolds() + amount);
+        public void RemoveGold(int amount) => SetGolds(GetGolds() - amount);
 
         public void SetHighScore(int score) => PlayerPrefs.SetInt("PLAYER_HIGHSCORE", score);
         public void SetHighScoreIfHigher(int score)
@@ -61,13 +62,16 @@ namespace Assets.Scripts
 
         public void SetMaxFPSIndex(int index)
         {
-            var maxFps = new int[] { 30, 60, 90, 120 };
-            index = Mathf.Clamp(index, 0, maxFps.Length - 1);
+            index = Mathf.Clamp(index, 0, _maxFps.Length - 1);
 
             PlayerPrefs.SetInt("PLAYER_MAX_FPS", index);
-            Application.targetFrameRate = maxFps[index];
+            Application.targetFrameRate = _maxFps[index];
         }
 
-        public int GetMaxFPSIndex() => PlayerPrefs.GetInt("PLAYER_MAX_FPS", 0);
+        public int GetMaxFPSIndex() => PlayerPrefs.GetInt("PLAYER_MAX_FPS", 1);
+        public int GetMaxFPS() => _maxFps[GetMaxFPSIndex()];
+
+        public void SetSFXToggle(bool isOn) => PlayerPrefs.SetInt("PLAYER_SFX_TOGGLE", isOn ? 1 : 0);
+        public bool GetSFXToggle() => PlayerPrefs.GetInt("PLAYER_SFX_TOGGLE", 1) == 1;
     }
 }

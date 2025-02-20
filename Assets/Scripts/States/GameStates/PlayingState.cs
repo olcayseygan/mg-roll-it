@@ -14,7 +14,7 @@ namespace Assets.Scripts.States.GameStates
         {
             self.inputList.Clear();
             GameUI.I.StateProvider.SwitchTo<GameUIStates.WaitForActionState>();
-            GameUI.I.playingPanel.SetCoinsText(PlayerController.I.GetCoins(), self.GetCurrentRunCoins());
+            GameUI.I.playingPanel.SetGoldText(PlayerController.I.GetGolds(), self.GetCurrentRunGolds());
             Cube.I.StateProvider.SwitchTo<CubeStates.WaitForActionState>();
             if (properties.isFreshRun)
             {

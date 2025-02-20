@@ -116,7 +116,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 73268414107648
-    m_Key: UI_GAME_OVER_COINS_TEXT
+    m_Key: UI_GAME_OVER_GOLDS_TEXT
     m_Metadata:
       m_Items: []
   - m_Id: 73308503265280
@@ -132,7 +132,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 75413192429568
-    m_Key: UI_MAIN_MENU_COINS_TEXT
+    m_Key: UI_MAIN_MENU_GOLDS_TEXT
     m_Metadata:
       m_Items: []
   - m_Id: 75474076946432
@@ -177,6 +177,38 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 85595381288960
     m_Key: SKIN_CUBE_RAINBOW
+    m_Metadata:
+      m_Items: []
+  - m_Id: 257147047493632
+    m_Key: UI_SHOP_NOT_ENOUGH_GOLD_BUTTON_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 257207147675648
+    m_Key: UI_SHOP_OWNED_BUTTON_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 261726594121728
+    m_Key: UI_SHOP_PURCHASE_BUTTON_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 267017289187328
+    m_Key: UI_SHOP_FREE_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 270453757952000
+    m_Key: UI_SHOP_CUBE_SKINS_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 273401372196864
+    m_Key: SKIN_CUBE_GOLD
+    m_Metadata:
+      m_Items: []
+  - m_Id: 280459379195904
+    m_Key: UI_GAME_OVER_CONTINUE_BUTTON_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 280495408267264
+    m_Key: UI_GAME_OVER_DOUBLE_GOLD_BUTTON_TEXT
     m_Metadata:
       m_Items: []
   m_Metadata:
