@@ -8,7 +8,7 @@ namespace Assets.Scripts.States.PlatformStates
     {
         public override StateTransition<Platform> Update(Platform self)
         {
-            self.transform.position = new Vector3(self.transform.position.x, self.transform.position.y - 1f, self.transform.position.z);
+            self.transform.position = new Vector3(self.transform.position.x, self.transform.position.y - 50f * Time.deltaTime, self.transform.position.z);
             return base.Update(self);
         }
     }

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Assets.Scripts.Patterns.SingletonPattern;
 using Assets.Scripts.Patterns.StatePattern;
+using Assets.Scripts.Patterns.StatePattern.Plugins;
 using GoogleMobileAds.Api;
 using UnityEngine;
 
@@ -10,7 +11,8 @@ namespace Assets.Scripts
     {
         private const float LERP_SPEED = 5f;
 
-        public StateProvider<Game> StateProvider { get; set; }
+        public StateProvider<Game> StateProvider { get; private set; }
+        public StateViewHandler<Game> StateViewHandler { get; private set; }
 
         public GameObject cubePrefab;
 
@@ -36,6 +38,11 @@ namespace Assets.Scripts
         public TMPro.TMP_Text adsFailText;
 
 
+        public const float MAX_SPEED = 0.175f;
+        private const float MIN_SPEED = 0.075f;
+        private const float SPEED_DECREASING_RATE = 0.001f;
+        [HideInInspector] public float speed = MAX_SPEED;
+
 
         protected override void Awake()
         {
@@ -50,9 +57,22 @@ namespace Assets.Scripts
             StateProvider.RegisterState(new States.GameStates.PlayingState());
             StateProvider.RegisterState(new States.GameStates.ShowcaseState());
             StateProvider.RegisterState(new States.GameStates.LoadingState());
+
+            StateViewHandler = new StateViewHandler<Game>();
+            StateViewHandler.RegisterStateViewPanel(GameUI.I.mainMenuPanel);
+            StateViewHandler.RegisterStateViewPanel(GameUI.I.settingsPanel);
+            StateViewHandler.RegisterStateViewPanel(GameUI.I.playingPanel);
+            StateViewHandler.RegisterStateViewPanel(GameUI.I.waitForActionPanel);
+            StateViewHandler.RegisterStateViewPanel(GameUI.I.loadingPanel);
+            StateViewHandler.RegisterStateViewPanel(GameUI.I.inventoryPanel);
+            StateViewHandler.RegisterStateViewPanel(GameUI.I.shopPanel);
+            StateViewHandler.RegisterStateViewPanel(GameUI.I.gameOverPanel);
+
             StateProvider.SwitchTo<States.GameStates.LoadingState>();
+
+
         }
-//
+        //
         private void HandleLog(string logString, string stackTrace, LogType type)
         {
             string colorTag = type == LogType.Error ? "<color=red>" :
@@ -80,6 +100,8 @@ namespace Assets.Scripts
                 );
                 spotlightTransform.position = Vector3.Lerp(spotlightTransform.position, smoothPosition + spotlightOffset, Time.deltaTime * LERP_SPEED);
                 puppy.transform.position = Vector3.Lerp(puppy.transform.position, smoothPosition, Time.deltaTime * LERP_SPEED);
+
+                speed = Mathf.Clamp(speed - SPEED_DECREASING_RATE * Time.deltaTime, MIN_SPEED, MAX_SPEED);
             }
 
             StateProvider.Update();

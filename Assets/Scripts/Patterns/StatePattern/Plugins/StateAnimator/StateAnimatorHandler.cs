@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Scripts.Patterns.StatePattern.Plugins.StateAnimator
+namespace Assets.Scripts.Patterns.StatePattern.Plugins
 {
 
   public class StateAnimatorHandler<MemberType> where MemberType : MonoBehaviour

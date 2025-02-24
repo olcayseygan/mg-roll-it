@@ -17,7 +17,8 @@ namespace Assets.Scripts
             StateProvider = new StateProvider<Platform>(this);
             StateProvider.RegisterState(new States.PlatformStates.IdleState());
             StateProvider.RegisterState(new States.PlatformStates.DestroyState());
-            StateProvider.SwitchTo<States.PlatformStates.IdleState>();
+            StateProvider.RegisterState(new States.PlatformStates.StartState());
+            StateProvider.SwitchTo<States.PlatformStates.StartState>();
         }
 
         private void Update()

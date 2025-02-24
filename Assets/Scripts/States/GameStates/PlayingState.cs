@@ -1,4 +1,5 @@
 using Assets.Scripts.Patterns.StatePattern;
+using Assets.Scripts.StateViews;
 using UnityEngine;
 
 namespace Assets.Scripts.States.GameStates
@@ -13,14 +14,16 @@ namespace Assets.Scripts.States.GameStates
         public override StateTransition<Game> OnEnter(Game self, PlayingStateProperties properties)
         {
             self.inputList.Clear();
-            GameUI.I.StateProvider.SwitchTo<GameUIStates.WaitForActionState>();
-            GameUI.I.playingPanel.SetGoldText(PlayerController.I.GetGolds(), self.GetCurrentRunGolds());
-            Cube.I.StateProvider.SwitchTo<CubeStates.WaitForActionState>();
             if (properties.isFreshRun)
             {
+                self.speed = Game.MAX_SPEED;
+                self.puppy.transform.position = Vector3.zero;
+                self.AdjustCameraAndSpotlight();
                 PlayerController.I.AddPlayedGames();
             }
 
+            Cube.I.StateProvider.SwitchTo<CubeStates.WaitForActionState>();
+            self.StateViewHandler.SwitchTo<WaitForActionPanel>();
             return base.OnEnter(self);
         }
 
@@ -35,7 +38,7 @@ namespace Assets.Scripts.States.GameStates
             {
                 if (Cube.I.StateProvider.IsInState<CubeStates.WaitForActionState>())
                 {
-                    GameUI.I.StateProvider.SwitchTo<GameUIStates.PlayingState>();
+                    Game.I.StateViewHandler.SwitchTo<PlayingPanel>();
                     Cube.I.StateProvider.SwitchTo<CubeStates.IdleState>();
                     return base.Update(self);
                 }
@@ -45,7 +48,6 @@ namespace Assets.Scripts.States.GameStates
             }
 
             PlatformManager.I.UpdatePlatforms();
-            PlatformManager.I.UpdateColors();
             return base.Update(self);
         }
     }

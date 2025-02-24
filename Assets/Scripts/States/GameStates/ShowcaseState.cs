@@ -1,4 +1,5 @@
 using Assets.Scripts.Patterns.StatePattern;
+using Assets.Scripts.StateViews;
 using UnityEngine;
 
 namespace Assets.Scripts.States.GameStates
@@ -12,7 +13,7 @@ namespace Assets.Scripts.States.GameStates
             self.cameraTargetOrthographicSize = 5f;
             self.AdjustCameraAndSpotlight();
             self.puppy.transform.position = new Vector3(0f, 0f, 0f);
-            GameUI.I.StateProvider.SwitchTo<GameUIStates.MainMenuState>();
+            self.StateViewHandler.SwitchTo<MainMenuPanel>();
             return base.OnEnter(self);
         }
 
@@ -23,7 +24,7 @@ namespace Assets.Scripts.States.GameStates
             self.cameraTargetRotation = Quaternion.Euler(45f, 45f, 0f);
             self.cameraTargetOrthographicSize = 15f;
             self.camera.transform.position = self.cameraTargetOffset;
-            GameUI.I.StateProvider.SwitchTo<GameUIStates.PlayingState>();
+            Game.I.StateViewHandler.SwitchTo<PlayingPanel>();
         }
     }
 }

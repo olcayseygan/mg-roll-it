@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
 using GooglePlayGames;
+using Assets.Scripts.StateViews;
 
 namespace Assets.Scripts.States.GameStates
 {
@@ -12,7 +13,7 @@ namespace Assets.Scripts.States.GameStates
     {
         public override StateTransition<Game> OnEnter(Game self)
         {
-            GameUI.I.StateProvider.SwitchTo<GameUIStates.LoadingState>();
+            Game.I.StateViewHandler.SwitchTo<LoadingPanel>();
             QualitySettings.vSyncCount = 0;
             Application.targetFrameRate = PlayerController.I.GetMaxFPS();
 

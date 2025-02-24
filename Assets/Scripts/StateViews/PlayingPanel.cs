@@ -1,20 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
-using Assets.Scripts.Patterns.SingletonPattern;
 using UnityEngine;
+using TMPro;
+using Assets.Scripts.Patterns.StatePattern.Plugins;
 
-namespace Assets.Scripts.Panels
+namespace Assets.Scripts.StateViews
 {
-    public class PlayingPanel : Panel
+    public class PlayingPanel : StateViewPanel
     {
-        [SerializeField] private TMPro.TMP_Text _goldsText;
-        [SerializeField] private TMPro.TMP_Text _scoreText;
+        [SerializeField] private TMP_Text _goldsText;
+        [SerializeField] private TMP_Text _scoreText;
 
         public void SetGoldText(int golds, int currentGolds)
         {
-            if (currentGolds > 0) {
+            if (currentGolds > 0)
+            {
                 _goldsText.text = $"{golds}+{currentGolds}({golds + currentGolds})";
-            } else {
+            }
+            else
+            {
                 _goldsText.text = golds.ToString();
             }
         }

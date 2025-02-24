@@ -11,10 +11,11 @@ namespace Assets.Scripts.States.GameStates
     public class InstantiationState : State<Game, InstantiationStateProperties>
     {
         private const int PLATFORM_SIZE = 5;
-        private const int PLATFORM_LENGTH = 20;
+        private const int PLATFORM_LENGTH = 15;
 
         public override StateTransition<Game> OnEnter(Game self, InstantiationStateProperties properties)
         {
+            PlatformManager.I.PickRandomColor();
             InstantiatePlatforms();
             InstantiateCube(self);
             GameUI.I.playingPanel.SetScoreText(0);
@@ -54,9 +55,6 @@ namespace Assets.Scripts.States.GameStates
             {
                 platformManager.SpawnPlatform();
             }
-
-            platformManager.SetColor();
-            platformManager.UpdateColors();
         }
 
         public void InstantiateCube(Game self)

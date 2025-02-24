@@ -1,4 +1,5 @@
 using Assets.Scripts.Patterns.StatePattern;
+using Assets.Scripts.StateViews;
 using UnityEngine;
 
 namespace Assets.Scripts.States.GameStates
@@ -29,7 +30,7 @@ namespace Assets.Scripts.States.GameStates
                 GameUI.I.gameOverPanel.HideDoubleGoldButton();
             }
 
-            GameUI.I.StateProvider.SwitchTo<GameUIStates.GameOverState>();
+            Game.I.StateViewHandler.SwitchTo<GameOverPanel>();
             return base.OnEnter(self);
         }
     }

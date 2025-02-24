@@ -22,8 +22,6 @@ namespace Assets.Scripts
 
         [HideInInspector] public Platform lastVisitedPlatform;
 
-        public float speed = 0.15f;
-
         public Vector3 GetSmoothPosition() => new(modelTransform.position.x, 0f, modelTransform.position.z);
 
         protected override void Awake()
@@ -44,6 +42,11 @@ namespace Assets.Scripts
         private void Update()
         {
             StateProvider.Update();
+        }
+
+        private void FixedUpdate()
+        {
+            StateProvider.FixedUpdate();
         }
 
         public void ChangeDirection()

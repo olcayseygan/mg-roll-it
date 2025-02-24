@@ -49,7 +49,7 @@ namespace Assets.Scripts.States.CubeStates
                 self.transform.SetPositionAndRotation(self.lastKnownPosition + self.direction * distance, Quaternion.identity);
             });
 
-            _motionDuration = self.speed;
+            _motionDuration = Game.I.speed;
             _timeElapsed = _motionDuration;
             return base.OnEnter(self);
         }
@@ -82,9 +82,9 @@ namespace Assets.Scripts.States.CubeStates
 
         }
 
-        public override StateTransition<Cube> Update(Cube self)
+        public override StateTransition<Cube> FixedUpdate(Cube self)
         {
-            _timeElapsed = Mathf.Max(0.0f, _timeElapsed - Time.deltaTime);
+            _timeElapsed = Mathf.Max(0.0f, _timeElapsed - Time.fixedDeltaTime);
             var t = self.motionCurve.Evaluate(1.0f - _timeElapsed / _motionDuration);
             self.transform.rotation = Quaternion.Euler(new Vector3(
                 Mathf.LerpAngle(_initialEulerAngle.x, _targetEulerAngle.x, t),

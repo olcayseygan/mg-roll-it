@@ -8,7 +8,8 @@ namespace Assets.Scripts
 {
     public class PlatformManager : SingletonProvider<PlatformManager>
     {
-        private const float DISMANTLE_DISTANCE_THRESHOLD = 10.0f;
+        private const float DISMANTLE_DISTANCE_THRESHOLD = 10f;
+        private const float SPAWN_DISTANCE_THRESHOLD = 20.0f;
         public const float PLATFORM_SIZE = 3.0f;
 
         [SerializeField] private GameObject _prefab;
@@ -23,7 +24,8 @@ namespace Assets.Scripts
 
         public void UpdatePlatforms()
         {
-            if (GetPlatforms().Count == 0)
+            var platforms = GetPlatforms();
+            if (platforms.Count == 0)
             {
                 return;
             }
@@ -33,29 +35,29 @@ namespace Assets.Scripts
                 return;
             }
 
-            var firstPlatform = GetPlatforms()[0];
-            var distance = Vector3.Distance(Cube.I.transform.position, firstPlatform.transform.position);
+            var lastPlatform = platforms[platforms.Count - 1];
+            var distance = Vector3.Distance(Cube.I.transform.position, lastPlatform.transform.position);
+            if (distance < SPAWN_DISTANCE_THRESHOLD)
+            {
+                SpawnPlatform();
+            }
+
+            var firstPlatform = platforms[0];
+            distance = Vector3.Distance(Cube.I.transform.position, firstPlatform.transform.position);
             if (distance > DISMANTLE_DISTANCE_THRESHOLD)
             {
                 firstPlatform.StateProvider.SwitchTo<States.PlatformStates.DestroyState>();
                 _platformFactory.Dismantle(firstPlatform, 0.1f);
-                SpawnPlatform();
             }
         }
 
-        public void SetColor()
+        public void PickRandomColor()
         {
             h = Random.Range(0f, 360f);
         }
 
-        public void UpdateColors()
+        public void SetColor()
         {
-            h += _speed * Time.deltaTime;
-            if (h >= 360f)
-            {
-                h = 0f;
-            }
-
             Color mainColor = Color.HSVToRGB(h / 360f, 0.12f, 1f);
             foreach (Platform platform in GetPlatforms())
             {
@@ -63,12 +65,20 @@ namespace Assets.Scripts
             }
         }
 
+        public void SetColor(Platform platform)
+        {
+            Color mainColor = Color.HSVToRGB(h / 360f, 0.12f, 1f);
+            platform.meshRenderer.material.color = mainColor;
+        }
+
         public void SpawnPlatform(float x, float z)
         {
             var platform = _platformFactory.Create(_prefab);
             platform.transform.position = new Vector3(x, 0.0f, z);
             platform.modelTransform.localScale = new Vector3(PLATFORM_SIZE, 20.0f, PLATFORM_SIZE);
+            SetColor(platform);
             _lastSpawnPosition = new Vector3(x, 0.0f, z);
+            platform.StateProvider.SwitchTo<States.PlatformStates.IdleState>();
         }
 
         public void SpawnPlatform()
@@ -96,7 +106,9 @@ namespace Assets.Scripts
             );
             platform.modelTransform.localScale = new Vector3(PLATFORM_SIZE, 20.0f, PLATFORM_SIZE);
             platform.TrySpawnGoldByChance();
+            SetColor(platform);
             _lastSpawnPosition = platform.transform.position;
+            platform.StateProvider.SwitchTo<States.PlatformStates.StartState>();
         }
 
         public List<Platform> GetPlatforms()
