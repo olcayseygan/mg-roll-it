@@ -1,5 +1,6 @@
 using Assets.Scripts.Patterns.SingletonPattern;
 using Assets.Scripts.Patterns.StatePattern;
+using UnityEngine;
 
 namespace Assets.Scripts
 {
@@ -7,6 +8,7 @@ namespace Assets.Scripts
     {
         public StateProvider<GameUI> StateProvider;
 
+        public GameObject debugPanel;
         public TMPro.TMP_Text debugText;
 
         public StateViews.MainMenuPanel mainMenuPanel;

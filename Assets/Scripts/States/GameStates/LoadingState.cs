@@ -6,6 +6,7 @@ using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
 using GooglePlayGames;
 using Assets.Scripts.StateViews;
+using com.unity3d.mediation;
 
 namespace Assets.Scripts.States.GameStates
 {
@@ -17,6 +18,25 @@ namespace Assets.Scripts.States.GameStates
             QualitySettings.vSyncCount = 0;
             Application.targetFrameRate = PlayerController.I.GetMaxFPS();
 
+            LevelPlayAdFormat[] legacyAdFormats = new[] { LevelPlayAdFormat.REWARDED };
+            Debug.Log("LoadingState");
+            LevelPlay.OnInitSuccess += (adFormats) =>
+            {
+                Debug.Log("LevelPlay initialized");
+            };
+            LevelPlay.OnInitFailed += (error) =>
+            {
+                Debug.Log("LevelPlay initialization failed");
+                Debug.Log(error);
+            };
+            IronSource.Agent.setMetaData("is_test_suite", "enable");
+            LevelPlay.Init("2103ecc85", adFormats: legacyAdFormats);
+
+            IronSourceEvents.onSdkInitializationCompletedEvent += () =>
+            {
+                Debug.Log("IronSource initialized");
+                IronSource.Agent.launchTestSuite();
+            };
             AudioManager.I.LoadAudioSettings();
             // MobileAds.Initialize(initStatus =>
             // {

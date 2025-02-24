@@ -17,7 +17,6 @@ namespace Assets.Scripts
 
         private Vector3 _lastSpawnPosition;
 
-        [SerializeField] private float _speed = 5f;
         private float h = 0f;
 
         private List<int> _last2Directions = new(); // 1 means forward, 0 means right

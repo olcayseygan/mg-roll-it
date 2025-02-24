@@ -46,7 +46,11 @@ namespace Assets.Scripts
 
         protected override void Awake()
         {
-            // Application.logMessageReceivedThreaded += HandleLog;
+            if (true)
+            {
+                Application.logMessageReceivedThreaded += HandleLog;
+                GameUI.I.debugPanel.SetActive(true);
+            }
             base.Awake();
             StateProvider = new StateProvider<Game>(this);
             StateProvider.RegisterState(new States.GameStates.CleaningState());
@@ -69,10 +73,8 @@ namespace Assets.Scripts
             StateViewHandler.RegisterStateViewPanel(GameUI.I.gameOverPanel);
 
             StateProvider.SwitchTo<States.GameStates.LoadingState>();
-
-
         }
-        //
+
         private void HandleLog(string logString, string stackTrace, LogType type)
         {
             string colorTag = type == LogType.Error ? "<color=red>" :
@@ -147,5 +149,10 @@ namespace Assets.Scripts
             _currentRunGolds = 0;
         }
         #endregion
+
+        void OnApplicationPause(bool isPaused)
+        {
+            IronSource.Agent.onApplicationPause(isPaused);
+        }
     }
 }
