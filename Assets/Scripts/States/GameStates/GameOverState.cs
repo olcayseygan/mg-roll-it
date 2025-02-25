@@ -12,7 +12,7 @@ namespace Assets.Scripts.States.GameStates
             PlayerController.I.SetHighScoreIfHigher(self.GetCurrentRunScore());
             PlayerController.I.AddGold(self.GetCurrentRunGolds());
             self.SetCurrentRunHighScore(PlayerController.I.GetHighScore());
-            if (self.isContinuationEnabled && (true || (Game.I.rewardedAd != null && Game.I.rewardedAd.CanShowAd())))
+            if (self.isContinuationEnabled && LevelPlayManager.I.CheckRewardedVideoAvailability("Game_Over__Continue"))
             {
                 GameUI.I.gameOverPanel.ShowContinueButton();
             }
@@ -21,7 +21,7 @@ namespace Assets.Scripts.States.GameStates
                 GameUI.I.gameOverPanel.HideContinueButton();
             }
 
-            if (self.GetCurrentRunGolds() > 0 || (Game.I.rewardedAd != null && Game.I.rewardedAd.CanShowAd()))
+            if (self.GetCurrentRunGolds() > 0 && LevelPlayManager.I.CheckRewardedVideoAvailability("Game_Over__Double_Gold"))
             {
                 GameUI.I.gameOverPanel.ShowDoubleGoldButton();
             }

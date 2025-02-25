@@ -46,7 +46,7 @@ namespace Assets.Scripts
 
         protected override void Awake()
         {
-            if (true)
+            if (false)
             {
                 Application.logMessageReceivedThreaded += HandleLog;
                 GameUI.I.debugPanel.SetActive(true);

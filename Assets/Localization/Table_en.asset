@@ -210,6 +210,10 @@ MonoBehaviour:
     m_Localized: +{0} GOLDS
     m_Metadata:
       m_Items: []
+  - m_Id: 2109562000490496
+    m_Localized: +20 GOLD
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

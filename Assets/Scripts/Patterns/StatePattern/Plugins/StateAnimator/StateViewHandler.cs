@@ -26,5 +26,18 @@ namespace Assets.Scripts.Patterns.StatePattern.Plugins
         }
       }
     }
+
+    public T2 Get<T2>() where T2 : StateViewPanel
+    {
+      foreach (var panel in _panels)
+      {
+        if (panel.GetType() == typeof(T2))
+        {
+          return (T2)panel;
+        }
+      }
+
+      return null;
+    }
   }
 }

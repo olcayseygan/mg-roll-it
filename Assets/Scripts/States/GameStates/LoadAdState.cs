@@ -29,6 +29,8 @@ namespace Assets.Scripts.States.GameStates
             //         self.rewardedAd = ad;
             //     });
 
+            // LevelPlayManager.I.LoadRewardedVideo();
+
             return self.StateProvider.FindState<PlayingState>(new PlayingStateProperties() { isFreshRun = true });
         }
 

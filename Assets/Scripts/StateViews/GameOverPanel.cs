@@ -1,3 +1,4 @@
+using System;
 using Assets.Scripts.Patterns.StatePattern.Plugins;
 using TMPro;
 using UnityEngine;
@@ -46,13 +47,21 @@ namespace Assets.Scripts.StateViews
             _doubleGoldButtonGameObject.SetActive(false);
         }
 
+        public void SetGoldsText(int gold)
+        {
+            _goldsText.text = gold.ToString();
+        }
+
         public void ContinueButton_Click()
         {
-            Game.I.StateProvider.SwitchTo<States.GameStates.ContinueState>();
+            HideContinueButton();
+            LevelPlayManager.I.ShowRewardedVideo("Game_Over__Continue");
+            // Game.I.StateProvider.SwitchTo<States.GameStates.ContinueState>();
         }
 
         public void DoubleGoldButton_Click()
         {
+            HideDoubleGoldButton();
             PlayerController.I.AddGold(Game.I.GetCurrentRunGolds());
             _goldsText.text = PlayerController.I.GetGolds().ToString();
             HideDoubleGoldButton();

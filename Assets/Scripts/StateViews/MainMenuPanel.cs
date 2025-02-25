@@ -14,12 +14,20 @@ namespace Assets.Scripts.StateViews
         [SerializeField] private TMP_Text _highScoreText;
         [SerializeField] private TMP_Text _gamesPlayedText;
 
+        [SerializeField] private Button _gainGoldButton;
+
         public override void Show()
         {
             _goldsText.text = PlayerController.I.GetGolds().ToString();
             _highScoreText.text = PlayerController.I.GetHighScore().ToString();
             _gamesPlayedText.text = PlayerController.I.GetPlayedGames().ToString();
+            _gainGoldButton.interactable = LevelPlayManager.I.CheckRewardedVideoAvailability("Home_Screen__Gain_Gold");
             base.Show();
+        }
+
+        public void SetGoldsText(int gold)
+        {
+            _goldsText.text = gold.ToString();
         }
 
         public void PlayButton_Click()
@@ -40,6 +48,11 @@ namespace Assets.Scripts.StateViews
         public void SettingsButton_Click()
         {
             Game.I.StateViewHandler.SwitchTo<SettingsPanel>();
+        }
+
+        public void GainGoldButton_Click()
+        {
+            LevelPlayManager.I.ShowRewardedVideo("Home_Screen__Gain_Gold");
         }
     }
 }
