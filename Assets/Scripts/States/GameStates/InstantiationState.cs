@@ -1,4 +1,5 @@
 using Assets.Scripts.Patterns.StatePattern;
+using Assets.Scripts.StateViews;
 using UnityEngine;
 
 namespace Assets.Scripts.States.GameStates
@@ -18,7 +19,8 @@ namespace Assets.Scripts.States.GameStates
             PlatformManager.I.PickRandomColor();
             InstantiatePlatforms();
             InstantiateCube(self);
-            GameUI.I.playingPanel.SetScoreText(0);
+            Game.I.StateViewHandler.Get<PlayingPanel>().SetScoreText(0);
+            Game.I.StateViewHandler.Get<PlayingPanel>().SetGoldText(PlayerController.I.GetGolds(), 0);
             self.isContinuationEnabled = true;
             self.ResetCurrentRun();
             if (properties.canSkipToPlaying)
