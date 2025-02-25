@@ -17,11 +17,11 @@ namespace Assets.Scripts
 
         public void Initialize()
         {
-            IronSource.Agent.setMetaData("is_test_suite", "enable");
+            // IronSource.Agent.setMetaData("is_test_suite", "enable");
+            // IronSource.Agent.setAdaptersDebug(true);
             IronSource.Agent.shouldTrackNetworkState(true);
-            IronSource.Agent.setAdaptersDebug(true);
             IronSource.Agent.init("2103ecc85", IronSourceAdUnits.REWARDED_VIDEO);
-            IronSource.Agent.validateIntegration();
+            // IronSource.Agent.validateIntegration();
         }
 
         private void RegisterRewardedVideoEvents()

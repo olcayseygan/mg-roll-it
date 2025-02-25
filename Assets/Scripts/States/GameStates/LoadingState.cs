@@ -14,11 +14,10 @@ namespace Assets.Scripts.States.GameStates
             Game.I.StateViewHandler.SwitchTo<LoadingPanel>();
             QualitySettings.vSyncCount = 0;
             Application.targetFrameRate = PlayerController.I.GetMaxFPS();
+
             LevelPlayManager.I.Initialize();
+
             AudioManager.I.LoadAudioSettings();
-            // PlayerController.I.SetHighScore(0);
-            // PlayerController.I.OwnAllCubeSkins();
-            // PlayerPrefs.DeleteAll();
             PlayGamesPlatform.Activate();
             PlayGamesPlatform.Instance.Authenticate((status) =>
             {
