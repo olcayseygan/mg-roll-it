@@ -90,6 +90,7 @@ namespace Assets.Scripts
                 case "Home_Screen__Gain_Gold":
                     PlayerController.I.AddGold(20);
                     Game.I.StateViewHandler.Get<MainMenuPanel>().SetGoldsText(PlayerController.I.GetGolds());
+                    Game.I.StateViewHandler.Get<MainMenuPanel>().UpdateGaingGoldButtonInteractable();
                     break;
             }
         }
@@ -113,7 +114,8 @@ namespace Assets.Scripts
         public bool CheckRewardedVideoAvailability(string placementName)
         {
             return IronSource.Agent.isRewardedVideoAvailable() &&
-                   IronSource.Agent.getPlacementInfo(placementName) != null;
+                   IronSource.Agent.getPlacementInfo(placementName) != null &&
+                   !IronSource.Agent.isRewardedVideoPlacementCapped(placementName);
         }
     }
 }

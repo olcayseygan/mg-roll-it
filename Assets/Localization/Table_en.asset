@@ -214,6 +214,22 @@ MonoBehaviour:
     m_Localized: +20 GOLD
     m_Metadata:
       m_Items: []
+  - m_Id: 2138253300580352
+    m_Localized: INITIAL SPEED
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2138262569992192
+    m_Localized: HIGH
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2138268010004480
+    m_Localized: MEDIUM
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2138610797887488
+    m_Localized: LOW
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

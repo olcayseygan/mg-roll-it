@@ -44,11 +44,6 @@ namespace Assets.Scripts
             StateProvider.Update();
         }
 
-        private void FixedUpdate()
-        {
-            StateProvider.FixedUpdate();
-        }
-
         public void ChangeDirection()
         {
             if (direction.z == 1f)

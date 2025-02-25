@@ -38,11 +38,10 @@ namespace Assets.Scripts
         public TMPro.TMP_Text adsFailText;
 
 
-        public const float MAX_SPEED = 0.175f;
+        public float maxSpeed = 0.175f;
         private const float MIN_SPEED = 0.075f;
         private const float SPEED_DECREASING_RATE = 0.001f;
-        [HideInInspector] public float speed = MAX_SPEED;
-
+        [HideInInspector] public float speed;
 
         protected override void Awake()
         {
@@ -51,13 +50,13 @@ namespace Assets.Scripts
                 Application.logMessageReceivedThreaded += HandleLog;
                 GameUI.I.debugPanel.SetActive(true);
             }
+
             base.Awake();
             StateProvider = new StateProvider<Game>(this);
             StateProvider.RegisterState(new States.GameStates.CleaningState());
             StateProvider.RegisterState(new States.GameStates.ContinueState());
             StateProvider.RegisterState(new States.GameStates.GameOverState());
             StateProvider.RegisterState(new States.GameStates.InstantiationState());
-            StateProvider.RegisterState(new States.GameStates.LoadAdState());
             StateProvider.RegisterState(new States.GameStates.PlayingState());
             StateProvider.RegisterState(new States.GameStates.ShowcaseState());
             StateProvider.RegisterState(new States.GameStates.LoadingState());
@@ -103,7 +102,7 @@ namespace Assets.Scripts
                 spotlightTransform.position = Vector3.Lerp(spotlightTransform.position, smoothPosition + spotlightOffset, Time.deltaTime * LERP_SPEED);
                 puppy.transform.position = Vector3.Lerp(puppy.transform.position, smoothPosition, Time.deltaTime * LERP_SPEED);
 
-                speed = Mathf.Clamp(speed - SPEED_DECREASING_RATE * Time.deltaTime, MIN_SPEED, MAX_SPEED);
+                speed = Mathf.Clamp(speed - SPEED_DECREASING_RATE * Time.deltaTime, MIN_SPEED, maxSpeed);
             }
 
             StateProvider.Update();

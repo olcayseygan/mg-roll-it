@@ -46,6 +46,13 @@ namespace Assets.Scripts
             }
         }
 
+        public void MaskAsDefault()
+        {
+            _purchaseButton.gameObject.SetActive(true);
+            _ownedButton.gameObject.SetActive(false);
+            _notEnoughGoldButton.gameObject.SetActive(false);
+        }
+
         public void MaskAsPurchased() {
             _purchaseButton.gameObject.SetActive(false);
             _ownedButton.gameObject.SetActive(true);
@@ -62,7 +69,7 @@ namespace Assets.Scripts
         {
             PlayerController.I.OwnCubeSkin(key);
             PlayerController.I.RemoveGold(data.price);
-            MaskAsPurchased();
+            ShopManager.I.UpdateList();
         }
     }
 }

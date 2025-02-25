@@ -23,7 +23,7 @@ namespace Assets.Scripts.States.GameStates
             self.ResetCurrentRun();
             if (properties.canSkipToPlaying)
             {
-                return self.StateProvider.FindState<LoadAdState>();
+                return self.StateProvider.FindState<PlayingState>(new PlayingStateProperties() { isFreshRun = true });
             }
 
             return self.StateProvider.FindState<ShowcaseState>();

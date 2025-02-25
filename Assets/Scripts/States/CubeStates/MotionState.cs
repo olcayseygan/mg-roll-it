@@ -82,9 +82,9 @@ namespace Assets.Scripts.States.CubeStates
 
         }
 
-        public override StateTransition<Cube> FixedUpdate(Cube self)
+        public override StateTransition<Cube> Update(Cube self)
         {
-            _timeElapsed = Mathf.Max(0.0f, _timeElapsed - Time.fixedDeltaTime);
+            _timeElapsed = Mathf.Max(0.0f, _timeElapsed - Time.deltaTime);
             var t = self.motionCurve.Evaluate(1.0f - _timeElapsed / _motionDuration);
             self.transform.rotation = Quaternion.Euler(new Vector3(
                 Mathf.LerpAngle(_initialEulerAngle.x, _targetEulerAngle.x, t),

@@ -16,8 +16,11 @@ namespace Assets.Scripts.States.GameStates
             self.inputList.Clear();
             if (properties.isFreshRun)
             {
-                self.speed = Game.MAX_SPEED;
+                self.maxSpeed = PlayerController.I.GetInitialSpeed();
+                self.speed = self.maxSpeed;
+                Debug.Log("Speed: " + self.speed);
                 self.puppy.transform.position = Vector3.zero;
+                self.ResetCurrentRun();
                 self.AdjustCameraAndSpotlight();
                 PlayerController.I.AddPlayedGames();
             }

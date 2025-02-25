@@ -5,6 +5,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using Assets.Scripts.Patterns.StatePattern.Plugins;
+using Assets.Scripts.States.GameStates;
 
 namespace Assets.Scripts.StateViews
 {
@@ -21,7 +22,7 @@ namespace Assets.Scripts.StateViews
             _goldsText.text = PlayerController.I.GetGolds().ToString();
             _highScoreText.text = PlayerController.I.GetHighScore().ToString();
             _gamesPlayedText.text = PlayerController.I.GetPlayedGames().ToString();
-            _gainGoldButton.interactable = LevelPlayManager.I.CheckRewardedVideoAvailability("Home_Screen__Gain_Gold");
+            UpdateGaingGoldButtonInteractable();
             base.Show();
         }
 
@@ -30,9 +31,14 @@ namespace Assets.Scripts.StateViews
             _goldsText.text = gold.ToString();
         }
 
+        public void UpdateGaingGoldButtonInteractable()
+        {
+            _gainGoldButton.interactable = LevelPlayManager.I.CheckRewardedVideoAvailability("Home_Screen__Gain_Gold");
+        }
+
         public void PlayButton_Click()
         {
-            Game.I.StateProvider.SwitchTo<States.GameStates.LoadAdState>();
+            Game.I.StateProvider.SwitchTo<PlayingState>(new PlayingStateProperties() { isFreshRun = true });
         }
 
         public void ShopButton_Click()

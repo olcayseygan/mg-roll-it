@@ -9,6 +9,8 @@ namespace Assets.Scripts
     public class PlayerController : SingletonProvider<PlayerController>
     {
         private int[] _maxFps = new int[] { 30, 60, 90, 120 };
+        private float[] _initialSpeeds = new float[] { 0.175f, 0.125f, 0.075f };
+
         public void SetGolds(int amount) => PlayerPrefs.SetInt("PLAYER_GOLDS", amount);
         public int GetGolds() => PlayerPrefs.GetInt("PLAYER_GOLDS", 0);
         public void AddGold(int amount) => SetGolds(GetGolds() + amount);
@@ -73,5 +75,10 @@ namespace Assets.Scripts
 
         public void SetSFXToggle(bool isOn) => PlayerPrefs.SetInt("PLAYER_SFX_TOGGLE", isOn ? 1 : 0);
         public bool GetSFXToggle() => PlayerPrefs.GetInt("PLAYER_SFX_TOGGLE", 1) == 1;
+
+        public void SetInitialSpeedIndex(int index) => PlayerPrefs.SetInt("PLAYER_INITIAL_SPEED", index);
+        public int GetInitialSpeedIndex() => PlayerPrefs.GetInt("PLAYER_INITIAL_SPEED", 0);
+        public float GetInitialSpeed() => _initialSpeeds[GetInitialSpeedIndex()];
+
     }
 }

@@ -52,5 +52,24 @@ namespace Assets.Scripts
 
             _shopItems.Clear();
         }
+
+        public void UpdateList() {
+            foreach (var item in _shopItems)
+            {
+                var ownedKeys = PlayerController.I.GetOwnedCubeSkinKeys();
+                if (ownedKeys.Contains(item.key))
+                {
+                    item.MaskAsPurchased();
+                }
+                else if (PlayerController.I.GetGolds() < item.data.price)
+                {
+                    item.MaskAsNotEnoughGold();
+                }
+                else
+                {
+                    item.MaskAsDefault();
+                }
+            }
+        }
     }
 }
