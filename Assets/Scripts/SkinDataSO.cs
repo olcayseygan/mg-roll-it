@@ -10,6 +10,7 @@ namespace Assets.Scripts
     {
         public new string name;
         public GameObject prefab;
+        public Material material;
         public int price;
     }
 }

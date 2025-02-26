@@ -33,7 +33,7 @@ namespace Assets.Scripts.StateViews
 
         public void UpdateGaingGoldButtonInteractable()
         {
-            _gainGoldButton.interactable = LevelPlayManager.I.CheckRewardedVideoAvailability("Home_Screen__Gain_Gold");
+            _gainGoldButton.gameObject.SetActive(LevelPlayManager.I.CheckRewardedVideoAvailability("Home_Screen__Gain_Gold"));
         }
 
         public void PlayButton_Click()

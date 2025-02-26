@@ -100,6 +100,7 @@ MonoBehaviour:
   _purchaseButton: {fileID: 8070277243208905977}
   _notEnoughGoldButton: {fileID: 5552605228112395860}
   _ownedButton: {fileID: 2934422370514637797}
+  _previewImage: {fileID: 0}
   _purchaseButtonImage: {fileID: 8933296030975940637}
   _purchaseButtonText: {fileID: 5407210080322643083}
 --- !u!114 &2776429550522160439

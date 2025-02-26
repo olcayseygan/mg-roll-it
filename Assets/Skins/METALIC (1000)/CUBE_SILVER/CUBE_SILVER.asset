@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b121e8d9691a44a43876473fdaf2c1e6, type: 3}
+  m_Name: CUBE_SILVER
+  m_EditorClassIdentifier: 
+  name: CUBE_SILVER
+  prefab: {fileID: 918632457735281269, guid: ee715c681807bae4c89cd1062c01575b, type: 3}
+  material: {fileID: 2100000, guid: a644e2c74067ecf41a84f0a5ab1f23fd, type: 2}
+  price: 1000

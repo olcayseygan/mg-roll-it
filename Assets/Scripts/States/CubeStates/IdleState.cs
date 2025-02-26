@@ -15,12 +15,11 @@ namespace Assets.Scripts.States.CubeStates
             }
 
             self.lastVisitedPlatform = lastVisitedPlatform;
-            if (Game.I.inputList.Count > 0)
-            {
-                Cube.I.ChangeDirection();
-                Game.I.inputList.RemoveAt(0);
+            if (Game.I.playerHasInteracted) {
+                self.ChangeDirection();
             }
 
+            Game.I.playerHasInteracted = false;
             return base.OnEnter(self);
         }
 

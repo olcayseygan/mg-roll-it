@@ -31,7 +31,7 @@ namespace Assets.Scripts
 
         public RewardedAd rewardedAd;
 
-        public List<byte> inputList = new();
+        public bool playerHasInteracted = false;
 
         public GameObject adsSuccessObject;
         public GameObject adsFailObject;

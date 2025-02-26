@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b121e8d9691a44a43876473fdaf2c1e6, type: 3}
+  m_Name: CUBE_GRAY
+  m_EditorClassIdentifier: 
+  name: CUBE_GRAY
+  prefab: {fileID: 918632457735281269, guid: 5ba369e5fc2ca8d449fa5c668f786d36, type: 3}
+  material: {fileID: 2100000, guid: 7545496239b96c44e9d8d31e3b602a02, type: 2}
+  price: 0

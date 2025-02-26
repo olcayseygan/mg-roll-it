@@ -36,6 +36,12 @@ namespace Assets.Scripts
 
                 _inventoryItems.Add(inventoryItem);
             }
+
+            _inventoryItems.Sort((a, b) => a.data.price.CompareTo(b.data.price));
+            foreach (var item in _inventoryItems)
+            {
+                item.transform.SetAsLastSibling();
+            }
         }
 
         public void MarkAsEquipped(InventoryItem inventoryItem)

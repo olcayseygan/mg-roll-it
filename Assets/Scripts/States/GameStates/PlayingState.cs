@@ -13,12 +13,11 @@ namespace Assets.Scripts.States.GameStates
     {
         public override StateTransition<Game> OnEnter(Game self, PlayingStateProperties properties)
         {
-            self.inputList.Clear();
+            self.playerHasInteracted = false;
             if (properties.isFreshRun)
             {
                 self.maxSpeed = PlayerController.I.GetInitialSpeed();
                 self.speed = self.maxSpeed;
-                Debug.Log("Speed: " + self.speed);
                 self.puppy.transform.position = Vector3.zero;
                 self.ResetCurrentRun();
                 self.AdjustCameraAndSpotlight();
@@ -47,7 +46,7 @@ namespace Assets.Scripts.States.GameStates
                 }
 
                 AudioManager.I.PlaySFX(AudioManager.I.screenTapClip);
-                self.inputList.Add(0);
+                self.playerHasInteracted = true;
             }
 
             PlatformManager.I.UpdatePlatforms();

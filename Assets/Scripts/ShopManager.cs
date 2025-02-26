@@ -41,6 +41,12 @@ namespace Assets.Scripts
 
                 _shopItems.Add(shopItem);
             }
+
+            _shopItems.Sort((a, b) => a.data.price.CompareTo(b.data.price));
+            foreach (var item in _shopItems)
+            {
+                item.transform.SetAsLastSibling();
+            }
         }
 
         public void ClearList()

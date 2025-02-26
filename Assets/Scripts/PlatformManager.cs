@@ -35,14 +35,18 @@ namespace Assets.Scripts
             }
 
             var lastPlatform = platforms[platforms.Count - 1];
-            var distance = Vector3.Distance(Cube.I.transform.position, lastPlatform.transform.position);
+            var distance = Vector3.Distance(
+                new Vector3(Cube.I.transform.position.x, 0.0f, Cube.I.transform.position.z),
+                new Vector3(lastPlatform.transform.position.x, 0.0f, lastPlatform.transform.position.z));
             if (distance < SPAWN_DISTANCE_THRESHOLD)
             {
                 SpawnPlatform();
             }
 
             var firstPlatform = platforms[0];
-            distance = Vector3.Distance(Cube.I.transform.position, firstPlatform.transform.position);
+            distance = Vector3.Distance(
+                new Vector3(Cube.I.transform.position.x, 0.0f, Cube.I.transform.position.z),
+                new Vector3(firstPlatform.transform.position.x, 0.0f, firstPlatform.transform.position.z));
             if (distance > DISMANTLE_DISTANCE_THRESHOLD)
             {
                 firstPlatform.StateProvider.SwitchTo<States.PlatformStates.DestroyState>();

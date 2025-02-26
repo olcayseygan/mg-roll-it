@@ -231,6 +231,50 @@ MonoBehaviour:
     m_Key: UI_WAIT_FOR_ACTION_TEXT
     m_Metadata:
       m_Items: []
+  - m_Id: 2454646617260032
+    m_Key: SKIN_CUBE_GRAY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2455114064052224
+    m_Key: SKIN_CUBE_LIGHT_BLUE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2455253281390592
+    m_Key: SKIN_CUBE_LAVENDER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2455301297782784
+    m_Key: SKIN_CUBE_LIGHT_GREEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2455674183991296
+    m_Key: SKIN_CUBE_LIGHT_PINK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2455757067632640
+    m_Key: SKIN_CUBE_NEON_GREEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2455839645089792
+    m_Key: SKIN_CUBE_ORANGE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2456090695155712
+    m_Key: SKIN_CUBE_PURPLE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2456448389595136
+    m_Key: SKIN_CUBE_SILVER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2456501808250880
+    m_Key: SKIN_CUBE_YELLOW
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2456550592200704
+    m_Key: SKIN_CUBE_CYBERPUNK_PURPLE
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

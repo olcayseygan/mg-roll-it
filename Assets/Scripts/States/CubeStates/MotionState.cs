@@ -17,9 +17,11 @@ namespace Assets.Scripts.States.CubeStates
 
     public class MotionState : State<Cube>
     {
+        private const float QUICK_MOTION_DURATION = 0.05f;
         private readonly Dictionary<FaceDirection, Vector3> _faceDirections = new();
         private float _timeElapsed = 0.0f;
         private float _motionDuration = 0.0f;
+        private float _percentageOfMotion = 0.0f;
 
         private Vector3 _initialEulerAngle = Vector3.zero;
         private Vector3 _targetEulerAngle = Vector3.zero;
@@ -50,6 +52,7 @@ namespace Assets.Scripts.States.CubeStates
             });
 
             _motionDuration = Game.I.speed;
+            _percentageOfMotion = 1.0f;
             _timeElapsed = _motionDuration;
             return base.OnEnter(self);
         }
@@ -79,19 +82,30 @@ namespace Assets.Scripts.States.CubeStates
             self.lastKnownPosition.z = self.modelTransform.transform.position.z;
             Game.I.AddCurrentRunScore(1);
             GameUI.I.playingPanel.SetScoreText(Game.I.GetCurrentRunScore());
-
         }
 
         public override StateTransition<Cube> Update(Cube self)
         {
             _timeElapsed = Mathf.Max(0.0f, _timeElapsed - Time.deltaTime);
-            var t = self.motionCurve.Evaluate(1.0f - _timeElapsed / _motionDuration);
+            if (Game.I.playerHasInteracted)
+            {
+                _timeElapsed = Mathf.Min(_timeElapsed, QUICK_MOTION_DURATION * _percentageOfMotion);
+                _percentageOfMotion = _timeElapsed / QUICK_MOTION_DURATION;
+            }
+            else
+            {
+                _percentageOfMotion = _timeElapsed / _motionDuration;
+            }
+
+            var t = self.motionCurve.Evaluate(1f - _percentageOfMotion);
             self.transform.rotation = Quaternion.Euler(new Vector3(
                 Mathf.LerpAngle(_initialEulerAngle.x, _targetEulerAngle.x, t),
                 Mathf.LerpAngle(_initialEulerAngle.y, _targetEulerAngle.y, t),
                 Mathf.LerpAngle(_initialEulerAngle.z, _targetEulerAngle.z, t)
             ));
-            if (_timeElapsed <= 0.0f) {
+
+            if (_timeElapsed <= 0.0f)
+            {
                 return self.StateProvider.FindState<IdleState>();
             }
 

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b121e8d9691a44a43876473fdaf2c1e6, type: 3}
+  m_Name: CUBE_YELLOW
+  m_EditorClassIdentifier: 
+  name: CUBE_YELLOW
+  prefab: {fileID: 918632457735281269, guid: 59113db0ce768374ea096a22c34fd61c, type: 3}
+  material: {fileID: 2100000, guid: 85de3554903e5584482228377acd8009, type: 2}
+  price: 250
