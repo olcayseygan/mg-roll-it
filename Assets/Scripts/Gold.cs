@@ -21,6 +21,7 @@ namespace Assets.Scripts
         public void OnTriggerEnter(Collider collider)
         {
             Cube.I.OnGoldCollected(1);
+            FloatingTextController.I.InstantiateFloatingText("+1", 0.5f, Color.black, transform.position + Vector3.up, Vector3.up * 10f);
             Destroy(gameObject);
         }
     }

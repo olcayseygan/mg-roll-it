@@ -20,18 +20,18 @@ namespace Assets.Scripts.States.CubeStates
             }
 
             Game.I.playerHasInteracted = false;
-            return base.OnEnter(self);
-        }
-
-
-        public override StateTransition<Cube> Update(Cube self)
-        {
-            if (!Game.I.StateProvider.IsInState<GameStates.PlayingState>())
-            {
-                return base.Update(self);
-            }
-
             return self.StateProvider.FindState<MotionState>();
         }
+
+
+        // public override StateTransition<Cube> Update(Cube self)
+        // {
+        //     if (!Game.I.StateProvider.IsInState<GameStates.PlayingState>())
+        //     {
+        //         return base.Update(self);
+        //     }
+
+        //     return self.StateProvider.FindState<MotionState>();
+        // }
     }
 }

@@ -14,7 +14,7 @@ namespace Assets.Scripts.States.PlatformStates
 
         public override StateTransition<Platform> Update(Platform self)
         {
-            var newY = self.transform.position.y + 200f * Time.deltaTime;
+            var newY = self.transform.position.y + 100f * Time.deltaTime;
             newY = Mathf.Min(newY, 0f);
             self.transform.position = new Vector3(self.transform.position.x, newY, self.transform.position.z);
             if (self.transform.position.y >= 0f)

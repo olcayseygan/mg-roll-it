@@ -9,7 +9,7 @@ namespace Assets.Scripts
     public class PlatformManager : SingletonProvider<PlatformManager>
     {
         private const float DISMANTLE_DISTANCE_THRESHOLD = 10f;
-        private const float SPAWN_DISTANCE_THRESHOLD = 20.0f;
+        private const float SPAWN_DISTANCE_THRESHOLD = 30.0f;
         public const float PLATFORM_SIZE = 3.0f;
 
         [SerializeField] private GameObject _prefab;

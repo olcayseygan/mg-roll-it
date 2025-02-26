@@ -9,7 +9,8 @@ namespace Assets.Scripts
 {
     public class Game : SingletonProvider<Game>
     {
-        private const float LERP_SPEED = 5f;
+        private const float LERP_SPEED = 2.5f;
+        private const float PUPPY_SPEED = 7.5f;
 
         public StateProvider<Game> StateProvider { get; private set; }
         public StateViewHandler<Game> StateViewHandler { get; private set; }
@@ -100,7 +101,7 @@ namespace Assets.Scripts
                     Quaternion.Lerp(camera.transform.rotation, cameraTargetRotation, Time.deltaTime * LERP_SPEED)
                 );
                 spotlightTransform.position = Vector3.Lerp(spotlightTransform.position, smoothPosition + spotlightOffset, Time.deltaTime * LERP_SPEED);
-                puppy.transform.position = Vector3.Lerp(puppy.transform.position, smoothPosition, Time.deltaTime * LERP_SPEED);
+                puppy.transform.position = Vector3.Lerp(puppy.transform.position, smoothPosition, Time.deltaTime * PUPPY_SPEED);
 
                 speed = Mathf.Clamp(speed - SPEED_DECREASING_RATE * Time.deltaTime, MIN_SPEED, maxSpeed);
             }
@@ -115,6 +116,7 @@ namespace Assets.Scripts
             camera.transform.SetPositionAndRotation(cameraTargetOffset, cameraTargetRotation);
             camera.orthographicSize = cameraTargetOrthographicSize;
             spotlightTransform.position = spotlightOffset;
+            puppy.transform.position = Vector3.zero;
         }
 
 

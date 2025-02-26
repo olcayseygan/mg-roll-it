@@ -12,7 +12,6 @@ namespace Assets.Scripts.StateViews
     public class SettingsPanel : StateViewPanel
     {
         [SerializeField] private RadioButtonGroup _graphicsQualityGroup;
-        [SerializeField] private RadioButtonGroup _maxFpsGroup;
         [SerializeField] private RadioButtonGroup _initialSpeedGroup;
 
         [SerializeField] private GameObject _muteButtonGameObject;
@@ -21,7 +20,6 @@ namespace Assets.Scripts.StateViews
         public override void Show()
         {
             _graphicsQualityGroup.SetSelectedIndex(PlayerController.I.GetQualityLevelIndex());
-            _maxFpsGroup.SetSelectedIndex(PlayerController.I.GetMaxFPSIndex());
             _initialSpeedGroup.SetSelectedIndex(PlayerController.I.GetInitialSpeedIndex());
             _muteButtonGameObject.SetActive(PlayerController.I.GetSFXToggle());
             _unmuteButtonGameObject.SetActive(!PlayerController.I.GetSFXToggle());

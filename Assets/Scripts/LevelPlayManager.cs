@@ -21,7 +21,7 @@ namespace Assets.Scripts
             // IronSource.Agent.setAdaptersDebug(true);
             IronSource.Agent.shouldTrackNetworkState(true);
             IronSource.Agent.init("2103ecc85", IronSourceAdUnits.REWARDED_VIDEO);
-            // IronSource.Agent.validateIntegration();
+            IronSource.Agent.validateIntegration();
         }
 
         private void RegisterRewardedVideoEvents()

@@ -12,8 +12,6 @@ namespace Assets.Scripts.States.GameStates
         public override StateTransition<Game> OnEnter(Game self)
         {
             Game.I.StateViewHandler.SwitchTo<LoadingPanel>();
-            QualitySettings.vSyncCount = 0;
-            Application.targetFrameRate = PlayerController.I.GetMaxFPS();
 
             LevelPlayManager.I.Initialize();
 

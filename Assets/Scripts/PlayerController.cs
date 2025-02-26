@@ -8,8 +8,7 @@ namespace Assets.Scripts
 {
     public class PlayerController : SingletonProvider<PlayerController>
     {
-        private int[] _maxFps = new int[] { 30, 60, 90, 120 };
-        private float[] _initialSpeeds = new float[] { 0.175f, 0.125f, 0.075f };
+        private readonly float[] _initialSpeeds = new float[] { 0.175f, 0.125f, 0.075f };
 
         public void SetGolds(int amount) => PlayerPrefs.SetInt("PLAYER_GOLDS", amount);
         public int GetGolds() => PlayerPrefs.GetInt("PLAYER_GOLDS", 0);
@@ -43,7 +42,6 @@ namespace Assets.Scripts
 
         public void OwnAllCubeSkins()
         {
-
             var ownedSkins = new List<string>();
             foreach (var pair in SkinManager.I.skinCollection.collection)
             {
@@ -61,17 +59,6 @@ namespace Assets.Scripts
         }
 
         public int GetQualityLevelIndex() => PlayerPrefs.GetInt("PLAYER_QUALITY_LEVEL", 2);
-
-        public void SetMaxFPSIndex(int index)
-        {
-            index = Mathf.Clamp(index, 0, _maxFps.Length - 1);
-
-            PlayerPrefs.SetInt("PLAYER_MAX_FPS", index);
-            Application.targetFrameRate = _maxFps[index];
-        }
-
-        public int GetMaxFPSIndex() => PlayerPrefs.GetInt("PLAYER_MAX_FPS", 1);
-        public int GetMaxFPS() => _maxFps[GetMaxFPSIndex()];
 
         public void SetSFXToggle(bool isOn) => PlayerPrefs.SetInt("PLAYER_SFX_TOGGLE", isOn ? 1 : 0);
         public bool GetSFXToggle() => PlayerPrefs.GetInt("PLAYER_SFX_TOGGLE", 1) == 1;
