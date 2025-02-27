@@ -179,10 +179,6 @@ MonoBehaviour:
     m_Key: UI_SETTINGS_INITIAL_SPEED_TEXT
     m_Metadata:
       m_Items: []
-  - m_Id: 68889262936064
-    m_Key: UI_SETTINGS_MAX_FPS_TEXT
-    m_Metadata:
-      m_Items: []
   - m_Id: 5749668036608
     m_Key: UI_SETTINGS_SOUND_MUTE_BUTTON_TEXT
     m_Metadata:

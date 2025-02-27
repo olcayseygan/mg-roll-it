@@ -102,10 +102,6 @@ MonoBehaviour:
     m_Localized: BACK
     m_Metadata:
       m_Items: []
-  - m_Id: 68889262936064
-    m_Localized: MAX FPS
-    m_Metadata:
-      m_Items: []
   - m_Id: 72654317670400
     m_Localized: MAIN MENU
     m_Metadata:
