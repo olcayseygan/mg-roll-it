@@ -78,7 +78,7 @@ namespace Assets.Scripts
         private void Start()
         {
             QualitySettings.vSyncCount = 0;
-            Application.targetFrameRate = (int)Screen.currentResolution.refreshRateRatio.value;
+            Application.targetFrameRate = int.MaxValue;
         }
 
         private void HandleLog(string logString, string stackTrace, LogType type)
