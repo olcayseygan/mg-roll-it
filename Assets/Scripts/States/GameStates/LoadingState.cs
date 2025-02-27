@@ -13,6 +13,7 @@ namespace Assets.Scripts.States.GameStates
         {
             Game.I.StateViewHandler.SwitchTo<LoadingPanel>();
 
+
             LevelPlayManager.I.Initialize();
 
             AudioManager.I.LoadAudioSettings();
