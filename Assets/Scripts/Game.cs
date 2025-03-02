@@ -44,6 +44,10 @@ namespace Assets.Scripts
         private const float SPEED_DECREASING_RATE = 0.001f;
         [HideInInspector] public float speed;
 
+        private const float DOUBLE_PRESS_INTERVAL = 0.5f;
+        private float _lastBackPressTime = 0f;
+
+
         protected override void Awake()
         {
             if (false)
@@ -86,6 +90,18 @@ namespace Assets.Scripts
 
         private void Update()
         {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                if (Time.time - _lastBackPressTime < DOUBLE_PRESS_INTERVAL)
+                {
+                    Application.Quit();
+                }
+                else
+                {
+                    _lastBackPressTime = Time.time;
+                }
+            }
+
             if (Input.GetMouseButtonDown(0))
             {
                 AudioManager.I.PlaySFX(AudioManager.I.screenTapClip);

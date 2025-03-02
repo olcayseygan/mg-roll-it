@@ -17,7 +17,7 @@ namespace Assets.Scripts.States.CubeStates
 
     public class MotionState : State<Cube>
     {
-        private const float QUICK_MOTION_DURATION = 0.05f;
+        private const float QUICK_MOTION_DURATION = 0.075f;
         private readonly Dictionary<FaceDirection, Vector3> _faceDirections = new();
         private float _timeElapsed = 0.0f;
         private float _motionDuration = 0.0f;
