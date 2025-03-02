@@ -15,4 +15,6 @@ MonoBehaviour:
   name: CUBE_RAINBOW
   prefab: {fileID: 918632457735281269, guid: d1655c761eda57247b0ac7ba90064ae9, type: 3}
   material: {fileID: 2100000, guid: 48aa49f427c1e9749bd071b3bf58b131, type: 2}
-  price: 2500
+  price: 246
+  _numberOfColors: 1
+  _hasAnimation: 1
