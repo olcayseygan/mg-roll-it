@@ -79,6 +79,12 @@ namespace Assets.Scripts
             StateProvider.SwitchTo<States.GameStates.LoadingState>();
         }
 
+        private void Start()
+        {
+            QualitySettings.vSyncCount = 0;
+            Application.targetFrameRate = int.MaxValue;
+        }
+
         private void HandleLog(string logString, string stackTrace, LogType type)
         {
             string colorTag = type == LogType.Error ? "<color=red>" :
