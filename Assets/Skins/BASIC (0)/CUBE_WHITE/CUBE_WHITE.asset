@@ -16,3 +16,6 @@ MonoBehaviour:
   prefab: {fileID: 918632457735281269, guid: 36379c28889ca3d41b952347430d5e86, type: 3}
   material: {fileID: 2100000, guid: e17eaf2a8513bba4097e527bd7de08a1, type: 2}
   price: 0
+  _isFree: 1
+  _numberOfColors: 0
+  _isMetallic: 0

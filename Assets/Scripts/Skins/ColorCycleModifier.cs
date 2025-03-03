@@ -19,7 +19,9 @@ namespace Assets.Scripts.Skins
             if (colors.Count < 2) return;
 
             _t += Time.deltaTime * _lerpSpeed;
-            _meshRenderer.material.color = Color.Lerp(colors[_currentIndex], colors[_nextIndex], _t);
+            // _meshRenderer.material.color = Color.Lerp(colors[_currentIndex], colors[_nextIndex], _t);
+            _meshRenderer.material.SetColor("_Color", Color.Lerp(colors[_currentIndex], colors[_nextIndex], _t));
+            _meshRenderer.material.SetColor("_EmissionColor", Color.Lerp(colors[_currentIndex], colors[_nextIndex], _t) * 0.5f);
 
             if (_t >= 1.0f)
             {

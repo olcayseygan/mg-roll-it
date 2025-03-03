@@ -42,6 +42,8 @@ namespace Assets.Scripts
             }
             else
             {
+                var stringEvent = _priceText.GetComponent<LocalizeStringEvent>();
+                stringEvent.StringReference = new LocalizedString { TableReference = "Table", TableEntryReference = "UI_SHOP_ITEM_PRICE_TEXT", Arguments = new[] { price.ToString() } };
                 _priceText.text = price.ToString();
             }
         }

@@ -69,6 +69,7 @@ public class AutoCubeSkinCreator : EditorWindow
             SkinDataSO newSO = CreateInstance<SkinDataSO>();
             newSO.name = assetName;
             newSO.prefab = prefab;
+            newSO.material = newMaterial;
             AssetDatabase.CreateAsset(newSO, $"{folderPath}/{assetName}.asset");
 
             AssetDatabase.SaveAssets();

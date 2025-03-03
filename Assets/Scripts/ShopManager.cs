@@ -29,7 +29,7 @@ namespace Assets.Scripts
                 shopItem.data = SkinManager.I.GetSkinData(key);
                 var stringEvent = shopItem.GetNameText().GetComponent<LocalizeStringEvent>();
                 stringEvent.StringReference = new LocalizedString { TableReference = "Table", TableEntryReference = $"SKIN_{shopItem.data.name}" };
-                shopItem.SetPriceText(shopItem.data.price);
+                shopItem.SetPriceText(shopItem.data.GetPrice());
                 if (ownedKeys.Contains(key))
                 {
                     shopItem.MaskAsPurchased();

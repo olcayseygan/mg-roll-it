@@ -270,6 +270,22 @@ MonoBehaviour:
     m_Localized: CYBERPUNK PURPLE
     m_Metadata:
       m_Items: []
+  - m_Id: 4275355870019584
+    m_Localized: '{0} GOLDS'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4287242582081536
+    m_Localized: SUNSET GLOW
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4287360064536576
+    m_Localized: CYBER PULSE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4287444588150784
+    m_Localized: OCEAN WAVE
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

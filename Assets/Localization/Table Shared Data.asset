@@ -271,6 +271,22 @@ MonoBehaviour:
     m_Key: SKIN_CUBE_CYBERPUNK_PURPLE
     m_Metadata:
       m_Items: []
+  - m_Id: 4275355870019584
+    m_Key: UI_SHOP_ITEM_PRICE_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4287242582081536
+    m_Key: SKIN_CUBE_SUNSET_GLOW
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4287360064536576
+    m_Key: SKIN_CUBE_CYBER_PULSE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4287444588150784
+    m_Key: SKIN_CUBE_OCEAN_WAVE
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

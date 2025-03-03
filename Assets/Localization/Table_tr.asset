@@ -270,6 +270,22 @@ MonoBehaviour:
     m_Localized: CYBERPUNK MOR
     m_Metadata:
       m_Items: []
+  - m_Id: 4275355870019584
+    m_Localized: '{0} ALTIN'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4287242582081536
+    m_Localized: "G\xDCN BATIMI"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4287360064536576
+    m_Localized: "S\u0130BER NABIZ"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4287444588150784
+    m_Localized: OKYANUZ DALGASI
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

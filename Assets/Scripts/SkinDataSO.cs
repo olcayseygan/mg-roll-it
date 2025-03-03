@@ -14,8 +14,30 @@ namespace Assets.Scripts
         public int price;
 
         [Header("Price Modifiers")]
+        [SerializeField] private bool _isFree;
         [SerializeField] private int _numberOfColors;
-        [SerializeField] private bool _hasAnimation;
+        [SerializeField] private bool _isMetallic;
+
+        public int GetPrice()
+        {
+            if (_isFree)
+            {
+                return 0;
+            }
+
+            var price = 259.8f;
+            if (_numberOfColors > 0)
+            {
+                price *= Mathf.Pow(1.69f, _numberOfColors);
+            }
+
+            if (_isMetallic)
+            {
+                price *= 2.465f;
+            }
+
+            return (int)price;
+        }
 
         private void OnValidate()
         {
@@ -29,15 +51,7 @@ namespace Assets.Scripts
                 Debug.LogError("Material is null");
             }
 
-            price = 56;
-            if (_numberOfColors > 0) {
-                price = (int)(price * Mathf.Pow(1.79f, _numberOfColors));
-            }
-
-            if (_hasAnimation)
-            {
-                price = (int)(price * 2.465f);
-            }
+            price = GetPrice();
         }
     }
 }

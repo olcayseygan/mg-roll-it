@@ -9,7 +9,7 @@ namespace Assets.Scripts
     public class PlatformManager : SingletonProvider<PlatformManager>
     {
         private const float DISMANTLE_DISTANCE_THRESHOLD = 10f;
-        private const float SPAWN_DISTANCE_THRESHOLD = 30.0f;
+        private const float SPAWN_DISTANCE_THRESHOLD = 100.0f;
         public const float PLATFORM_SIZE = 3.0f;
 
         [SerializeField] private GameObject _prefab;
@@ -81,7 +81,6 @@ namespace Assets.Scripts
             platform.modelTransform.localScale = new Vector3(PLATFORM_SIZE, 20.0f, PLATFORM_SIZE);
             SetColor(platform);
             _lastSpawnPosition = new Vector3(x, 0.0f, z);
-            platform.StateProvider.SwitchTo<States.PlatformStates.IdleState>();
         }
 
         public void SpawnPlatform()
@@ -111,7 +110,6 @@ namespace Assets.Scripts
             platform.TrySpawnGoldByChance();
             SetColor(platform);
             _lastSpawnPosition = platform.transform.position;
-            platform.StateProvider.SwitchTo<States.PlatformStates.StartState>();
         }
 
         public List<Platform> GetPlatforms()
