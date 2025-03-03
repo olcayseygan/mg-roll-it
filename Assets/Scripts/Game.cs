@@ -73,6 +73,7 @@ namespace Assets.Scripts
             StateViewHandler.RegisterStateViewPanel(GameUI.I.inventoryPanel);
             StateViewHandler.RegisterStateViewPanel(GameUI.I.shopPanel);
             StateViewHandler.RegisterStateViewPanel(GameUI.I.gameOverPanel);
+            StateViewHandler.RegisterStateViewPanel(GameUI.I.shopItemPanel);
 
             StateProvider.SwitchTo<States.GameStates.LoadingState>();
         }
@@ -81,6 +82,7 @@ namespace Assets.Scripts
         {
             QualitySettings.vSyncCount = 0;
             Application.targetFrameRate = int.MaxValue;
+            Debug.Log(PlayerData.Serialize());
         }
 
         private void HandleLog(string logString, string stackTrace, LogType type)

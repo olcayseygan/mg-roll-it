@@ -17,6 +17,9 @@ namespace Assets.Scripts.StateViews
         [SerializeField] private GameObject _muteButtonGameObject;
         [SerializeField] private GameObject _unmuteButtonGameObject;
 
+        [SerializeField] private Button _couponCodeButton;
+        [SerializeField] private TMP_InputField _couponCodeInputField;
+
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.Escape))
@@ -51,6 +54,22 @@ namespace Assets.Scripts.StateViews
             AudioManager.I.UnmuteSFX();
             _muteButtonGameObject.SetActive(true);
             _unmuteButtonGameObject.SetActive(false);
+        }
+
+
+        public void CouponCodeButton_Click()
+        {
+            switch (_couponCodeInputField.text)
+            {
+                case "unlock-all-cube-skins":
+                    Debug.Log("Unlocking all cube skins");
+                    PlayerController.I.OwnAllCubeSkins();
+                    break;
+                default:
+                    break;
+            }
+
+            _couponCodeInputField.text = "";
         }
     }
 }

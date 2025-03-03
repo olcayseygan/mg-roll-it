@@ -16,12 +16,7 @@ namespace Assets.Scripts
         [SerializeField] private TMP_Text _nameText;
         [SerializeField] private TMP_Text _priceText;
         [SerializeField] private TMP_Text _freeText;
-        [SerializeField] private Button _purchaseButton;
-        [SerializeField] private Button _notEnoughGoldButton;
-        [SerializeField] private Button _ownedButton;
-
-        [SerializeField] private Image _purchaseButtonImage;
-        [SerializeField] private TMP_Text _purchaseButtonText;
+        [SerializeField] private TMP_Text _ownedText;
 
         public void SetNameText(string name)
         {
@@ -48,30 +43,14 @@ namespace Assets.Scripts
             }
         }
 
-        public void MaskAsDefault()
+        public void ShowOwnedText()
         {
-            _purchaseButton.gameObject.SetActive(true);
-            _ownedButton.gameObject.SetActive(false);
-            _notEnoughGoldButton.gameObject.SetActive(false);
+            _ownedText.gameObject.SetActive(true);
         }
 
-        public void MaskAsPurchased() {
-            _purchaseButton.gameObject.SetActive(false);
-            _ownedButton.gameObject.SetActive(true);
-            _notEnoughGoldButton.gameObject.SetActive(false);
-        }
-
-        public void MaskAsNotEnoughGold() {
-            _purchaseButton.gameObject.SetActive(false);
-            _ownedButton.gameObject.SetActive(false);
-            _notEnoughGoldButton.gameObject.SetActive(true);
-        }
-
-        public void Purchase()
+        public void Inspect()
         {
-            PlayerController.I.OwnCubeSkin(key);
-            PlayerController.I.RemoveGold(data.price);
-            ShopManager.I.UpdateList();
+            ShopManager.I.InspectItem(key);
         }
     }
 }

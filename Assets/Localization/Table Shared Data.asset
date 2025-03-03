@@ -208,15 +208,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 257147047493632
-    m_Key: UI_SHOP_NOT_ENOUGH_GOLD_BUTTON_TEXT
+    m_Key: UI_SHOP_ITEM_NOT_ENOUGH_GOLD_BUTTON_TEXT
     m_Metadata:
       m_Items: []
   - m_Id: 257207147675648
-    m_Key: UI_SHOP_OWNED_BUTTON_TEXT
+    m_Key: UI_SHOP_ITEM_OWNED_BUTTON_TEXT
     m_Metadata:
       m_Items: []
   - m_Id: 261726594121728
-    m_Key: UI_SHOP_PURCHASE_BUTTON_TEXT
+    m_Key: UI_SHOP_ITEM_PURCHASE_BUTTON_TEXT
     m_Metadata:
       m_Items: []
   - m_Id: 52264329531392
@@ -289,6 +289,34 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 4352483596681216
     m_Key: SKIN_CUBE_FIRE_BENDER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4424888258121728
+    m_Key: UI_SHOP_INSPECT_BUTTON_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4430972511309824
+    m_Key: UI_SHOP_ITEM_OWNED_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4437123860779008
+    m_Key: UI_SHOP_ITEM_FREE_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4437568486363136
+    m_Key: UI_SHOP_ITEM_BACK_BUTTON_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4438860659150848
+    m_Key: UI_SETTINGS_COUPON_CODE_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4440006526226432
+    m_Key: UI_SETTINGS_COUPON_CODE_INPUT_PLACEHOLDER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4440537416060928
+    m_Key: UI_SETTINGS_COUPON_CODE_BUTTON_TEXT
     m_Metadata:
       m_Items: []
   m_Metadata:

@@ -36,7 +36,14 @@ namespace Assets.Scripts
         public void OwnCubeSkin(string key)
         {
             var ownedSkins = GetOwnedCubeSkinKeys();
+            if (ownedSkins.Contains(key)) return;
             ownedSkins.Add(key);
+            PlayerPrefs.SetString("PLAYER_OWNED_CUBE_SKINS", string.Join(",", ownedSkins));
+        }
+        public void OwnCubeSkins(List<string> keys)
+        {
+            var ownedSkins = GetOwnedCubeSkinKeys();
+            ownedSkins.AddRange(keys.Where(key => !ownedSkins.Contains(key)));
             PlayerPrefs.SetString("PLAYER_OWNED_CUBE_SKINS", string.Join(",", ownedSkins));
         }
 

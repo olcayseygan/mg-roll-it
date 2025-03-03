@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Assets.Scripts.Patterns.SingletonPattern;
+using Assets.Scripts.StateViews;
 using UnityEngine;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Components;
@@ -32,11 +33,7 @@ namespace Assets.Scripts
                 shopItem.SetPriceText(shopItem.data.GetPrice());
                 if (ownedKeys.Contains(key))
                 {
-                    shopItem.MaskAsPurchased();
-                }
-                else if (PlayerController.I.GetGolds() < shopItem.data.price)
-                {
-                    shopItem.MaskAsNotEnoughGold();
+                    shopItem.ShowOwnedText();
                 }
 
                 _shopItems.Add(shopItem);
@@ -63,19 +60,26 @@ namespace Assets.Scripts
             foreach (var item in _shopItems)
             {
                 var ownedKeys = PlayerController.I.GetOwnedCubeSkinKeys();
-                if (ownedKeys.Contains(item.key))
-                {
-                    item.MaskAsPurchased();
-                }
-                else if (PlayerController.I.GetGolds() < item.data.price)
-                {
-                    item.MaskAsNotEnoughGold();
-                }
-                else
-                {
-                    item.MaskAsDefault();
-                }
+                // if (ownedKeys.Contains(item.key))
+                // {
+                //     item.MaskAsPurchased();
+                // }
+                // else if (PlayerController.I.GetGolds() < item.data.price)
+                // {
+                //     item.MaskAsNotEnoughGold();
+                // }
+                // else
+                // {
+                //     item.MaskAsDefault();
+                // }
             }
+        }
+
+        public void InspectItem(string key)
+        {
+            var shopItem = _shopItems.Find(item => item.key == key);
+            Game.I.StateViewHandler.Get<ShopItemPanel>().LoadShopItem(shopItem);
+            Game.I.StateViewHandler.SwitchTo<ShopItemPanel>();
         }
     }
 }

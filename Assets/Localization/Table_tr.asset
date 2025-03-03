@@ -187,7 +187,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 267017289187328
-    m_Localized: BEDAVA
+    m_Localized: "\xDCCRETS\u0130Z"
     m_Metadata:
       m_Items: []
   - m_Id: 270453757952000
@@ -288,6 +288,34 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 4352483596681216
     m_Localized: "ATE\u015E B\xDCK\xDCC\xDC"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4424888258121728
+    m_Localized: "\u0130NCELE"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4430972511309824
+    m_Localized: "SAH\u0130P"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4437123860779008
+    m_Localized: "\xDCCRETS\u0130Z"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4437568486363136
+    m_Localized: "GER\u0130"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4438860659150848
+    m_Localized: KUPON KODU
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4440006526226432
+    m_Localized: "KODU G\u0130R\u0130N"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4440537416060928
+    m_Localized: "G\u0130R"
     m_Metadata:
       m_Items: []
   references:

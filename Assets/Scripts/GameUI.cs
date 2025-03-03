@@ -18,6 +18,7 @@ namespace Assets.Scripts
         public StateViews.LoadingPanel loadingPanel;
         public StateViews.InventoryPanel inventoryPanel;
         public StateViews.ShopPanel shopPanel;
+        public StateViews.ShopItemPanel shopItemPanel;
         public StateViews.GameOverPanel gameOverPanel;
     }
 }

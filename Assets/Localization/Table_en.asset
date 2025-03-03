@@ -290,6 +290,34 @@ MonoBehaviour:
     m_Localized: FIRE BENDER
     m_Metadata:
       m_Items: []
+  - m_Id: 4424888258121728
+    m_Localized: INSPECT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4430972511309824
+    m_Localized: OWNED
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4437123860779008
+    m_Localized: FREE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4437568486363136
+    m_Localized: BACK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4438860659150848
+    m_Localized: COUPON CODE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4440006526226432
+    m_Localized: ENTER CODE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4440537416060928
+    m_Localized: ENTER
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
