@@ -1,10 +1,19 @@
 using System.Collections;
 using Assets.Scripts.Patterns.StatePattern.Plugins;
+using UnityEngine;
 
 namespace Assets.Scripts.StateViews
 {
     public class InventoryPanel : StateViewPanel
     {
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                BackButton_Click();
+            }
+        }
+
         public override void Show()
         {
             InventoryManager.I.LoadOwnedCubeSkins();

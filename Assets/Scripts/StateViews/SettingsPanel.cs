@@ -17,6 +17,14 @@ namespace Assets.Scripts.StateViews
         [SerializeField] private GameObject _muteButtonGameObject;
         [SerializeField] private GameObject _unmuteButtonGameObject;
 
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                BackButton_Click();
+            }
+        }
+
         public override void Show()
         {
             _graphicsQualityGroup.SetSelectedIndex(PlayerController.I.GetQualityLevelIndex());
