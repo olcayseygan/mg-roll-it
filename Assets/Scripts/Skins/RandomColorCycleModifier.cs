@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Skins
 {
-    public class ColorCycleModifier : MonoBehaviour
+    public class RandomColorCycleModifier : MonoBehaviour
     {
         public List<Color> colors = new();
         [SerializeField] private float _lerpSpeed = 1.0f;
@@ -19,7 +19,7 @@ namespace Assets.Scripts.Skins
             _t = _lerpSpeed;
             if (colors.Count > 1)
             {
-                _nextIndex = 1;
+                _nextIndex = Random.Range(0, colors.Count);
             }
         }
 
@@ -36,7 +36,7 @@ namespace Assets.Scripts.Skins
             {
                 _t = _lerpSpeed;
                 _currentIndex = _nextIndex;
-                _nextIndex = (_nextIndex + 1) % colors.Count;
+                _nextIndex = Random.Range(0, colors.Count);
             }
         }
     }

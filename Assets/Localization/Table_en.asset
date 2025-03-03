@@ -286,6 +286,10 @@ MonoBehaviour:
     m_Localized: OCEAN WAVE
     m_Metadata:
       m_Items: []
+  - m_Id: 4352483596681216
+    m_Localized: FIRE BENDER
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

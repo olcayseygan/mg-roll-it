@@ -17,6 +17,7 @@ namespace Assets.Scripts
         [SerializeField] private bool _isFree;
         [SerializeField] private int _numberOfColors;
         [SerializeField] private bool _isMetallic;
+        [SerializeField] private bool _hasAnimation;
 
         public int GetPrice()
         {
@@ -33,7 +34,12 @@ namespace Assets.Scripts
 
             if (_isMetallic)
             {
-                price *= 2.465f;
+                price *= 1.89f;
+            }
+
+            if (_hasAnimation)
+            {
+                price *= 6.42f;
             }
 
             return (int)price;

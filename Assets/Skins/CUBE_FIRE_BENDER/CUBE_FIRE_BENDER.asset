@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b121e8d9691a44a43876473fdaf2c1e6, type: 3}
+  m_Name: CUBE_FIRE_BENDER
+  m_EditorClassIdentifier: 
+  name: CUBE_FIRE_BENDER
+  prefab: {fileID: 918632457735281269, guid: 1fbf4132a6c89df4eac0066c62293271, type: 3}
+  material: {fileID: 2100000, guid: 3317ca2ffdbc8b54ca774309da6a3f98, type: 2}
+  price: 8050
+  _isFree: 0
+  _numberOfColors: 3
+  _isMetallic: 0
+  _hasAnimation: 1
