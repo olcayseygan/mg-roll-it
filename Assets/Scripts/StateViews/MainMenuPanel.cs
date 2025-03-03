@@ -17,6 +17,25 @@ namespace Assets.Scripts.StateViews
 
         [SerializeField] private Button _gainGoldButton;
 
+        private const float DOUBLE_PRESS_INTERVAL = 0.5f;
+        private float _lastBackPressTime = 0f;
+
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                if (Time.time - _lastBackPressTime < DOUBLE_PRESS_INTERVAL)
+                {
+                    Application.Quit();
+                }
+                else
+                {
+                    _lastBackPressTime = Time.time;
+                }
+            }
+        }
+
         public override void Show()
         {
             _goldsText.text = PlayerController.I.GetGolds().ToString();
