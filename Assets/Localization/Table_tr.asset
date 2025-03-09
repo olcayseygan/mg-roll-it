@@ -207,7 +207,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2109562000490496
-    m_Localized: +20 ALTIN
+    m_Localized: +42 ALTIN
     m_Metadata:
       m_Items: []
   - m_Id: 2138253300580352
@@ -316,6 +316,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 4440537416060928
     m_Localized: "G\u0130R"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6422256608333824
+    m_Localized: "\u0130NCELE"
     m_Metadata:
       m_Items: []
   references:

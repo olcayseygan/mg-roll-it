@@ -26,6 +26,9 @@ namespace Assets.Scripts.States.CubeStates
         private Vector3 _initialEulerAngle = Vector3.zero;
         private Vector3 _targetEulerAngle = Vector3.zero;
 
+        private int _score = 0;
+        private FaceDirection _targetFace;
+
         public override StateTransition<Cube> OnEnter(Cube self)
         {
             _faceDirections[FaceDirection.Forward] = self.modelTransform.forward;
@@ -36,16 +39,18 @@ namespace Assets.Scripts.States.CubeStates
             _faceDirections[FaceDirection.Down] = -self.modelTransform.up;
 
             var groundFace = DetermineMaxDotFace(Vector3.down);
-            var targetFace = DetermineMaxDotFace(self.direction);
+            _targetFace = DetermineMaxDotFace(self.direction);
 
             _initialEulerAngle = new Vector3(0.0f, 0.0f, 0.0f);
             _targetEulerAngle = new Vector3(self.direction.z * 90f, 0.0f, self.direction.x * -90f);
             UpdateTransformWhileKeepingModel(self, () =>
             {
                 var distance = 0.5f;
-                if (targetFace == FaceDirection.Up || targetFace == FaceDirection.Down)
+                _score = 1;
+                if (_targetFace == FaceDirection.Up || _targetFace == FaceDirection.Down)
                 {
                     distance = 1.0f;
+                    _score = 2;
                 }
 
                 self.transform.SetPositionAndRotation(self.lastKnownPosition + self.direction * distance, Quaternion.identity);
@@ -80,22 +85,29 @@ namespace Assets.Scripts.States.CubeStates
             self.lastKnownPosition.x = self.modelTransform.transform.position.x;
             self.lastKnownPosition.y = 0f;
             self.lastKnownPosition.z = self.modelTransform.transform.position.z;
-            Game.I.AddCurrentRunScore(1);
+            Game.I.AddCurrentRunScore(_score);
             GameUI.I.playingPanel.SetScoreText(Game.I.GetCurrentRunScore());
         }
 
         public override StateTransition<Cube> Update(Cube self)
         {
+            var lastVisitedPlatform = PlatformManager.I.GetPlatforms().Find(platform => platform.IsCubeOnMe());
+            if (lastVisitedPlatform == null)
+            {
+                return self.StateProvider.FindState<FellOffState>(new FellOffStateProperties { targetFace = _targetFace });
+            }
+
+            self.lastVisitedPlatform = lastVisitedPlatform;
             _timeElapsed = Mathf.Max(0.0f, _timeElapsed - Time.deltaTime);
-            if (Game.I.playerHasInteracted)
-            {
-                _timeElapsed = Mathf.Min(_timeElapsed, QUICK_MOTION_DURATION * _percentageOfMotion);
-                _percentageOfMotion = _timeElapsed / QUICK_MOTION_DURATION;
-            }
-            else
-            {
-                _percentageOfMotion = _timeElapsed / _motionDuration;
-            }
+            // if (Game.I.playerHasInteracted)
+            // {
+            //     _timeElapsed = Mathf.Min(_timeElapsed, QUICK_MOTION_DURATION * _percentageOfMotion);
+            //     _percentageOfMotion = _timeElapsed / QUICK_MOTION_DURATION;
+            // }
+            // else
+            // {
+            _percentageOfMotion = _timeElapsed / _motionDuration;
+            // }
 
             var t = self.motionCurve.Evaluate(1f - _percentageOfMotion);
             self.transform.rotation = Quaternion.Euler(new Vector3(

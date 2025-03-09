@@ -20,8 +20,8 @@ namespace Assets.Scripts
             // IronSource.Agent.setMetaData("is_test_suite", "enable");
             // IronSource.Agent.setAdaptersDebug(true);
             IronSource.Agent.shouldTrackNetworkState(true);
-            IronSource.Agent.init("2103ecc85", IronSourceAdUnits.REWARDED_VIDEO);
             IronSource.Agent.validateIntegration();
+            IronSource.Agent.init("2103ecc85", PlayerController.I.GetPlayerName(), IronSourceAdUnits.REWARDED_VIDEO);
         }
 
         private void RegisterRewardedVideoEvents()
@@ -48,7 +48,6 @@ namespace Assets.Scripts
         {
             if (!CheckRewardedVideoAvailability(placementName))
             {
-                Debug.Log("Rewarded video not available");
                 return;
             }
 
@@ -57,7 +56,10 @@ namespace Assets.Scripts
 
         private void RewardedVideoOnAdAvailable(IronSourceAdInfo adInfo)
         {
-            Debug.Log("Rewarded video ad available: " + adInfo.adUnit);
+            if (adInfo.adUnit == IronSourceAdUnits.REWARDED_VIDEO)
+            {
+                Game.I.StateViewHandler.Get<MainMenuPanel>().UpdateGaingGoldButtonInteractable();
+            }
         }
 
         private void RewardedVideoOnAdUnavailable()
@@ -88,7 +90,7 @@ namespace Assets.Scripts
                     break;
 
                 case "Home_Screen__Gain_Gold":
-                    PlayerController.I.AddGold(20);
+                    PlayerController.I.AddGold(42);
                     Game.I.StateViewHandler.Get<MainMenuPanel>().SetGoldsText(PlayerController.I.GetGolds());
                     Game.I.StateViewHandler.Get<MainMenuPanel>().UpdateGaingGoldButtonInteractable();
                     break;

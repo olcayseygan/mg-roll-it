@@ -13,6 +13,12 @@ namespace Assets.Scripts.States.GameStates
         {
             Game.I.StateViewHandler.SwitchTo<LoadingPanel>();
 
+            if (PlayerController.I.GetFirstTime())
+            {
+                PlayerController.I.SetFirstTime(false);
+                var uuid = System.Guid.NewGuid().ToString();
+                PlayerController.I.SetPlayerName(uuid);
+            }
 
             LevelPlayManager.I.Initialize();
 

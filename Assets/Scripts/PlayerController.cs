@@ -10,6 +10,12 @@ namespace Assets.Scripts
     {
         private readonly float[] _initialSpeeds = new float[] { 0.175f, 0.125f, 0.075f };
 
+        public string GetPlayerName() => PlayerPrefs.GetString("PLAYER_NAME", "Unknown Player");
+        public void SetPlayerName(string name) => PlayerPrefs.SetString("PLAYER_NAME", name);
+
+        public bool GetFirstTime() => PlayerPrefs.GetInt("PLAYER_FIRST_TIME", 1) == 1;
+        public void SetFirstTime(bool isFirstTime) => PlayerPrefs.SetInt("PLAYER_FIRST_TIME", isFirstTime ? 1 : 0);
+
         public void SetGolds(int amount) => PlayerPrefs.SetInt("PLAYER_GOLDS", amount);
         public int GetGolds() => PlayerPrefs.GetInt("PLAYER_GOLDS", 0);
         public void AddGold(int amount) => SetGolds(GetGolds() + amount);

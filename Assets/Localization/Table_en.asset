@@ -207,7 +207,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2109562000490496
-    m_Localized: +20 GOLD
+    m_Localized: +42 GOLD
     m_Metadata:
       m_Items: []
   - m_Id: 2138253300580352
@@ -316,6 +316,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 4440537416060928
     m_Localized: ENTER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6422256608333824
+    m_Localized: INSPECT
     m_Metadata:
       m_Items: []
   references:

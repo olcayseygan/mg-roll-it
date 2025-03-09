@@ -4,10 +4,11 @@ using TMPro;
 using UnityEngine.Localization.Components;
 using UnityEngine.Localization;
 using UnityEngine.UI;
+using Assets.Scripts.StateViews;
 
-namespace Assets.Scripts.StateViews
+namespace Assets.Scripts
 {
-    public class ShopItemPanel : StateViewPanel
+    public class ShopItemInspector : MonoBehaviour
     {
         [SerializeField] private TMP_Text _titleText;
         [SerializeField] private TMP_Text _nameText;
@@ -28,30 +29,22 @@ namespace Assets.Scripts.StateViews
 
         private GameObject _cubeGameObject;
 
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                BackButton_Click();
-            }
-        }
-
-        public override void Show()
+        public void Show()
         {
             _showcaseGameObject.SetActive(true);
-            base.Show();
+            gameObject.SetActive(true);
         }
 
-        public override void Hide()
+        public void Hide()
         {
             _showcaseGameObject.SetActive(false);
             Destroy(_cubeGameObject);
-            base.Hide();
+            gameObject.SetActive(false);
         }
 
         public void BackButton_Click()
         {
-            Game.I.StateViewHandler.SwitchTo<ShopPanel>();
+            Hide();
         }
 
 
@@ -86,9 +79,7 @@ namespace Assets.Scripts.StateViews
         public void LoadShopItem(ShopItem shopItem)
         {
             _shopItem = shopItem;
-            var stringEvent = _titleText.GetComponent<LocalizeStringEvent>();
-            stringEvent.StringReference = new LocalizedString { TableReference = "Table", TableEntryReference = $"SKIN_{shopItem.data.name}" };
-            stringEvent = _nameText.GetComponent<LocalizeStringEvent>();
+            var stringEvent = _nameText.GetComponent<LocalizeStringEvent>();
             stringEvent.StringReference = new LocalizedString { TableReference = "Table", TableEntryReference = $"SKIN_{shopItem.data.name}" };
             var price = shopItem.data.GetPrice();
             if (price == 0)

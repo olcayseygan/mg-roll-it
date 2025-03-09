@@ -319,6 +319,10 @@ MonoBehaviour:
     m_Key: UI_SETTINGS_COUPON_CODE_BUTTON_TEXT
     m_Metadata:
       m_Items: []
+  - m_Id: 6422256608333824
+    m_Key: UI_SHOP_ITEM_INSPECTOR_TITLE
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

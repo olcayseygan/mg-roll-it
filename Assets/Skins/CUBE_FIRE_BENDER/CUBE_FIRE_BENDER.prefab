@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7404342962992307980}
   - component: {fileID: 1838898216421855832}
-  - component: {fileID: 6418553037994005137}
   m_Layer: 0
   m_Name: CUBE_FIRE_BENDER
   m_TagString: Player
@@ -77,25 +76,8 @@ MonoBehaviour:
   direction: {x: 1, y: 0, z: 0}
   lastKnownPosition: {x: 0, y: 0, z: 0}
   modelTransform: {fileID: 7676407792814863724}
+  modelRigidbody: {fileID: 0}
   lastVisitedPlatform: {fileID: 0}
---- !u!114 &6418553037994005137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 918632457735281269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92c6cf7068a0e334c8b43b5e155c22b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colors:
-  - {r: 0, g: 0, b: 0, a: 1}
-  - {r: 0.54509807, g: 0, b: 0, a: 1}
-  - {r: 0.8, g: 0.2164706, b: 0, a: 1}
-  _lerpSpeed: 1
-  _meshRenderer: {fileID: 7863060293021140279}
 --- !u!1 &2671960119788632831
 GameObject:
   m_ObjectHideFlags: 0
@@ -1621,19 +1603,19 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0, g: 0, b: 0, a: 1}
-        key1: {r: 0.54509807, g: 0, b: 0, a: 1}
-        key2: {r: 1, g: 0.27058825, b: 0, a: 0}
-        key3: {r: 1, g: 0.64705884, b: 0, a: 0}
-        key4: {r: 1, g: 1, b: 0, a: 0}
+        key0: {r: 0.69803923, g: 0.13333334, b: 0.13333334, a: 1}
+        key1: {r: 1, g: 0.27058825, b: 0, a: 1}
+        key2: {r: 1, g: 0.84313726, b: 0, a: 0}
+        key3: {r: 1, g: 1, b: 1, a: 0}
+        key4: {r: 1, g: 1, b: 1, a: 0}
         key5: {r: 1, g: 1, b: 1, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 13107
-        ctime2: 26214
-        ctime3: 39321
-        ctime4: 52428
+        ctime1: 32768
+        ctime2: 65535
+        ctime3: 65535
+        ctime4: 65535
         ctime5: 65535
         ctime6: 0
         ctime7: 0
@@ -1646,8 +1628,8 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
-        m_ColorSpace: -1
-        m_NumColorKeys: 6
+        m_ColorSpace: 0
+        m_NumColorKeys: 3
         m_NumAlphaKeys: 2
       minGradient:
         serializedVersion: 2

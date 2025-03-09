@@ -17,6 +17,8 @@ namespace Assets.Scripts
 
         public GameObject cubePrefab;
 
+        public GameObject deathEffectPrefab;
+
         public new Camera camera;
         public Vector3 cameraOffset;
         public Vector3 cameraTargetOffset;
@@ -48,12 +50,6 @@ namespace Assets.Scripts
 
         protected override void Awake()
         {
-            if (false)
-            {
-                Application.logMessageReceivedThreaded += HandleLog;
-                GameUI.I.debugPanel.SetActive(true);
-            }
-
             base.Awake();
             StateProvider = new StateProvider<Game>(this);
             StateProvider.RegisterState(new States.GameStates.CleaningState());
@@ -73,7 +69,6 @@ namespace Assets.Scripts
             StateViewHandler.RegisterStateViewPanel(GameUI.I.inventoryPanel);
             StateViewHandler.RegisterStateViewPanel(GameUI.I.shopPanel);
             StateViewHandler.RegisterStateViewPanel(GameUI.I.gameOverPanel);
-            StateViewHandler.RegisterStateViewPanel(GameUI.I.shopItemPanel);
 
             StateProvider.SwitchTo<States.GameStates.LoadingState>();
         }

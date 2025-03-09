@@ -19,6 +19,7 @@ namespace Assets.Scripts
         [HideInInspector] public Vector3 lastKnownPosition = Vector3.zero;
 
         public Transform modelTransform;
+        [HideInInspector] public Rigidbody modelRigidbody;
 
         [HideInInspector] public Platform lastVisitedPlatform;
 
@@ -27,6 +28,7 @@ namespace Assets.Scripts
         protected override void Awake()
         {
             base.Awake();
+            modelRigidbody = GetComponentInChildren<Rigidbody>();
             layerMask = LayerMask.GetMask("Cube");
             StateProvider = new StateProvider<Cube>(this);
             StateProvider.RegisterState(new States.CubeStates.IdleState());

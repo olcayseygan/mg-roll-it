@@ -15,8 +15,8 @@ MonoBehaviour:
   name: CUBE_FIRE_BENDER
   prefab: {fileID: 918632457735281269, guid: 1fbf4132a6c89df4eac0066c62293271, type: 3}
   material: {fileID: 2100000, guid: 3317ca2ffdbc8b54ca774309da6a3f98, type: 2}
-  price: 8050
+  price: 2818
   _isFree: 0
-  _numberOfColors: 3
+  _numberOfColors: 1
   _isMetallic: 0
   _hasAnimation: 1

@@ -33,7 +33,7 @@ namespace Assets.Scripts.States.GameStates
         {
             if (Cube.I.StateProvider.IsInState<CubeStates.FellOffState>())
             {
-                return self.StateProvider.FindState<GameOverState>();
+                return base.Update(self);
             }
 
             if (Input.GetMouseButtonDown(0))

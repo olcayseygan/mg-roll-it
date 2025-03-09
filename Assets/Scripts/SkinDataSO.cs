@@ -29,7 +29,7 @@ namespace Assets.Scripts
             var price = 259.8f;
             if (_numberOfColors > 0)
             {
-                price *= Mathf.Pow(1.69f, _numberOfColors);
+                price *= 1.69f * _numberOfColors;
             }
 
             if (_isMetallic)

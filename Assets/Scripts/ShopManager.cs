@@ -78,8 +78,9 @@ namespace Assets.Scripts
         public void InspectItem(string key)
         {
             var shopItem = _shopItems.Find(item => item.key == key);
-            Game.I.StateViewHandler.Get<ShopItemPanel>().LoadShopItem(shopItem);
-            Game.I.StateViewHandler.SwitchTo<ShopItemPanel>();
+            var shopPanel = Game.I.StateViewHandler.Get<ShopPanel>();
+            shopPanel.shopItemInspector.LoadShopItem(shopItem);
+            shopPanel.shopItemInspector.Show();
         }
     }
 }
