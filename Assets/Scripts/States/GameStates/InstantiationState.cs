@@ -22,6 +22,7 @@ namespace Assets.Scripts.States.GameStates
             Game.I.StateViewHandler.Get<PlayingPanel>().SetScoreText(0);
             Game.I.StateViewHandler.Get<PlayingPanel>().SetGoldText(PlayerController.I.GetGolds(), 0);
             self.isContinuationEnabled = true;
+            self.hasUsedDoubleGold = false;
             self.ResetCurrentRun();
             if (properties.canSkipToPlaying)
             {

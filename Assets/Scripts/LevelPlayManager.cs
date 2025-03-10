@@ -82,9 +82,11 @@ namespace Assets.Scripts
             switch (placement.getPlacementName())
             {
                 case "Game_Over__Continue":
+                    Game.I.isContinuationEnabled = false;
                     Game.I.StateProvider.SwitchTo<States.GameStates.ContinueState>();
                     break;
                 case "Game_Over__Double_Gold":
+                    Game.I.hasUsedDoubleGold = true;
                     PlayerController.I.AddGold(Game.I.GetCurrentRunGolds());
                     Game.I.StateViewHandler.Get<GameOverPanel>().SetGoldsText(PlayerController.I.GetGolds());
                     break;

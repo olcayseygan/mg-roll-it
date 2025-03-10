@@ -71,7 +71,7 @@ namespace Assets.Scripts
             QualitySettings.SetQualityLevel(index);
         }
 
-        public int GetQualityLevelIndex() => PlayerPrefs.GetInt("PLAYER_QUALITY_LEVEL", 2);
+        public int GetQualityLevelIndex() => PlayerPrefs.GetInt("PLAYER_QUALITY_LEVEL", 1);
 
         public void SetSFXToggle(bool isOn) => PlayerPrefs.SetInt("PLAYER_SFX_TOGGLE", isOn ? 1 : 0);
         public bool GetSFXToggle() => PlayerPrefs.GetInt("PLAYER_SFX_TOGGLE", 1) == 1;

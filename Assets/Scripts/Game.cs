@@ -28,6 +28,7 @@ namespace Assets.Scripts
         public Vector3 spotlightOffset;
 
         public bool isContinuationEnabled = true;
+        public bool hasUsedDoubleGold = false;
 
 
         public GameObject puppy;
@@ -147,6 +148,7 @@ namespace Assets.Scripts
         private int _currentRunGolds = 0;
         public int GetCurrentRunGolds() => _currentRunGolds;
         public void AddCurrentRunGolds(int amount) => _currentRunGolds += amount;
+
 
         public void ResetCurrentRun()
         {

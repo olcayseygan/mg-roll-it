@@ -6,7 +6,6 @@ namespace Assets.Scripts.States.GameStates
 {
     public class GameOverState : State<Game>
     {
-
         public override StateTransition<Game> OnEnter(Game self)
         {
             PlayerController.I.SetHighScoreIfHigher(self.GetCurrentRunScore());
@@ -21,7 +20,7 @@ namespace Assets.Scripts.States.GameStates
                 GameUI.I.gameOverPanel.HideContinueButton();
             }
 
-            if (self.GetCurrentRunGolds() > 0 && LevelPlayManager.I.CheckRewardedVideoAvailability("Game_Over__Double_Gold"))
+            if (self.GetCurrentRunGolds() > 0 && !self.hasUsedDoubleGold && LevelPlayManager.I.CheckRewardedVideoAvailability("Game_Over__Double_Gold"))
             {
                 GameUI.I.gameOverPanel.ShowDoubleGoldButton();
             }
