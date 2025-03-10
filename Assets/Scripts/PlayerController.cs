@@ -63,7 +63,7 @@ namespace Assets.Scripts
             PlayerPrefs.SetString("PLAYER_OWNED_CUBE_SKINS", string.Join(",", ownedSkins));
         }
 
-        public List<string> GetAllSkinKeys() => SkinManager.I.skinCollection.collection.Select(pair => pair.key).ToList();
+        public List<string> GetAllSkinKeys() => SkinManager.I.skinCollection.collection.Where(pair => pair.canBePurchased).Select(pair => pair.key).ToList();
 
         public void SetQualityLevel(int index)
         {

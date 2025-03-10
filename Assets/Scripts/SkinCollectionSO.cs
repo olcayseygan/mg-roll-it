@@ -9,6 +9,7 @@ namespace Assets.Scripts
     {
         public string key;
         public SkinDataSO data;
+        public bool canBePurchased = true;
     }
 
     [CreateAssetMenu(fileName = "Skin Collection", menuName = "ScriptableObjects/Skin Collection", order = 1)]

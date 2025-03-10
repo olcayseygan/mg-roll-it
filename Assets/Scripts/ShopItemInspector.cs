@@ -74,6 +74,7 @@ namespace Assets.Scripts
             PlayerController.I.OwnCubeSkin(_shopItem.key);
             PlayerController.I.RemoveGold(_shopItem.data.GetPrice());
             MaskAsPurchased();
+            _shopItem.ShowOwnedText();
         }
 
         public void LoadShopItem(ShopItem shopItem)

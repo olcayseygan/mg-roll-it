@@ -15,45 +15,67 @@ MonoBehaviour:
   collection:
   - key: 0
     data: {fileID: 11400000, guid: a5c058770aaa1f941ae744209ef91580, type: 2}
+    canBePurchased: 1
   - key: 1
     data: {fileID: 11400000, guid: f5b956b079871a64c8d7845c3b0a376a, type: 2}
+    canBePurchased: 1
   - key: 2
     data: {fileID: 11400000, guid: a2137ff0e82ce11409c808b77d5f4188, type: 2}
+    canBePurchased: 1
   - key: 3
     data: {fileID: 11400000, guid: 92f4c8a2296923348be81b4fdf08d5c6, type: 2}
+    canBePurchased: 1
   - key: 4
     data: {fileID: 11400000, guid: f0a648fd69070be48bb8a890f4a021aa, type: 2}
+    canBePurchased: 1
   - key: 5
     data: {fileID: 11400000, guid: 9e4cb95954201a445bfdf977243f77f9, type: 2}
+    canBePurchased: 1
   - key: 6
     data: {fileID: 11400000, guid: 582588fe22dd33d4186276070bd6cad4, type: 2}
+    canBePurchased: 1
   - key: 7
     data: {fileID: 11400000, guid: b103a4168f8053e48b4c37c72b0c9235, type: 2}
+    canBePurchased: 1
   - key: 8
     data: {fileID: 11400000, guid: 0c94fe3b8d0378f41a8e0589da4d043d, type: 2}
+    canBePurchased: 0
   - key: 9
     data: {fileID: 11400000, guid: 348dc646581d4ed45ad01514b6b0e60b, type: 2}
+    canBePurchased: 0
   - key: 10
     data: {fileID: 11400000, guid: 557e5db8c88bd3f4ba493ca87f56b9d3, type: 2}
+    canBePurchased: 0
   - key: 11
     data: {fileID: 11400000, guid: 31e3824856d18084294c70e1cb07c22b, type: 2}
+    canBePurchased: 0
   - key: 12
     data: {fileID: 11400000, guid: 9b738fd6a0f9d874f8f874200f5cb5af, type: 2}
+    canBePurchased: 1
   - key: 13
     data: {fileID: 11400000, guid: 3798d7a2006a07c418fda9233cee88de, type: 2}
+    canBePurchased: 1
   - key: 14
     data: {fileID: 11400000, guid: a146b7a9668793049a5fb9f132340f73, type: 2}
+    canBePurchased: 1
   - key: 15
     data: {fileID: 11400000, guid: f5f1739a55fc3db44acbc4a82a4ac2ce, type: 2}
+    canBePurchased: 1
   - key: 16
     data: {fileID: 11400000, guid: a55833295e28e3841b3aad39652929fa, type: 2}
+    canBePurchased: 0
   - key: 17
     data: {fileID: 11400000, guid: 20784bfd0780cc74cba3621b7eb85148, type: 2}
+    canBePurchased: 1
   - key: 18
     data: {fileID: 11400000, guid: 46304b03bec19bf4194ec6429d362548, type: 2}
+    canBePurchased: 1
   - key: 19
     data: {fileID: 11400000, guid: 617c59f0c44ab384da3a38a86f3362a8, type: 2}
+    canBePurchased: 1
   - key: 20
     data: {fileID: 11400000, guid: 41a2bb96ca35cd64b800c61249fda8e2, type: 2}
+    canBePurchased: 1
   - key: 21
     data: {fileID: 11400000, guid: 1ed46c514ee3dbf4a9e03f40f84b42e7, type: 2}
+    canBePurchased: 1

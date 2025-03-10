@@ -11,7 +11,7 @@ namespace Assets.Scripts.States.CubeStates
 
     public class FellOffState : State<Cube, FellOffStateProperties>
     {
-        private const float DURATION = 1f;
+        private const float DURATION = 1.5f;
         private float _timer = DURATION;
 
         private GameObject _deathEffectGameObject;
@@ -21,7 +21,7 @@ namespace Assets.Scripts.States.CubeStates
             AudioManager.I.PlaySFX(AudioManager.I.cubeDeathClip);
             _timer = DURATION;
             _deathEffectGameObject = Object.Instantiate(Game.I.deathEffectPrefab, self.modelTransform.position, self.modelTransform.rotation);
-            self.modelTransform.gameObject.SetActive(false);
+            ChangeAllChildrenActivity(self, false);
             return base.OnEnter(self);
         }
 
@@ -39,10 +39,18 @@ namespace Assets.Scripts.States.CubeStates
                 Game.I.StateProvider.SwitchTo<GameStates.GameOverState>();
                 Object.Destroy(_deathEffectGameObject);
                 _timer = DURATION;
-                self.modelTransform.gameObject.SetActive(true);
+                ChangeAllChildrenActivity(self, true);
             }
 
             return base.Update(self);
+        }
+
+        private void ChangeAllChildrenActivity(Cube self, bool active)
+        {
+            foreach (Transform child in self.transform)
+            {
+                child.gameObject.SetActive(active);
+            }
         }
     }
 }

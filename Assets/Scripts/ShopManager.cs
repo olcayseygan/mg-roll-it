@@ -26,6 +26,7 @@ namespace Assets.Scripts
             foreach (var key in PlayerController.I.GetAllSkinKeys())
             {
                 var shopItem = Instantiate(_shopItemPrefab, _contentTranform).GetComponent<ShopItem>();
+
                 shopItem.key = key;
                 shopItem.data = SkinManager.I.GetSkinData(key);
                 var stringEvent = shopItem.GetNameText().GetComponent<LocalizeStringEvent>();
