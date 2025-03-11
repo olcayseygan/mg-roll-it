@@ -8,9 +8,6 @@ namespace Assets.Scripts
     {
         public StateProvider<GameUI> StateProvider;
 
-        public GameObject debugPanel;
-        public TMPro.TMP_Text debugText;
-
         public StateViews.MainMenuPanel mainMenuPanel;
         public StateViews.SettingsPanel settingsPanel;
         public StateViews.PlayingPanel playingPanel;

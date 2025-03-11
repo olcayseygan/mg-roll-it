@@ -17,7 +17,7 @@ namespace Assets.Scripts.States.CubeStates
 
     public class MotionState : State<Cube>
     {
-        private const float QUICK_MOTION_DURATION = 0.075f;
+        private const float QUICK_MOTION_DURATION = 0.100f;
         private readonly Dictionary<FaceDirection, Vector3> _faceDirections = new();
         private float _timeElapsed = 0.0f;
         private float _motionDuration = 0.0f;
@@ -56,9 +56,12 @@ namespace Assets.Scripts.States.CubeStates
                 self.transform.SetPositionAndRotation(self.lastKnownPosition + self.direction * distance, Quaternion.identity);
             });
 
+            Game.I.speed = Mathf.Clamp(Game.I.speed - Game.SPEED_DECREASING_RATE, Game.MIN_SPEED, Game.I.maxSpeed);
             _motionDuration = Game.I.speed;
+            Debug.Log($"Motion duration: {_motionDuration}");
             _percentageOfMotion = 1.0f;
             _timeElapsed = _motionDuration;
+
             return base.OnEnter(self);
         }
 
@@ -99,15 +102,15 @@ namespace Assets.Scripts.States.CubeStates
 
             self.lastVisitedPlatform = lastVisitedPlatform;
             _timeElapsed = Mathf.Max(0.0f, _timeElapsed - Time.deltaTime);
-            // if (Game.I.playerHasInteracted)
-            // {
-            //     _timeElapsed = Mathf.Min(_timeElapsed, QUICK_MOTION_DURATION * _percentageOfMotion);
-            //     _percentageOfMotion = _timeElapsed / QUICK_MOTION_DURATION;
-            // }
-            // else
-            // {
-            _percentageOfMotion = _timeElapsed / _motionDuration;
-            // }
+            if (Game.I.playerHasInteracted)
+            {
+                _timeElapsed = Mathf.Min(_timeElapsed, QUICK_MOTION_DURATION * _percentageOfMotion);
+                _percentageOfMotion = _timeElapsed / QUICK_MOTION_DURATION;
+            }
+            else
+            {
+                _percentageOfMotion = _timeElapsed / _motionDuration;
+            }
 
             var t = self.motionCurve.Evaluate(1f - _percentageOfMotion);
             self.transform.rotation = Quaternion.Euler(new Vector3(

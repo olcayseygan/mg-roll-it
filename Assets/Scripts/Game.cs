@@ -33,18 +33,11 @@ namespace Assets.Scripts
 
         public GameObject puppy;
 
-        public RewardedAd rewardedAd;
-
         public bool playerHasInteracted = false;
 
-        public GameObject adsSuccessObject;
-        public GameObject adsFailObject;
-        public TMPro.TMP_Text adsFailText;
-
-
         public float maxSpeed = 0.175f;
-        private const float MIN_SPEED = 0.075f;
-        private const float SPEED_DECREASING_RATE = 0.001f;
+        public const float MIN_SPEED = 0.125f;
+        public const float SPEED_DECREASING_RATE = 0.00001f;
         [HideInInspector] public float speed;
 
 
@@ -81,15 +74,6 @@ namespace Assets.Scripts
             Debug.Log(PlayerData.Serialize());
         }
 
-        private void HandleLog(string logString, string stackTrace, LogType type)
-        {
-            string colorTag = type == LogType.Error ? "<color=red>" :
-                type == LogType.Warning ? "<color=yellow>" :
-                "<color=black>";
-            string formattedMessage = $"{colorTag}{logString}{stackTrace}</color>\n";
-            GameUI.I.debugText.text += formattedMessage;
-        }
-
         private void Update()
         {
             if (Input.GetMouseButtonDown(0))
@@ -109,7 +93,6 @@ namespace Assets.Scripts
                 spotlightTransform.position = Vector3.Lerp(spotlightTransform.position, smoothPosition + spotlightOffset, Time.deltaTime * LERP_SPEED);
                 puppy.transform.position = Vector3.Lerp(puppy.transform.position, smoothPosition, Time.deltaTime * PUPPY_SPEED);
 
-                speed = Mathf.Clamp(speed - SPEED_DECREASING_RATE * Time.deltaTime, MIN_SPEED, maxSpeed);
             }
 
             StateProvider.Update();

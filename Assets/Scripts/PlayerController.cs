@@ -8,7 +8,7 @@ namespace Assets.Scripts
 {
     public class PlayerController : SingletonProvider<PlayerController>
     {
-        private readonly float[] _initialSpeeds = new float[] { 0.175f, 0.125f, 0.075f };
+        private readonly float[] _initialSpeeds = new float[] { 0.175f, 0.150f, 0.125f };
 
         public string GetPlayerName() => PlayerPrefs.GetString("PLAYER_NAME", "Unknown Player");
         public void SetPlayerName(string name) => PlayerPrefs.SetString("PLAYER_NAME", name);
