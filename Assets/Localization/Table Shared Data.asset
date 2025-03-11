@@ -323,6 +323,10 @@ MonoBehaviour:
     m_Key: UI_SHOP_ITEM_INSPECTOR_TITLE
     m_Metadata:
       m_Items: []
+  - m_Id: 7226844166995968
+    m_Key: SKIN_CUBE_WATER_BENDER
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

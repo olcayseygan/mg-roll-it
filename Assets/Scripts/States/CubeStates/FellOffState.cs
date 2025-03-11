@@ -49,7 +49,21 @@ namespace Assets.Scripts.States.CubeStates
         {
             foreach (Transform child in self.transform)
             {
-                child.gameObject.SetActive(active);
+                if (child.TryGetComponent<ParticleSystem>(out var particleSystem))
+                {
+                    if (active)
+                    {
+                        particleSystem.Play();
+                    }
+                    else
+                    {
+                        particleSystem.Stop();
+                    }
+                }
+                else
+                {
+                    child.gameObject.SetActive(active);
+                }
             }
         }
     }

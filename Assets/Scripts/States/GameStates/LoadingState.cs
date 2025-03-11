@@ -35,7 +35,7 @@ namespace Assets.Scripts.States.GameStates
         private IEnumerator OnEnterCoroutine(Game self)
         {
             yield return LocalizationSettings.InitializationOperation;
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(1.5f);
             self.StateProvider.SwitchTo<InstantiationState>(new InstantiationStateProperties() { canSkipToPlaying = false });
         }
     }

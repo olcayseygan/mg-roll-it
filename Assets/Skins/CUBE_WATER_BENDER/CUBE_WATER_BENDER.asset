@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b121e8d9691a44a43876473fdaf2c1e6, type: 3}
-  m_Name: CURE_WATER_BENDER
+  m_Name: CUBE_WATER_BENDER
   m_EditorClassIdentifier: 
-  name: CURE_WATER_BENDER
+  name: CUBE_WATER_BENDER
   prefab: {fileID: 918632457735281269, guid: 8ace24514221fde44a046aedf057a435, type: 3}
   material: {fileID: 2100000, guid: a2bd03cf30faa7b4b8b500c548eb8545, type: 2}
-  price: 0
+  price: 2818
   _isFree: 0
-  _numberOfColors: 0
+  _numberOfColors: 1
   _isMetallic: 0
-  _hasAnimation: 0
+  _hasAnimation: 1

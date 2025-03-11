@@ -79,3 +79,6 @@ MonoBehaviour:
   - key: 21
     data: {fileID: 11400000, guid: 1ed46c514ee3dbf4a9e03f40f84b42e7, type: 2}
     canBePurchased: 1
+  - key: 22
+    data: {fileID: 11400000, guid: e7ad8d5f2c0ad664db70083f7cdd4ea6, type: 2}
+    canBePurchased: 1

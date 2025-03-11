@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Assets.Scripts.Patterns.StatePattern;
 using UnityEngine;
 
@@ -58,7 +59,6 @@ namespace Assets.Scripts.States.CubeStates
 
             Game.I.speed = Mathf.Clamp(Game.I.speed - Game.SPEED_DECREASING_RATE, Game.MIN_SPEED, Game.I.maxSpeed);
             _motionDuration = Game.I.speed;
-            Debug.Log($"Motion duration: {_motionDuration}");
             _percentageOfMotion = 1.0f;
             _timeElapsed = _motionDuration;
 
@@ -94,7 +94,7 @@ namespace Assets.Scripts.States.CubeStates
 
         public override StateTransition<Cube> Update(Cube self)
         {
-            var lastVisitedPlatform = PlatformManager.I.GetPlatforms().Find(platform => platform.IsCubeOnMe());
+            var lastVisitedPlatform = PlatformManager.I.GetPlatforms().Where(platform => Vector3.Distance(platform.transform.position, self.transform.position) < 10f).ToList().Find(platform => platform.IsCubeOnMe());
             if (lastVisitedPlatform == null)
             {
                 return self.StateProvider.FindState<FellOffState>(new FellOffStateProperties { targetFace = _targetFace });

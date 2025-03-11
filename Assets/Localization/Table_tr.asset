@@ -322,6 +322,10 @@ MonoBehaviour:
     m_Localized: "\u0130NCELE"
     m_Metadata:
       m_Items: []
+  - m_Id: 7226844166995968
+    m_Localized: "SU B\xDCK\xDCC\xDC"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
