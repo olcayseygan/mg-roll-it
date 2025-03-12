@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7404342962992307980}
   - component: {fileID: 1838898216421855832}
   m_Layer: 0
-  m_Name: CURE_AIR_BENDER
+  m_Name: CUBE_AIR_BENDER
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

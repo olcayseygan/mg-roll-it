@@ -326,6 +326,10 @@ MonoBehaviour:
     m_Localized: "SU B\xDCK\xDCC\xDC"
     m_Metadata:
       m_Items: []
+  - m_Id: 7506047617712128
+    m_Localized: REKLAM
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

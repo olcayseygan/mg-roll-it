@@ -327,6 +327,10 @@ MonoBehaviour:
     m_Key: SKIN_CUBE_WATER_BENDER
     m_Metadata:
       m_Items: []
+  - m_Id: 7506047617712128
+    m_Key: UI_ADS_TEXT
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

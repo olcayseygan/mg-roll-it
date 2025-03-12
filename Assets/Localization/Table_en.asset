@@ -326,6 +326,10 @@ MonoBehaviour:
     m_Localized: WATER BENDER
     m_Metadata:
       m_Items: []
+  - m_Id: 7506047617712128
+    m_Localized: ADS
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

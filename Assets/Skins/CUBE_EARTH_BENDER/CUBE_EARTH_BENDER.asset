@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b121e8d9691a44a43876473fdaf2c1e6, type: 3}
-  m_Name: CURE_AIR_BENDER
+  m_Name: CUBE_EARTH_BENDER
   m_EditorClassIdentifier: 
-  name: CURE_AIR_BENDER
-  prefab: {fileID: 918632457735281269, guid: c61a094e08af93243a360aa3911a9729, type: 3}
-  material: {fileID: 2100000, guid: 86e2de3cd151b284da7e6ca81b9f2464, type: 2}
+  name: CURE_EARTH_BENDER
+  prefab: {fileID: 918632457735281269, guid: 9a0b8ea9aa3c8014bb6d913bc92f0ca5, type: 3}
+  material: {fileID: 2100000, guid: 4dc3c99f5f277044087db1c5d2c31c8f, type: 2}
   price: 0
   _isFree: 0
   _numberOfColors: 0
