@@ -69,13 +69,13 @@ MonoBehaviour:
     canBePurchased: 1
   - key: 18
     data: {fileID: 11400000, guid: 46304b03bec19bf4194ec6429d362548, type: 2}
-    canBePurchased: 1
+    canBePurchased: 0
   - key: 19
     data: {fileID: 11400000, guid: 617c59f0c44ab384da3a38a86f3362a8, type: 2}
-    canBePurchased: 1
+    canBePurchased: 0
   - key: 20
     data: {fileID: 11400000, guid: 41a2bb96ca35cd64b800c61249fda8e2, type: 2}
-    canBePurchased: 1
+    canBePurchased: 0
   - key: 21
     data: {fileID: 11400000, guid: 1ed46c514ee3dbf4a9e03f40f84b42e7, type: 2}
     canBePurchased: 1
