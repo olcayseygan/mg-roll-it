@@ -22,11 +22,11 @@ namespace Assets.Scripts.States.GameStates
             LevelPlayManager.I.Initialize();
             AudioManager.I.LoadAudioSettings();
             // PlayGamesPlatform.Activate();
-            // PlayGamesPlatform.Instance.Authenticate((status) =>
-            // {
-            //     Debug.Log("PlayGamesPlatform authentication");
-            //     Debug.Log(status.ToString());
-            // });
+            PlayGamesPlatform.Instance.Authenticate((status) =>
+            {
+                Debug.Log("PlayGamesPlatform authentication");
+                Debug.Log(status.ToString());
+            });
 
             self.StartCoroutine(OnEnterCoroutine(self));
             return base.OnEnter(self);

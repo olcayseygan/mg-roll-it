@@ -6,6 +6,8 @@ using TMPro;
 using UnityEngine.UI;
 using Assets.Scripts.Patterns.StatePattern.Plugins;
 using Assets.Scripts.States.GameStates;
+using GooglePlayGames;
+using GooglePlayGames.BasicApi;
 
 namespace Assets.Scripts.StateViews
 {
@@ -78,6 +80,28 @@ namespace Assets.Scripts.StateViews
         public void GainGoldButton_Click()
         {
             LevelPlayManager.I.ShowRewardedVideo("Home_Screen__Gain_Gold");
+        }
+
+        public void SignInButton_Click()
+        {
+            PlayGamesPlatform.Instance.Authenticate((status) =>
+            {
+                Debug.Log("PlayGamesPlatform authentication");
+                switch(status)  {
+                    case SignInStatus.Success:
+                        Debug.Log("Success");
+                        break;
+                    case SignInStatus.InternalError:
+                        Debug.Log("InternalError");
+                        break;
+                    case SignInStatus.Canceled:
+                        Debug.Log("Canceled");
+                        break;
+                    default:
+                        Debug.Log("Unknown");
+                        break;
+                }
+            });
         }
     }
 }
