@@ -331,6 +331,24 @@ MonoBehaviour:
     m_Key: UI_ADS_TEXT
     m_Metadata:
       m_Items: []
+  - m_Id: 8447537116336128
+    m_Key: UI_GOLD_PACKAGE_STARTER_PACK_TITLE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8447686458724352
+    m_Key: 'UI_GOLD_PACKAGE_STARTER_PACK_DESCRIPTION
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8448587462332416
+    m_Key: UI_GOLD_PACKAGE_PURCHASE_BUTTON_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8449194847883264
+    m_Key: NOTIFICATION_GOLD_PACKAGE_PUCHASE_SUCCESSFUL
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -330,6 +330,22 @@ MonoBehaviour:
     m_Localized: ADS
     m_Metadata:
       m_Items: []
+  - m_Id: 8447537116336128
+    m_Localized: STARTER PACK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8447686458724352
+    m_Localized: GET <b>500</b> GOLD AND JUMPSTART YOUR JOURNEY!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8448587462332416
+    m_Localized: PURCHASE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8449194847883264
+    m_Localized: YOU HAVE PURCHASED {0} GOLDS!
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

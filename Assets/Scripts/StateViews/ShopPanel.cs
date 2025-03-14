@@ -31,5 +31,13 @@ namespace Assets.Scripts.StateViews
 
             Game.I.StateViewHandler.SwitchTo<MainMenuPanel>();
         }
+
+        public void GoldPackagePurchaseButton_Click(int amount)
+        {
+            PlayerController.I.AddGold(amount);
+            NotificationController.I.ShowNotification(
+                LocalizationController.I.GetLocalizedString("NOTIFICATION_GOLD_PACKAGE_PUCHASE_SUCCESSFUL", amount.ToString()),
+                5f, NotificationType.Success);
+        }
     }
 }

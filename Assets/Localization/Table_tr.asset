@@ -330,6 +330,22 @@ MonoBehaviour:
     m_Localized: REKLAM
     m_Metadata:
       m_Items: []
+  - m_Id: 8447537116336128
+    m_Localized: "BA\u015ELANGI\xC7 PAKET\u0130"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8447686458724352
+    m_Localized: "<b>500</b> ALTIN ALIN VE YOLCULU\u011EUNUZA HIZLI BA\u015ELAYIN!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8448587462332416
+    m_Localized: SATIN AL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8449194847883264
+    m_Localized: '{0} ALTIN SATIN ALDINIZ!'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
