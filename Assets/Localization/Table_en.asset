@@ -335,7 +335,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 8447686458724352
-    m_Localized: GET <b>500</b> GOLD AND JUMPSTART YOUR JOURNEY!
+    m_Localized: GET <b>500</b> GOLDS AND JUMPSTART YOUR JOURNEY!
     m_Metadata:
       m_Items: []
   - m_Id: 8448587462332416
@@ -344,6 +344,39 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 8449194847883264
     m_Localized: YOU HAVE PURCHASED {0} GOLDS!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9355048910569472
+    m_Localized: <b>1200</b> GOLDS + <b>200</b> BONUS! MORE POWER, MORE REWARDS.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9354938491322368
+    m_Localized: EXPLORER PACK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9360037649301504
+    m_Localized: ADVENTURER PACK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9360111838150656
+    m_Localized: <b>3000</b> GOLDS + <b>900</b> BONUS! UNLOCK PREMIUM SKINS FASTER.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9360321083588608
+    m_Localized: ULTIMATE PACK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9360398694989824
+    m_Localized: <b>8000</b> GOLDS + <b>4000</b> BONUS! GET AHEAD WITH MASSIVE SAVINGS.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9360648574844928
+    m_Localized: LEGENDARY PACK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9360704610746368
+    m_Localized: <b>20000</b> GOLDS + <b>20000</b> BONUS! DOUBLE YOUR VALUE AND DOMINATE
+      THE GAME!
     m_Metadata:
       m_Items: []
   references:

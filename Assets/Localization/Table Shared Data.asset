@@ -349,6 +349,38 @@ MonoBehaviour:
     m_Key: NOTIFICATION_GOLD_PACKAGE_PUCHASE_SUCCESSFUL
     m_Metadata:
       m_Items: []
+  - m_Id: 9354938491322368
+    m_Key: UI_GOLD_PACKAGE_EXPLORER_PACK_TITLE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9355048910569472
+    m_Key: UI_GOLD_PACKAGE_EXPLORER_PACK_DESCRIPTION
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9360037649301504
+    m_Key: UI_GOLD_PACKAGE_ADVENTURER_PACK_TITLE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9360111838150656
+    m_Key: UI_GOLD_PACKAGE_ADVENTURER_PACK_DESCRIPTION
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9360321083588608
+    m_Key: UI_GOLD_PACKAGE_ULTIMATE_PACK_TITLE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9360398694989824
+    m_Key: UI_GOLD_PACKAGE_ULTIMATE_PACK_DESCRIPTION
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9360648574844928
+    m_Key: UI_GOLD_PACKAGE_LEGENDARY_PACK_TITLE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9360704610746368
+    m_Key: UI_GOLD_PACKAGE_LEGENDARY_PACK_DESCRITION
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
