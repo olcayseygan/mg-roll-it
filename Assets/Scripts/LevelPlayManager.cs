@@ -83,16 +83,19 @@ namespace Assets.Scripts
             {
                 case "Game_Over__Continue":
                     Game.I.isContinuationEnabled = false;
+                    NotificationController.I.ShowNotification(LocalizationController.I.GetLocalizedString("NOTIFICATION_REWARD_CONTINUE_ACQUIRED"), 5.0f, NotificationType.Success);
                     Game.I.StateProvider.SwitchTo<States.GameStates.ContinueState>();
                     break;
                 case "Game_Over__Double_Gold":
                     Game.I.hasUsedDoubleGold = true;
                     PlayerController.I.AddGold(Game.I.GetCurrentRunGolds());
+                    NotificationController.I.ShowNotification(LocalizationController.I.GetLocalizedString("NOTIFICATION_REWARD_DOUBLE_GOLD_ACQUIRED", Game.I.GetCurrentRunGolds().ToString()), 5.0f, NotificationType.Success);
                     Game.I.StateViewHandler.Get<GameOverPanel>().SetGoldsText(PlayerController.I.GetGolds());
                     break;
 
                 case "Home_Screen__Gain_Gold":
                     PlayerController.I.AddGold(42);
+                    NotificationController.I.ShowNotification(LocalizationController.I.GetLocalizedString("NOTIFICATION_REWARD_GAIN_GOLD_ACQUIRED", 42.ToString()), 5.0f, NotificationType.Success);
                     Game.I.StateViewHandler.Get<MainMenuPanel>().SetGoldsText(PlayerController.I.GetGolds());
                     Game.I.StateViewHandler.Get<MainMenuPanel>().UpdateGaingGoldButtonInteractable();
                     break;

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Localization.Settings;
 using Assets.Scripts.StateViews;
 using GooglePlayGames;
+using GooglePlayGames.BasicApi;
 
 namespace Assets.Scripts.States.GameStates
 {
@@ -20,7 +21,7 @@ namespace Assets.Scripts.States.GameStates
             }
 
             LevelPlayManager.I.Initialize();
-            AudioManager.I.LoadAudioSettings();
+
             // PlayGamesPlatform.Activate();
             PlayGamesPlatform.Instance.Authenticate((status) =>
             {

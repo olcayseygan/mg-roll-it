@@ -346,6 +346,58 @@ MonoBehaviour:
     m_Localized: '{0} ALTIN SATIN ALDINIZ!'
     m_Metadata:
       m_Items: []
+  - m_Id: 9842333793898496
+    m_Localized: "ALTIN PAKETLER\u0130"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9360704610746368
+    m_Localized: "<b>20000</b> ALTIN + <b>20000</b> BONUS!</b> DE\u011EER\u0130N\u0130
+      \u0130K\u0130YE KATLA VE OYUNA H\xDCKMET!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9360398694989824
+    m_Localized: "<b>8000</b> ALTIN + <b>4000</b> BONUS!</b> DEV TASARRUFLA \xD6NE
+      GE\xC7."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9360111838150656
+    m_Localized: "<b>3000</b> ALTIN + <b>900</b> BONUS!</b> PREMIUM KOST\xDCMLER\u0130
+      DAHA HIZLI A\xC7."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9355048910569472
+    m_Localized: "<b>1200</b> ALTIN + <b>200</b> BONUS!</b> DAHA FAZLA G\xDC\xC7,
+      DAHA FAZLA \xD6D\xDCL."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9360037649301504
+    m_Localized: "MACERACI PAKET\u0130"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9360321083588608
+    m_Localized: "ULTIMATE PAKET\u0130"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9360648574844928
+    m_Localized: "EFSANEV\u0130 PAKET"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9354938491322368
+    m_Localized: "KA\u015E\u0130F PAKET\u0130"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9847742919331840
+    m_Localized: '{0} ALTIN KAZANDINIZ!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9850547063214080
+    m_Localized: "YEN\u0130DEN DO\u011EMA HAKKI KAZANDINIZ!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9864543946395648
+    m_Localized: "\xD6D\xDCL OLARAK ALTIN KAZANDINIZ!"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

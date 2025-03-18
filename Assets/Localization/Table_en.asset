@@ -379,6 +379,22 @@ MonoBehaviour:
       THE GAME!
     m_Metadata:
       m_Items: []
+  - m_Id: 9842333793898496
+    m_Localized: GOLD PACKAGES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9847742919331840
+    m_Localized: YOU EARNED {0} GOLD!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9850547063214080
+    m_Localized: YOU HAVE EARNED A RESPAWN RIGHT!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9864543946395648
+    m_Localized: YOU HAVE EARNED GOLD AS A REWARD!
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
