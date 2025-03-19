@@ -1,11 +1,23 @@
 using Assets.Scripts.Patterns.StatePattern.Plugins;
 using UnityEngine;
+using TMPro;
 
 namespace Assets.Scripts.StateViews
 {
     public class ShopPanel : StateViewPanel
     {
         public ShopItemInspector shopItemInspector;
+
+        public GameObject gold500GameObject;
+        public TMP_Text gold500PriceText;
+        public GameObject gold1400GameObject;
+        public TMP_Text gold1400PriceText;
+        public GameObject gold3900GameObject;
+        public TMP_Text gold3900PriceText;
+        public GameObject gold12000GameObject;
+        public TMP_Text gold12000PriceText;
+        public GameObject gold40000GameObject;
+        public TMP_Text gold40000PriceText;
 
         private void Update()
         {

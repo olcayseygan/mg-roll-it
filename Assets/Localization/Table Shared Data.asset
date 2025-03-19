@@ -397,6 +397,10 @@ MonoBehaviour:
     m_Key: NOTIFICATION_REWARD_GAIN_GOLD_ACQUIRED
     m_Metadata:
       m_Items: []
+  - m_Id: 10139393912979456
+    m_Key: UI_GAME_OVER_CONTINUE_BUTTON_GOLD_TEXT
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

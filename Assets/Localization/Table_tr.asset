@@ -398,6 +398,10 @@ MonoBehaviour:
     m_Localized: "\xD6D\xDCL OLARAK ALTIN KAZANDINIZ!"
     m_Metadata:
       m_Items: []
+  - m_Id: 10139393912979456
+    m_Localized: 20 ALTIN
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

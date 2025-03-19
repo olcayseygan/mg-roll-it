@@ -395,6 +395,10 @@ MonoBehaviour:
     m_Localized: YOU HAVE EARNED GOLD AS A REWARD!
     m_Metadata:
       m_Items: []
+  - m_Id: 10139393912979456
+    m_Localized: 20 GOLDS
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
