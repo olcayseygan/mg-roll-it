@@ -22,7 +22,7 @@ namespace Assets.Scripts.States.GameStates
 
             LevelPlayManager.I.Initialize();
 
-            // PlayGamesPlatform.Activate();
+            PlayGamesPlatform.Activate();
             PlayGamesPlatform.Instance.Authenticate((status) =>
             {
                 Debug.Log("PlayGamesPlatform authentication");
