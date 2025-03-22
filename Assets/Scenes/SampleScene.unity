@@ -2180,7 +2180,7 @@ PrefabInstance:
     - target: {fileID: 3689486006137415762, guid: a597cf7d8dac200438e80c310ae21df8,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8010,6 +8010,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &610356902 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4774735163646505007, guid: dde154346c95b654a88ec4f1a5293b7e,
+    type: 3}
+  m_PrefabInstance: {fileID: 37401695}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &613639169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10726,7 +10732,7 @@ MonoBehaviour:
   _scoreText: {fileID: 1148944552}
   _highScoreText: {fileID: 1067498322}
   _continueWithGoldButtonGameObject: {fileID: 519784981}
-  _continueButtonGameObject: {fileID: 519784981}
+  _continueButtonGameObject: {fileID: 610356902}
   _doubleGoldButtonGameObject: {fileID: 409220255}
   _doubleGoldButtonText: {fileID: 409220254}
 --- !u!1 &906826707
@@ -18217,7 +18223,7 @@ PrefabInstance:
     - target: {fileID: 2290080715658335771, guid: a597cf7d8dac200438e80c310ae21df8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -300
       objectReference: {fileID: 0}
     - target: {fileID: 2290080715658335771, guid: a597cf7d8dac200438e80c310ae21df8,
         type: 3}

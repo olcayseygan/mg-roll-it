@@ -107,11 +107,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 72719614595072
-    m_Localized: RETRY
+    m_Localized: TRY AGAIN
     m_Metadata:
       m_Items: []
   - m_Id: 73339016826880
-    m_Localized: HIGHSCORE
+    m_Localized: BEST SCORE
     m_Metadata:
       m_Items: []
   - m_Id: 73308503265280
@@ -119,11 +119,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 73268414107648
-    m_Localized: GOLDS
+    m_Localized: GOLD
     m_Metadata:
       m_Items: []
   - m_Id: 74197586661376
-    m_Localized: FELL OFF
+    m_Localized: YOU FELL
     m_Metadata:
       m_Items: []
   - m_Id: 75512500965376
@@ -131,15 +131,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 75474076946432
-    m_Localized: HIGHSCORE
+    m_Localized: BEST SCORE
     m_Metadata:
       m_Items: []
   - m_Id: 75413192429568
-    m_Localized: GOLDS
+    m_Localized: GOLD
     m_Metadata:
       m_Items: []
   - m_Id: 80524648108032
-    m_Localized: TAP TO CONTINUE
+    m_Localized: TAP TO GO
     m_Metadata:
       m_Items: []
   - m_Id: 81669596631040
@@ -147,7 +147,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 83178463940608
-    m_Localized: EQUIPED
+    m_Localized: EQUIPPED
     m_Metadata:
       m_Items: []
   - m_Id: 83737409474560
@@ -175,15 +175,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 257147047493632
-    m_Localized: NOT ENOUGH GOLD
+    m_Localized: NEED MORE GOLD
     m_Metadata:
       m_Items: []
   - m_Id: 257207147675648
-    m_Localized: OWNED
+    m_Localized: YOURS
     m_Metadata:
       m_Items: []
   - m_Id: 261726594121728
-    m_Localized: PURCHASE
+    m_Localized: BUY
     m_Metadata:
       m_Items: []
   - m_Id: 267017289187328
@@ -199,11 +199,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 280459379195904
-    m_Localized: CONTINUE
+    m_Localized: KEEP GOING
     m_Metadata:
       m_Items: []
   - m_Id: 280495408267264
-    m_Localized: +{0} GOLDS
+    m_Localized: +{0} GOLD
     m_Metadata:
       m_Items: []
   - m_Id: 2109562000490496
@@ -211,11 +211,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2138253300580352
-    m_Localized: INITIAL SPEED
+    m_Localized: STARTING SPEED
     m_Metadata:
       m_Items: []
   - m_Id: 2138262569992192
-    m_Localized: HIGH
+    m_Localized: FAST
     m_Metadata:
       m_Items: []
   - m_Id: 2138268010004480
@@ -271,7 +271,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 4275355870019584
-    m_Localized: '{0} GOLDS'
+    m_Localized: '{0} GOLD'
     m_Metadata:
       m_Items: []
   - m_Id: 4287242582081536
@@ -291,11 +291,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 4424888258121728
-    m_Localized: INSPECT
+    m_Localized: CHECK OUT
     m_Metadata:
       m_Items: []
   - m_Id: 4430972511309824
-    m_Localized: OWNED
+    m_Localized: YOURS
     m_Metadata:
       m_Items: []
   - m_Id: 4437123860779008
@@ -315,11 +315,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 4440537416060928
-    m_Localized: ENTER
+    m_Localized: SUBMIT
     m_Metadata:
       m_Items: []
   - m_Id: 6422256608333824
-    m_Localized: INSPECT
+    m_Localized: CHECK OUT
     m_Metadata:
       m_Items: []
   - m_Id: 7226844166995968
@@ -335,19 +335,19 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 8447686458724352
-    m_Localized: GET <b>500</b> GOLDS AND JUMPSTART YOUR JOURNEY!
+    m_Localized: GRAB <b>500</b> GOLD AND KICK OFF YOUR ADVENTURE!
     m_Metadata:
       m_Items: []
   - m_Id: 8448587462332416
-    m_Localized: PURCHASE
+    m_Localized: BUY
     m_Metadata:
       m_Items: []
   - m_Id: 8449194847883264
-    m_Localized: YOU HAVE PURCHASED {0} GOLDS!
+    m_Localized: YOU SNAGGED {0} GOLD!
     m_Metadata:
       m_Items: []
   - m_Id: 9355048910569472
-    m_Localized: <b>1200</b> GOLDS + <b>200</b> BONUS! MORE POWER, MORE REWARDS.
+    m_Localized: <b>1200</b> GOLD + <b>200</b> BONUS! MORE POWER, MORE GOODIES.
     m_Metadata:
       m_Items: []
   - m_Id: 9354938491322368
@@ -359,7 +359,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 9360111838150656
-    m_Localized: <b>3000</b> GOLDS + <b>900</b> BONUS! UNLOCK PREMIUM SKINS FASTER.
+    m_Localized: <b>3000</b> GOLD + <b>900</b> BONUS! UNLOCK COOL SKINS FAST.
     m_Metadata:
       m_Items: []
   - m_Id: 9360321083588608
@@ -367,7 +367,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 9360398694989824
-    m_Localized: <b>8000</b> GOLDS + <b>4000</b> BONUS! GET AHEAD WITH MASSIVE SAVINGS.
+    m_Localized: <b>8000</b> GOLD + <b>4000</b> BONUS! GET AHEAD BIG TIME.
     m_Metadata:
       m_Items: []
   - m_Id: 9360648574844928
@@ -375,28 +375,31 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 9360704610746368
-    m_Localized: <b>20000</b> GOLDS + <b>20000</b> BONUS! DOUBLE YOUR VALUE AND DOMINATE
-      THE GAME!
+    m_Localized: <b>20000</b> GOLD + <b>20000</b> BONUS! DOUBLE UP AND RULE THE GAME!
     m_Metadata:
       m_Items: []
   - m_Id: 9842333793898496
-    m_Localized: GOLD PACKAGES
+    m_Localized: GOLD PACKS
     m_Metadata:
       m_Items: []
   - m_Id: 9847742919331840
-    m_Localized: YOU EARNED {0} GOLD!
+    m_Localized: YOU SCORED {0} GOLD!
     m_Metadata:
       m_Items: []
   - m_Id: 9850547063214080
-    m_Localized: YOU HAVE EARNED A RESPAWN RIGHT!
+    m_Localized: YOU EARNED A RESPAWN!
     m_Metadata:
       m_Items: []
   - m_Id: 9864543946395648
-    m_Localized: YOU HAVE EARNED GOLD AS A REWARD!
+    m_Localized: YOU GOT GOLD AS A REWARD!
     m_Metadata:
       m_Items: []
   - m_Id: 10139393912979456
-    m_Localized: 20 GOLDS
+    m_Localized: 20 GOLD
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11309319585517568
+    m_Localized: CLOSE
     m_Metadata:
       m_Items: []
   references:

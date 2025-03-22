@@ -5,6 +5,7 @@ using UnityEngine.Localization.Settings;
 using Assets.Scripts.StateViews;
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
+using GooglePlayGames.BasicApi.SavedGame;
 
 namespace Assets.Scripts.States.GameStates
 {
@@ -19,7 +20,7 @@ namespace Assets.Scripts.States.GameStates
                 var uuid = System.Guid.NewGuid().ToString();
                 PlayerController.I.SetPlayerName(uuid);
             }
-
+            AudioManager.I.LoadAudioSettings();
             LevelPlayManager.I.Initialize();
 
             PlayGamesPlatform.Activate();
@@ -27,6 +28,8 @@ namespace Assets.Scripts.States.GameStates
             {
                 Debug.Log("PlayGamesPlatform authentication");
                 Debug.Log(status.ToString());
+                byte[] bytes = System.Text.Encoding.UTF8.GetBytes("Hello, world!");
+                SavedGameMetadataUpdate update = new SavedGameMetadataUpdate.Builder().WithUpdatedDescription("Saved game at " + System.DateTime.Now).Build();
             });
 
             self.StartCoroutine(OnEnterCoroutine(self));

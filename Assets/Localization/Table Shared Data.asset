@@ -72,9 +72,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 72654317670400
-    m_Key: 'UI_GAME_OVER_MAIN_MENU_BUTTON_TEXT
-
-'
+    m_Key: UI_GAME_OVER_MAIN_MENU_BUTTON_TEXT
     m_Metadata:
       m_Items: []
   - m_Id: 72719614595072
@@ -106,7 +104,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 75413192429568
-    m_Key: UI_MAIN_MENU_GOLDS_TEXT
+    m_Key: UI_MAIN_MENU_GOLD_TEXT
     m_Metadata:
       m_Items: []
   - m_Id: 75474076946432
@@ -134,9 +132,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 52789108264960
-    m_Key: 'UI_SETTINGS_BACK_BUTTON_TEXT
-
-'
+    m_Key: UI_SETTINGS_BACK_BUTTON_TEXT
     m_Metadata:
       m_Items: []
   - m_Id: 10322096930816
@@ -336,9 +332,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 8447686458724352
-    m_Key: 'UI_GOLD_PACKAGE_STARTER_PACK_DESCRIPTION
-
-'
+    m_Key: UI_GOLD_PACKAGE_STARTER_PACK_DESCRIPTION
     m_Metadata:
       m_Items: []
   - m_Id: 8448587462332416
@@ -399,6 +393,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 10139393912979456
     m_Key: UI_GAME_OVER_CONTINUE_BUTTON_GOLD_TEXT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11309319585517568
+    m_Key: UI_NOTIFICATION_CLOSE_BUTTON_TEXT
     m_Metadata:
       m_Items: []
   m_Metadata:

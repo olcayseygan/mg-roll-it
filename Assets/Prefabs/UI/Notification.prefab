@@ -672,6 +672,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Assets.Scripts.Notification, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 6527135805012490987, guid: 737b22357a455be4c926f8528312d012,
+        type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 11309319585517568
+      objectReference: {fileID: 0}
+    - target: {fileID: 6527135805012490987, guid: 737b22357a455be4c926f8528312d012,
+        type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:1fbb5fc14e224af47ac07f0c967b5bd5
+      objectReference: {fileID: 0}
     - target: {fileID: 6798524574126163877, guid: 737b22357a455be4c926f8528312d012,
         type: 3}
       propertyPath: m_Color.b

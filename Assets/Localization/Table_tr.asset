@@ -43,11 +43,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 5749668036608
-    m_Localized: KAPAT
+    m_Localized: "SESS\u0130Z"
     m_Metadata:
       m_Items: []
   - m_Id: 5785000853504
-    m_Localized: "A\xC7"
+    m_Localized: "SES\u0130 A\xC7"
     m_Metadata:
       m_Items: []
   - m_Id: 8156300951552
@@ -79,15 +79,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 74197586661376
-    m_Localized: "D\xDC\u015ET\xDCN"
+    m_Localized: "D\xDC\u015E\xDCVERD\u0130N"
     m_Metadata:
       m_Items: []
   - m_Id: 73339016826880
-    m_Localized: "EN \u0130Y\u0130 PUAN"
+    m_Localized: "EN \u0130Y\u0130 SKOR"
     m_Metadata:
       m_Items: []
   - m_Id: 73308503265280
-    m_Localized: PUAN
+    m_Localized: SKOR
     m_Metadata:
       m_Items: []
   - m_Id: 73268414107648
@@ -95,7 +95,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 72719614595072
-    m_Localized: TEKRAR DENE
+    m_Localized: "YEN\u0130DEN DENE"
     m_Metadata:
       m_Items: []
   - m_Id: 72654317670400
@@ -131,15 +131,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 75474076946432
-    m_Localized: "EN \u0130Y\u0130 PUAN"
+    m_Localized: "EN \u0130Y\u0130 SKOR"
     m_Metadata:
       m_Items: []
   - m_Id: 75512500965376
-    m_Localized: OYNANAN OYUN
+    m_Localized: "OYNADI\u011EIN OYUNLAR"
     m_Metadata:
       m_Items: []
   - m_Id: 80524648108032
-    m_Localized: "DEVAM ETMEK \u0130\xC7\u0130N DOKUN"
+    m_Localized: DOKUN VE DEVAM ET
     m_Metadata:
       m_Items: []
   - m_Id: 81669596631040
@@ -147,7 +147,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 83178463940608
-    m_Localized: "KU\u015EANILDI"
+    m_Localized: "KU\u015EANDIN"
     m_Metadata:
       m_Items: []
   - m_Id: 83737409474560
@@ -175,11 +175,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 257147047493632
-    m_Localized: "YETERL\u0130 ALTIN YOK"
+    m_Localized: "ALTIN YETM\u0130YOR"
     m_Metadata:
       m_Items: []
   - m_Id: 257207147675648
-    m_Localized: ALINDI
+    m_Localized: "SEN\u0130N"
     m_Metadata:
       m_Items: []
   - m_Id: 261726594121728
@@ -187,7 +187,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 267017289187328
-    m_Localized: "\xDCCRETS\u0130Z"
+    m_Localized: BEDAVA
     m_Metadata:
       m_Items: []
   - m_Id: 270453757952000
@@ -215,7 +215,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2138262569992192
-    m_Localized: "Y\xDCKSEK"
+    m_Localized: HIZLI
     m_Metadata:
       m_Items: []
   - m_Id: 2138268010004480
@@ -223,7 +223,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2138610797887488
-    m_Localized: "D\xDC\u015E\xDCK"
+    m_Localized: "YAVA\u015E"
     m_Metadata:
       m_Items: []
   - m_Id: 2454646617260032
@@ -267,7 +267,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2456550592200704
-    m_Localized: CYBERPUNK MOR
+    m_Localized: CYBERPUNK MORU
     m_Metadata:
       m_Items: []
   - m_Id: 4275355870019584
@@ -295,11 +295,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 4430972511309824
-    m_Localized: "SAH\u0130P"
+    m_Localized: "SEN\u0130N"
     m_Metadata:
       m_Items: []
   - m_Id: 4437123860779008
-    m_Localized: "\xDCCRETS\u0130Z"
+    m_Localized: BEDAVA
     m_Metadata:
       m_Items: []
   - m_Id: 4437568486363136
@@ -311,11 +311,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 4440006526226432
-    m_Localized: "KODU G\u0130R\u0130N"
+    m_Localized: KODU YAZ
     m_Metadata:
       m_Items: []
   - m_Id: 4440537416060928
-    m_Localized: "G\u0130R"
+    m_Localized: "G\xD6NDER"
     m_Metadata:
       m_Items: []
   - m_Id: 6422256608333824
@@ -327,7 +327,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 7506047617712128
-    m_Localized: REKLAM
+    m_Localized: RKLM
     m_Metadata:
       m_Items: []
   - m_Id: 8447537116336128
@@ -335,7 +335,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 8447686458724352
-    m_Localized: "<b>500</b> ALTIN ALIN VE YOLCULU\u011EUNUZA HIZLI BA\u015ELAYIN!"
+    m_Localized: <b>500</b> ALTIN KAP VE MACERAYA ATIL!
     m_Metadata:
       m_Items: []
   - m_Id: 8448587462332416
@@ -343,7 +343,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 8449194847883264
-    m_Localized: '{0} ALTIN SATIN ALDINIZ!'
+    m_Localized: '{0} ALTIN KAPTIN!'
     m_Metadata:
       m_Items: []
   - m_Id: 9842333793898496
@@ -351,23 +351,22 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 9360704610746368
-    m_Localized: "<b>20000</b> ALTIN + <b>20000</b> BONUS!</b> DE\u011EER\u0130N\u0130
-      \u0130K\u0130YE KATLA VE OYUNA H\xDCKMET!"
+    m_Localized: "<b>20000</b> ALTIN + <b>20000</b> BONUS! \u0130K\u0130YE KATLA
+      VE OYUNA H\xDCKMET!"
     m_Metadata:
       m_Items: []
   - m_Id: 9360398694989824
-    m_Localized: "<b>8000</b> ALTIN + <b>4000</b> BONUS!</b> DEV TASARRUFLA \xD6NE
-      GE\xC7."
+    m_Localized: "<b>8000</b> ALTIN + <b>4000</b> BONUS! B\xDCY\xDCK AVANTAJ YAKALA."
     m_Metadata:
       m_Items: []
   - m_Id: 9360111838150656
-    m_Localized: "<b>3000</b> ALTIN + <b>900</b> BONUS!</b> PREMIUM KOST\xDCMLER\u0130
-      DAHA HIZLI A\xC7."
+    m_Localized: "<b>3000</b> ALTIN + <b>900</b> BONUS! HAVALI KOST\xDCMLER\u0130
+      \xC7ABUK A\xC7."
     m_Metadata:
       m_Items: []
   - m_Id: 9355048910569472
-    m_Localized: "<b>1200</b> ALTIN + <b>200</b> BONUS!</b> DAHA FAZLA G\xDC\xC7,
-      DAHA FAZLA \xD6D\xDCL."
+    m_Localized: "<b>1200</b> ALTIN + <b>200</b> BONUS! DAHA FAZLA G\xDC\xC7, DAHA
+      FAZLA \xD6D\xDCL."
     m_Metadata:
       m_Items: []
   - m_Id: 9360037649301504
@@ -375,11 +374,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 9360321083588608
-    m_Localized: "ULTIMATE PAKET\u0130"
+    m_Localized: ULTIMATE PAKET
     m_Metadata:
       m_Items: []
   - m_Id: 9360648574844928
-    m_Localized: "EFSANEV\u0130 PAKET"
+    m_Localized: EFSANE PAKET
     m_Metadata:
       m_Items: []
   - m_Id: 9354938491322368
@@ -387,19 +386,23 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 9847742919331840
-    m_Localized: '{0} ALTIN KAZANDINIZ!'
+    m_Localized: '{0} ALTIN KAZANDIN!'
     m_Metadata:
       m_Items: []
   - m_Id: 9850547063214080
-    m_Localized: "YEN\u0130DEN DO\u011EMA HAKKI KAZANDINIZ!"
+    m_Localized: "YEN\u0130DEN DO\u011EMA HAKKI KAPTIN!"
     m_Metadata:
       m_Items: []
   - m_Id: 9864543946395648
-    m_Localized: "\xD6D\xDCL OLARAK ALTIN KAZANDINIZ!"
+    m_Localized: "\xD6D\xDCL OLARAK ALTIN ALDIN!"
     m_Metadata:
       m_Items: []
   - m_Id: 10139393912979456
     m_Localized: 20 ALTIN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11309319585517568
+    m_Localized: KAPAT
     m_Metadata:
       m_Items: []
   references:
